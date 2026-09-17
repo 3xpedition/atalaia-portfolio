@@ -12,39 +12,49 @@
 </head>
 <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
-    <header class="site-header subpage-header">
+    <header class="site-header subpage-header examples-header">
         <div class="container nav-wrap">
             <a class="brand" href="../" aria-label="Voltar ao início do portfólio"><span class="brand-mark" aria-hidden="true">A</span><span>Atalaia <small>portfólio técnico</small></span></a>
-            <nav class="main-nav" aria-label="Navegação da página"><a href="../">Visão geral</a><a href="../#evolucao">Evolução</a><a class="nav-cta" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Código no GitHub</a></nav>
+            <nav class="examples-nav" aria-label="Navegação da página"><a href="../">Visão geral</a><a href="../#evolucao">Evolução</a><a class="nav-cta" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Código no GitHub</a></nav>
         </div>
     </header>
 
     <main id="conteudo">
-        <section class="subpage-hero">
-            <div class="container reveal">
-                <a class="breadcrumb" href="../">← Voltar ao portfólio</a>
-                <p class="eyebrow">Código demonstrativo</p>
-                <h1>Pequenos exemplos. Decisões de engenharia visíveis.</h1>
-                <p>Uma trilha curta pela separação de responsabilidades: entrada HTTP, regra de negócio, persistência, consulta analítica e apresentação.</p>
+        <section class="subpage-hero examples-hero">
+            <div class="container examples-hero-grid">
+                <div class="reveal">
+                    <a class="breadcrumb" href="../">← Voltar ao portfólio</a>
+                    <p class="eyebrow">Código demonstrativo</p>
+                    <h1>Exemplos técnicos, sem ruído.</h1>
+                    <p>Uma pequena funcionalidade fictícia mostra como as responsabilidades atravessam a aplicação — da requisição à interface.</p>
+                    <div class="hero-actions"><a class="button primary" href="#arquivos">Explorar arquivos</a><a class="button secondary" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Abrir no GitHub</a></div>
+                </div>
+                <aside class="example-summary reveal" aria-label="Resumo do conteúdo">
+                    <span class="summary-label">Neste exemplo</span>
+                    <strong>Indicadores acadêmicos</strong>
+                    <p>Um fluxo genérico para consultar, consolidar e apresentar métricas de um período.</p>
+                    <ul><li>5 arquivos comentados</li><li>Camadas desacopladas</li><li>Dados 100% fictícios</li></ul>
+                </aside>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section examples-section" id="arquivos">
             <div class="container">
-                <div class="section-heading reveal"><p class="eyebrow">Explore por camada</p><h2>Do pedido ao indicador.</h2><p>Cada arquivo foi criado exclusivamente para este portfólio e usa entidades fictícias.</p></div>
+                <div class="examples-intro reveal"><div><p class="eyebrow">Explore por camada</p><h2>Do pedido ao indicador.</h2></div><p>Leia na ordem sugerida ou abra apenas a camada que interessa. Cada arquivo foi criado exclusivamente para este portfólio.</p></div>
+                <ol class="code-flow reveal" aria-label="Fluxo da funcionalidade"><li><span>01</span>Requisição</li><li><span>02</span>Orquestração</li><li><span>03</span>Consulta</li><li><span>04</span>Apresentação</li></ol>
                 <div class="examples-grid">
-                    <article class="example-card reveal"><span class="example-type">Controller</span><h2>Entrada HTTP enxuta</h2><p>Validação do período, delegação ao serviço e resposta previsível, sem concentrar regra de negócio.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/controllers/IndicadorController.php">Abrir IndicadorController.php →</a></article>
-                    <article class="example-card reveal"><span class="example-type">Service</span><h2>Orquestração explícita</h2><p>Consolidação dos indicadores em uma unidade testável e reutilizável por diferentes saídas.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/ConsolidaIndicadoresService.php">Abrir ConsolidaIndicadoresService.php →</a></article>
-                    <article class="example-card reveal"><span class="example-type">Model</span><h2>Consulta encapsulada</h2><p>Modelo demonstrativo com escopo temporal e agregação orientada ao caso de uso.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/models/IndicadorAcademico.php">Abrir IndicadorAcademico.php →</a></article>
-                    <article class="example-card reveal"><span class="example-type">SQL</span><h2>Resumo analítico</h2><p>Consulta legível sobre um esquema fictício, com agrupamento e parâmetros claramente delimitados.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/sql/resumo_avaliacoes.sql">Abrir resumo_avaliacoes.sql →</a></article>
-                    <article class="example-card reveal"><span class="example-type">Blade</span><h2>Apresentação acessível</h2><p>Componente responsivo que mantém a regra fora da view e comunica estados vazios.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/views/painel-indicadores.blade.php">Abrir painel-indicadores.blade.php →</a></article>
-                    <article class="example-card reveal"><span class="example-type">Guia</span><h2>Contexto dos exemplos</h2><p>Leia as premissas, o fluxo demonstrado e os limites de uso deste material público.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/README.md">Abrir o guia →</a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">01</span><span class="example-type">Controller</span></div><code>controllers/IndicadorController.php</code><h3>Entrada HTTP enxuta</h3><p>Valida o período, delega ao serviço e devolve uma resposta previsível sem concentrar regra de negócio.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/controllers/IndicadorController.php">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">02</span><span class="example-type">Service</span></div><code>services/ConsolidaIndicadoresService.php</code><h3>Orquestração explícita</h3><p>Consolida os indicadores em uma unidade testável e reutilizável por diferentes saídas.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/ConsolidaIndicadoresService.php">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">03</span><span class="example-type">Model</span></div><code>models/IndicadorAcademico.php</code><h3>Consulta encapsulada</h3><p>Aplica um escopo temporal e mantém a consulta orientada ao caso de uso demonstrado.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/models/IndicadorAcademico.php">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">04</span><span class="example-type">SQL</span></div><code>sql/resumo_avaliacoes.sql</code><h3>Resumo analítico</h3><p>Usa agrupamento e parâmetros delimitados sobre um esquema inteiramente fictício.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/sql/resumo_avaliacoes.sql">Ver consulta <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">05</span><span class="example-type">Blade</span></div><code>views/painel-indicadores.blade.php</code><h3>Apresentação acessível</h3><p>Renderiza o resultado com responsividade, sem transportar a regra de negócio para a view.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/views/painel-indicadores.blade.php">Ver interface <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card example-card-guide reveal"><div class="example-card-top"><span class="example-index">+</span><span class="example-type">Guia</span></div><code>examples/README.md</code><h3>Premissas e limites</h3><p>Explica o fluxo, as decisões demonstradas e o que este material público deliberadamente não contém.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/README.md">Ler o guia <span aria-hidden="true">→</span></a></article>
                 </div>
             </div>
         </section>
 
         <section class="section section-tint">
-            <div class="container"><div class="section-heading reveal"><p class="eyebrow">Fluxo de leitura</p><h2>Uma responsabilidade por etapa.</h2></div><div class="learning-path reveal"><div><small>01</small><strong>Controller valida a entrada</strong></div><div><small>02</small><strong>Service coordena a regra</strong></div><div><small>03</small><strong>Model e SQL consultam</strong></div><div><small>04</small><strong>Blade apresenta o resultado</strong></div></div></div>
+                <div class="container split"><div class="section-heading reveal"><p class="eyebrow">O que observar</p><h2>Uma responsabilidade por etapa.</h2></div><ul class="responsibility-list reveal"><li><strong>Entrada previsível</strong><span>Validação e resposta ficam na borda HTTP.</span></li><li><strong>Regra reutilizável</strong><span>O serviço não depende da forma de apresentação.</span></li><li><strong>Consulta legível</strong><span>A intenção permanece clara no model e no SQL.</span></li><li><strong>View simples</strong><span>A interface recebe dados prontos para exibir.</span></li></ul></div>
         </section>
 
         <section class="section disclosure">
