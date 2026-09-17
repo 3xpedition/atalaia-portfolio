@@ -28,6 +28,12 @@ $requiredPaths = @(
     'docs/assets/favicon.svg',
     'docs/assets/styles.css',
     'docs/assets/examples-1d3a47a.css',
+    'docs/assets/portfolio-team-725b14c.css',
+    'docs/assets/dashboard-ssaa-demonstrativa.png',
+    'docs/assets/logo-esa.svg',
+    'docs/assets/team/joao-victor.jpg',
+    'docs/assets/team/alexandre-ferreira.jpg',
+    'docs/assets/team/natanael-cirino-restaurada.png',
     'docs/assets/main.js',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
@@ -68,6 +74,8 @@ foreach ($term in $historyTerms) {
 Assert-Portfolio -Condition (-not $site.Contains('href="../examples/"')) -Message 'O link antigo dos exemplos ainda aponta para fora do projeto do GitHub Pages.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais, genéricos e sanitizados.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Exemplos técnicos, sem ruído.')) -Message 'Título principal da página de exemplos ausente.'
+Assert-Portfolio -Condition ($site.Contains('Uma equipe multidisciplinar por trás da evolução.')) -Message 'Seção pública da equipe ausente.'
+Assert-Portfolio -Condition ($site.Contains('Métricas, turmas e valores são inteiramente fictícios.')) -Message 'Aviso de dados fictícios da dashboard ausente.'
 
 $legacyModuleHeadings = @(
     'Calendário de Avaliações',
