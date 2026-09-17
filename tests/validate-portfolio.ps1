@@ -66,6 +66,7 @@ foreach ($term in $historyTerms) {
 
 Assert-Portfolio -Condition (-not $site.Contains('href="../examples/"')) -Message 'O link antigo dos exemplos ainda aponta para fora do projeto do GitHub Pages.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais, genéricos e sanitizados.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
+Assert-Portfolio -Condition ($examplesSite.Contains('Exemplos técnicos, sem ruído.')) -Message 'Título principal da página de exemplos ausente.'
 
 $legacyModuleHeadings = @(
     'Calendário de Avaliações',
