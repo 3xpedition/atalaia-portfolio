@@ -24,6 +24,7 @@ $requiredPaths = @(
     'LICENSE',
     '.gitignore',
     'docs/index.html',
+    'docs/examples/index.html',
     'docs/assets/favicon.svg',
     'docs/assets/styles.css',
     'docs/assets/main.js',
@@ -45,6 +46,7 @@ foreach ($relativePath in $requiredPaths) {
 
 $readme = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'README.md')
 $site = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'docs/index.html')
+$examplesSite = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'docs/examples/index.html')
 $requiredTerms = @(
     'Laravel', 'PHP', 'MySQL', 'Redis', 'Bootstrap', 'Nginx', 'Git', 'MicroStrategy',
     'Kotlin', 'Jetpack Compose', 'WorkManager', 'SQLCipher',
@@ -56,6 +58,14 @@ foreach ($term in $requiredTerms) {
     $readmeTerm = $term.Replace('&amp;', '&')
     Assert-Portfolio -Condition ($readme.Contains($readmeTerm) -and $site.Contains($term)) -Message "Termo obrigatório ausente no README ou no site: $readmeTerm"
 }
+
+$historyTerms = @('Histórico e evolução', '2020', '2021', '2022', '2023–2024', '2025', '2026')
+foreach ($term in $historyTerms) {
+    Assert-Portfolio -Condition ($readme.Contains($term) -and $site.Contains($term)) -Message "Marco histórico ausente no README ou no site: $term"
+}
+
+Assert-Portfolio -Condition (-not $site.Contains('href="../examples/"')) -Message 'O link antigo dos exemplos ainda aponta para fora do projeto do GitHub Pages.'
+Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais, genéricos e sanitizados.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
 
 $legacyModuleHeadings = @(
     'Calendário de Avaliações',
@@ -91,16 +101,20 @@ foreach ($file in $publicFiles) {
     }
 }
 
-$hrefMatches = [regex]::Matches($site, 'href="([^"]+)"')
-foreach ($match in $hrefMatches) {
-    $href = $match.Groups[1].Value
-    if ($href.StartsWith('#') -or $href.StartsWith('http://') -or $href.StartsWith('https://') -or $href.StartsWith('mailto:')) {
-        continue
-    }
+$htmlFiles = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File -Filter '*.html'
+foreach ($htmlFile in $htmlFiles) {
+    $html = Get-Content -Raw -LiteralPath $htmlFile.FullName
+    $hrefMatches = [regex]::Matches($html, 'href="([^"]+)"')
+    foreach ($match in $hrefMatches) {
+        $href = $match.Groups[1].Value
+        if ($href.StartsWith('#') -or $href.StartsWith('http://') -or $href.StartsWith('https://') -or $href.StartsWith('mailto:')) {
+            continue
+        }
 
-    $withoutFragment = $href.Split('#')[0]
-    $target = [System.IO.Path]::GetFullPath((Join-Path (Join-Path $repositoryRoot 'docs') $withoutFragment))
-    Assert-Portfolio -Condition (Test-Path -LiteralPath $target) -Message "Link local inválido em docs/index.html: $href"
+        $withoutFragment = $href.Split('#')[0]
+        $target = [System.IO.Path]::GetFullPath((Join-Path $htmlFile.DirectoryName $withoutFragment))
+        Assert-Portfolio -Condition (Test-Path -LiteralPath $target) -Message "Link local inválido em $($htmlFile.FullName): $href"
+    }
 }
 
 $nestedRepositories = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -Directory -Force -Filter '.git' |
