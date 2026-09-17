@@ -27,6 +27,7 @@ $requiredPaths = @(
     'docs/examples/index.html',
     'docs/assets/favicon.svg',
     'docs/assets/styles.css',
+    'docs/assets/examples-1d3a47a.css',
     'docs/assets/main.js',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
