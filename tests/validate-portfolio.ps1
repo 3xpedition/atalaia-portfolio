@@ -113,7 +113,8 @@ foreach ($htmlFile in $htmlFiles) {
         }
 
         $withoutFragment = $href.Split('#')[0]
-        $target = [System.IO.Path]::GetFullPath((Join-Path $htmlFile.DirectoryName $withoutFragment))
+        $withoutQuery = $withoutFragment.Split('?')[0]
+        $target = [System.IO.Path]::GetFullPath((Join-Path $htmlFile.DirectoryName $withoutQuery))
         Assert-Portfolio -Condition (Test-Path -LiteralPath $target) -Message "Link local inválido em $($htmlFile.FullName): $href"
     }
 }
