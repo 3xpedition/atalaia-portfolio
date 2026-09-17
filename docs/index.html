@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfólio técnico do Atalaia / COP Educação: arquitetura, tecnologias, módulos e exemplos de engenharia de software.">
+    <meta name="theme-color" content="#102a43">
+    <title>Atalaia / COP Educação — Portfólio técnico</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="assets/main.js" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+    <header class="site-header" id="inicio">
+        <div class="container nav-wrap">
+            <a class="brand" href="#inicio" aria-label="Atalaia Portfólio — início">
+                <span class="brand-mark" aria-hidden="true">A</span>
+                <span>Atalaia <small>portfólio técnico</small></span>
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-principal">
+                <span></span><span></span><span></span>
+                <span class="sr-only">Abrir menu</span>
+            </button>
+            <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
+                <a href="#visao-geral">Visão geral</a>
+                <a href="#modulos">Módulos</a>
+                <a href="#arquitetura">Arquitetura</a>
+                <a href="#atuacao">Atuação</a>
+                <a class="nav-cta" href="https://github.com/3xpedition/atalaia-portfolio">Ver no GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo">
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Engenharia de software aplicada à educação</p>
+                    <h1>Dados, processos e decisões em uma experiência integrada.</h1>
+                    <p class="hero-lead">O Atalaia / COP Educação apoia rotinas acadêmicas, consolida indicadores e transforma regras complexas em fluxos claros e rastreáveis.</p>
+                    <div class="hero-actions">
+                        <a class="button primary" href="#visao-geral">Conhecer o projeto</a>
+                        <a class="button secondary" href="../examples/">Explorar exemplos</a>
+                    </div>
+                    <ul class="hero-notes" aria-label="Características do portfólio">
+                        <li>Conteúdo sanitizado</li>
+                        <li>Exemplos autorais</li>
+                        <li>Sem dados de produção</li>
+                    </ul>
+                </div>
+                <div class="hero-visual reveal" aria-label="Representação conceitual do fluxo da aplicação">
+                    <div class="window-card">
+                        <div class="window-top"><i></i><i></i><i></i><span>painel.educacao</span></div>
+                        <div class="window-body">
+                            <div class="metric featured"><small>Visão consolidada</small><strong>Fluxos acadêmicos</strong><span>do registro ao indicador</span></div>
+                            <div class="mini-grid">
+                                <div class="metric"><small>Aplicação</small><strong>Laravel</strong></div>
+                                <div class="metric"><small>Dados</small><strong>MySQL</strong></div>
+                                <div class="metric"><small>Cache</small><strong>Redis</strong></div>
+                                <div class="metric"><small>Análise</small><strong>MicroStrategy</strong></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="orbit orbit-one"></div>
+                    <div class="orbit orbit-two"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="visao-geral">
+            <div class="container split">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Visão geral</p>
+                    <h2>Uma plataforma para acompanhar o ciclo acadêmico.</h2>
+                </div>
+                <div class="prose reveal">
+                    <p>O projeto reúne planejamento de avaliações, registros operacionais, acompanhamento de desempenho e relatórios. A arquitetura prioriza regras consistentes no servidor, interfaces acessíveis e informação útil para diferentes níveis de decisão.</p>
+                    <p>Este portfólio apresenta o contexto técnico e as competências aplicadas. O sistema completo e seus dados permanecem no repositório institucional privado.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-tint" id="modulos">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <p class="eyebrow">Escopo funcional</p>
+                    <h2>Módulos que conectam planejamento e acompanhamento.</h2>
+                    <p>Cada área traduz um fluxo de negócio em uma experiência coerente e rastreável.</p>
+                </div>
+                <div class="card-grid">
+                    <article class="module-card reveal"><span class="card-number">01</span><h3>Calendário de Avaliações</h3><p>Organização temporal e consulta das atividades avaliativas por período.</p></article>
+                    <article class="module-card reveal"><span class="card-number">02</span><h3>Índice de Dificuldades</h3><p>Registro estruturado de sinais que apoiam intervenções pedagógicas.</p></article>
+                    <article class="module-card reveal"><span class="card-number">03</span><h3>Relatórios</h3><p>Consolidação de informações para leitura operacional e apoio à decisão.</p></article>
+                    <article class="module-card reveal"><span class="card-number">04</span><h3>TFM</h3><p>Acompanhamento de avaliações e fluxos relacionados ao treinamento físico.</p></article>
+                    <article class="module-card reveal"><span class="card-number">05</span><h3>Lança Local</h3><p>Registro orientado de informações em cenários operacionais específicos.</p></article>
+                    <article class="module-card reveal"><span class="card-number">06</span><h3>Conteúdos Atitudinais</h3><p>Acompanhamento de dimensões comportamentais e formativas.</p></article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section dark" id="arquitetura">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Arquitetura</p>
+                    <h2>Responsabilidades bem definidas, da interface aos dados.</h2>
+                </div>
+                <ol class="architecture-flow reveal">
+                    <li><span>01</span><div><strong>Experiência web</strong><small>Blade · Bootstrap · JavaScript</small></div></li>
+                    <li><span>02</span><div><strong>Aplicação</strong><small>PHP · Laravel · validação</small></div></li>
+                    <li><span>03</span><div><strong>Domínio</strong><small>Serviços · regras · autorização</small></div></li>
+                    <li><span>04</span><div><strong>Dados e análise</strong><small>MySQL · Redis · MicroStrategy</small></div></li>
+                </ol>
+                <div class="tech-list reveal" aria-label="Tecnologias utilizadas">
+                    <span>Laravel</span><span>PHP</span><span>MySQL</span><span>Redis</span><span>Bootstrap</span><span>Nginx</span><span>Git</span><span>MicroStrategy</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="atuacao">
+            <div class="container split wide-gap">
+                <div class="section-heading reveal">
+                    <p class="eyebrow">Atuação profissional</p>
+                    <h2>Do entendimento do problema à entrega confiável.</h2>
+                    <p>Trabalho orientado à clareza das regras, segurança das mudanças e manutenção sustentável.</p>
+                    <a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Ver exemplos no GitHub <span aria-hidden="true">→</span></a>
+                </div>
+                <ul class="responsibility-list reveal">
+                    <li><strong>Desenvolvimento full stack</strong><span>Evolução de aplicações Laravel, interfaces responsivas e integrações.</span></li>
+                    <li><strong>Regras e dados</strong><span>Modelagem de fluxos, consultas, indicadores e relatórios consistentes.</span></li>
+                    <li><strong>Qualidade</strong><span>Diagnóstico, testes de regressão, revisão e entregas rastreáveis com Git.</span></li>
+                    <li><strong>Segurança e privacidade</strong><span>Autorização no backend, validação de entrada e proteção de informações.</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section section-tint" id="destaques">
+            <div class="container">
+                <div class="section-heading centered reveal">
+                    <p class="eyebrow">Destaques técnicos</p>
+                    <h2>Decisões para um software mais previsível.</h2>
+                </div>
+                <div class="highlights">
+                    <div class="highlight reveal"><span>↗</span><h3>Regra única</h3><p>Cálculos compartilhados entre telas, relatórios e exportações.</p></div>
+                    <div class="highlight reveal"><span>◎</span><h3>Autorização real</h3><p>Proteções no servidor para além da visibilidade dos controles.</p></div>
+                    <div class="highlight reveal"><span>◇</span><h3>Leitura eficiente</h3><p>Consultas e cache desenhados para os fluxos de uso.</p></div>
+                    <div class="highlight reveal"><span>✓</span><h3>Entrega segura</h3><p>Testes, lint, revisão de diffs e histórico independente.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section disclosure">
+            <div class="container disclosure-card reveal">
+                <div>
+                    <p class="eyebrow">Transparência</p>
+                    <h2>O que este portfólio publica — e o que preserva.</h2>
+                </div>
+                <div>
+                    <p>O conteúdo público inclui somente documentação e exemplos demonstrativos escritos para este repositório.</p>
+                    <p><strong>Não são públicos:</strong> o código completo, o histórico institucional, credenciais, dados pessoais, configurações internas e dados de produção.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-wrap">
+            <div><strong>Atalaia / COP Educação</strong><span>Portfólio técnico independente</span></div>
+            <p>Conteúdo demonstrativo · <span id="ano">2026</span></p>
+        </div>
+    </footer>
+</body>
+</html>

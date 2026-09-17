@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Atalaia">
+  <rect width="64" height="64" rx="16" fill="#102a43"/>
+  <path d="M32 13 51 49h-9l-4-8H26l-4 8h-9L32 13Zm0 13-3 7h6l-3-7Z" fill="#fff"/>
+  <circle cx="49" cy="15" r="6" fill="#d05a3a"/>
+</svg>

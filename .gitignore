@@ -1,0 +1,30 @@
+# Operating systems and editors
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+auth.json
+
+# Dependencies and generated output
+/vendor/
+/node_modules/
+/coverage/
+/.phpunit.cache/
+npm-debug.log*
+yarn-error.log*
+
+# Temporary and local files
+*.log
+*.tmp
+*.bak
