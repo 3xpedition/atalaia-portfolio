@@ -29,6 +29,7 @@ $requiredPaths = @(
     'docs/assets/main.js',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
+    'docs/mobile/README.md',
     'docs/screenshots/README.md',
     'examples/controllers/IndicadorController.php',
     'examples/models/IndicadorAcademico.php',
@@ -46,12 +47,27 @@ $readme = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'README.md')
 $site = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'docs/index.html')
 $requiredTerms = @(
     'Laravel', 'PHP', 'MySQL', 'Redis', 'Bootstrap', 'Nginx', 'Git', 'MicroStrategy',
-    'Calendário de Avaliações', 'Índice de Dificuldades', 'Relatórios', 'TFM',
-    'Lança Local', 'Conteúdos Atitudinais'
+    'Kotlin', 'Jetpack Compose', 'WorkManager', 'SQLCipher',
+    'Ciclo de Formação', 'Avaliação &amp; Desempenho', 'Inteligência Educacional',
+    'Jornada Disciplinar', 'Escolha de QMS', 'Operação Móvel Offline'
 )
 
 foreach ($term in $requiredTerms) {
-    Assert-Portfolio -Condition ($readme.Contains($term) -and $site.Contains($term)) -Message "Termo obrigatório ausente no README ou no site: $term"
+    $readmeTerm = $term.Replace('&amp;', '&')
+    Assert-Portfolio -Condition ($readme.Contains($readmeTerm) -and $site.Contains($term)) -Message "Termo obrigatório ausente no README ou no site: $readmeTerm"
+}
+
+$legacyModuleHeadings = @(
+    'Calendário de Avaliações',
+    'Índice de Dificuldades',
+    'Relatórios',
+    'TFM',
+    'Lança Local',
+    'Conteúdos Atitudinais'
+)
+
+foreach ($heading in $legacyModuleHeadings) {
+    Assert-Portfolio -Condition (-not $site.Contains("<h3>$heading</h3>")) -Message "Card de módulo legado ainda presente: $heading"
 }
 
 $textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt')
