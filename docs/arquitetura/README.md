@@ -8,8 +8,8 @@ Esta visão descreve uma arquitetura pública e conceitual. Ela demonstra as cam
 2. **Aplicativo Android** — experiência nativa em Kotlin e Compose, preparada para operação offline.
 3. **Aplicação HTTP e API** — rotas, validação de entrada, autenticação, autorização e controllers Laravel.
 4. **Serviços de domínio** — regras reutilizáveis para formação, avaliação, disciplina e relatórios.
-5. **Persistência** — modelos e consultas no MySQL, Redis para cache e SQLCipher no dispositivo.
-6. **Entrega e análise** — Nginx na camada web e integração controlada com MicroStrategy.
+5. **Persistência** — dois bancos MySQL (administrativo e SSAA, das avaliações da qualificação) e SQLCipher no dispositivo.
+6. **Entrega e análise** — Nginx na camada web, relatórios em PDF e Excel e painéis de comando em D3.js, com todas as dependências servidas localmente para funcionar na Intranet.
 
 ## Princípios
 

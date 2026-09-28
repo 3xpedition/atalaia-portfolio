@@ -1,6 +1,6 @@
-# Atalaia / COP Educação — Portfólio técnico
+# Atalaia & Gavião — Portfólio técnico
 
-Portfólio público e independente sobre a evolução do **Atalaia / COP Educação**, um ecossistema web e mobile criado para apoiar a gestão do ciclo de formação, o acompanhamento acadêmico, processos disciplinares e a tomada de decisão orientada por dados.
+Portfólio público do **Atalaia** e do **Gavião**, os sistemas de gestão acadêmica da Escola de Sargentos das Armas (ESA), mantidos pelo COP Educação. O Atalaia acompanha o 1º ano do Curso de Formação e Graduação de Sargentos (Período Básico, nas UETEs); o Gavião, o 2º ano (Período de Qualificação, na ESA). Em produção desde 2020.
 
 > Este repositório reúne documentação e exemplos autorais, genéricos e sanitizados. O código-fonte completo, o histórico institucional, as configurações internas e os dados de produção permanecem privados.
 
@@ -10,7 +10,7 @@ Portfólio público e independente sobre a evolução do **Atalaia / COP Educaç
 
 Uma jornada de formação produz informações em momentos, formatos e contextos diferentes: cadastro, planejamento, avaliações, desempenho físico, acompanhamento disciplinar, classificação, escolha de especialidade e relatórios gerenciais. O Atalaia nasceu para conectar esses fluxos e reduzir a distância entre o registro operacional e a decisão.
 
-A plataforma atende dois contextos complementares — formação básica e qualificação — por meio de regras compartilhadas, perfis de acesso e visões adequadas a cada etapa. Em 2026, esse ecossistema passou a incluir também uma experiência Android offline-first para trabalho em campo.
+A plataforma atende dois contextos complementares — o Período Básico (Atalaia) e o Período de Qualificação (Gavião) — sobre a mesma base de código, com regras compartilhadas, perfis de acesso e dois bancos MySQL: um administrativo e o SSAA, das avaliações da qualificação. Em 2026, ganhou o Painel Oficial do Diretor e o app Android Gavião FO, para registro de Fato Observado em campo, sem rede.
 
 ## Ecossistema em quatro camadas
 
@@ -19,7 +19,7 @@ A plataforma atende dois contextos complementares — formação básica e quali
 | Experiência web | Operações administrativas, acadêmicas e gerenciais em interfaces responsivas. |
 | Experiência móvel | Registro protegido em Android, inclusive sem conectividade, com sincronização posterior. |
 | Domínio e integração | Regras de negócio, autorização no servidor, APIs e processos assíncronos. |
-| Dados e decisão | Persistência, cache, relatórios, indicadores e integração com business intelligence. |
+| Dados e decisão | Persistência em MySQL, relatórios em PDF e Excel e painéis de comando em D3.js. |
 
 ## Seis frentes de produto
 
@@ -27,45 +27,45 @@ Os nomes abaixo foram criados para comunicar as capacidades do produto no portf�
 
 ### 1. Ciclo de Formação
 
-Organiza a jornada de alunos, turmas, cursos, anos, situações acadêmicas e transições entre etapas. Conecta o cadastro inicial às rotinas de acompanhamento e encerramento do ciclo.
+Importação dos aprovados no concurso, matrícula por ano de formação, passagem do Básico para a Qualificação, reintegração e situações diversas (trancamento e desligamento, a pedido ou ex officio).
 
 ### 2. Avaliação & Desempenho
 
-Reúne planejamento, aplicação, lançamento e consolidação de avaliações acadêmicas e físicas. As regras são centralizadas para manter coerência entre telas, relatórios e exportações.
+Calendário de provas, lançamento de graus (GBO) com 2ª chamada, índice de dificuldade por questão, recuperação e demonstrativo de notas com três casas decimais. O Treinamento Físico Militar (TFM) entra na média, com bônus para atletas.
 
 ### 3. Inteligência Educacional
 
-Transforma registros operacionais em indicadores, análises de resultados, painéis e relatórios. A camada analítica apoia a leitura de tendências sem duplicar as regras que definem os dados.
+Painel Oficial do Diretor: efetivo e evasão, desempenho cognitivo, físico e atitudinal, saúde, função de comando e concurso por região, com a série dos últimos cinco ciclos. Mediana no lugar da média, comparação em % do efetivo, escala de cor fixa e todo número clicável até a lista de alunos.
 
 ### 4. Jornada Disciplinar
 
-Estrutura o registro, a tramitação e o acompanhamento de fatos com rastreabilidade. Perfis e autorizações limitam cada ação ao contexto e à responsabilidade do usuário.
+Fato Observado (FO) positivo, neutro ou negativo, convertido em FATD quando cabe e arquivado na FRAD e na ROD. Encaminhamento em lote, aviso ao sargenteante por mensagem interna, e-mail e Telegram, e estatística por aluno e por observador.
 
 ### 5. Escolha de QMS
 
-Apoia a distribuição de vagas a partir de classificação, mérito e preferências, preservando a associação entre cada participante e suas escolhas ao longo do processo.
+Distribuição das vagas de cada Qualificação Militar de Sargentos pela classificação decrescente dos alunos e pelas prioridades indicadas por cada um, com relatório final em planilha.
 
 ### 6. Operação Móvel Offline
 
-Leva fluxos selecionados ao Android para uso em campo. O aplicativo mantém um conjunto autorizado de dados no dispositivo, registra ações pendentes e sincroniza com o servidor quando a conectividade retorna.
+App Android Gavião FO: mantém no aparelho os alunos que o observador pode ver, registra o Fato Observado sem conexão e sincroniza com o Gavião por uma API móvel dedicada quando a rede volta.
 
 ## Como a solução funciona
 
 ```text
 Web responsiva ─┐
-                ├─> API e aplicação Laravel ─> serviços de domínio ─> MySQL / Redis
+                ├─> API e aplicação Laravel ─> serviços de domínio ─> MySQL (administrativo + SSAA)
 Android nativo ─┘              │                                      │
-       │                       └─> autorização e auditoria             └─> relatórios e BI
+       │                       └─> autorização e auditoria             └─> PDF, Excel e painéis D3.js
        └─> SQLCipher + fila local + sincronização em segundo plano
 ```
 
-- **Backend:** PHP, Laravel e API REST autenticada
-- **Dados:** MySQL, Redis e persistência local criptografada
-- **Frontend:** Blade, JavaScript e Bootstrap
+- **Backend:** PHP 7.3, Laravel 5.8 e API móvel autenticada
+- **Dados:** MySQL (dois bancos) e persistência local criptografada
+- **Frontend:** Blade, JavaScript, jQuery, Bootstrap 5 e D3.js, tudo servido localmente (a Intranet bloqueia CDN)
 - **Mobile:** Kotlin, Jetpack Compose, WorkManager, Retrofit e OkHttp
 - **Segurança mobile:** SQLCipher, Android Keystore, AES-GCM e biometria
-- **Infraestrutura:** Nginx, contêineres e Git
-- **Business intelligence:** MicroStrategy
+- **Infraestrutura:** Docker, Nginx e Git; deploy por pacote de PR com manifesto SHA-256
+- **Integrações:** MQTT, e-mail e Telegram Bot API
 
 ## Android offline-first
 
@@ -103,9 +103,9 @@ Essa trajetória mostra a transformação de um sistema acadêmico central em um
 - análise de requisitos e tradução de fluxos operacionais em funcionalidades;
 - modelagem de consultas, indicadores e relatórios em MySQL;
 - construção de interfaces responsivas com Blade, JavaScript e Bootstrap;
-- integração entre aplicação, cache, serviços web e ferramentas analíticas;
+- visualização de dados sob medida em SVG e D3.js, conferida contra os números oficiais;
 - desenvolvimento Android com experiência offline e sincronização resiliente;
-- investigação de falhas, testes de regressão e melhoria contínua da qualidade;
+- investigação de falhas e testes com PHPUnit, Jest, PHPStan e PHPCS no pre-commit e no CI;
 - uso de Git para rastreabilidade, revisão e entrega segura de mudanças;
 - cuidado com segurança, privacidade, autorização e consistência de dados.
 
