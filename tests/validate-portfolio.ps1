@@ -43,11 +43,14 @@ $requiredPaths = @(
     'docs/diagramas/componentes.md',
     'docs/mobile/README.md',
     'docs/screenshots/README.md',
-    'examples/controllers/IndicadorController.php',
-    'examples/models/IndicadorAcademico.php',
-    'examples/services/ConsolidaIndicadoresService.php',
-    'examples/sql/resumo_avaliacoes.sql',
-    'examples/views/painel-indicadores.blade.php'
+    'examples/README.md',
+    'examples/controllers/PainelDesempenhoController.php',
+    'examples/services/FaixaDesempenhoService.php',
+    'examples/services/EscolhaQmsService.php',
+    'examples/views/painel-faixas.blade.php',
+    'examples/sql/efetivo_evasao_ciclo.sql',
+    'examples/js/quebras-naturais.js',
+    'examples/android/EnvioFoWorker.kt'
 )
 
 foreach ($relativePath in $requiredPaths) {
@@ -76,7 +79,7 @@ foreach ($term in $historyTerms) {
 }
 
 Assert-Portfolio -Condition (-not $site.Contains('href="../examples/"')) -Message 'O link antigo dos exemplos ainda aponta para fora do projeto do GitHub Pages.'
-Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais, genéricos e sanitizados.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
+Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais e sanitizados, escritos a partir das regras reais do sistema.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Exemplos técnicos, sem ruído.')) -Message 'Título principal da página de exemplos ausente.'
 Assert-Portfolio -Condition ($site.Contains('Uma equipe multidisciplinar por trás da evolução.')) -Message 'Seção pública da equipe ausente.'
 Assert-Portfolio -Condition ($site.Contains('Métricas, turmas e valores são inteiramente fictícios.')) -Message 'Aviso de dados fictícios da dashboard ausente.'
@@ -94,7 +97,7 @@ foreach ($heading in $legacyModuleHeadings) {
     Assert-Portfolio -Condition (-not $site.Contains("<h3>$heading</h3>")) -Message "Card de módulo legado ainda presente: $heading"
 }
 
-$textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt')
+$textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt', '.kt')
 $publicFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File |
     Where-Object {
         $_.FullName -notlike "*\.git\*" -and
