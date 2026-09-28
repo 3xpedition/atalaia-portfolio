@@ -59,7 +59,7 @@ $readme = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'README.md')
 $site = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'docs/index.html')
 $examplesSite = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'docs/examples/index.html')
 $requiredTerms = @(
-    'Laravel', 'PHP', 'MySQL', 'Redis', 'Bootstrap', 'Nginx', 'Git', 'MicroStrategy',
+    'Laravel', 'PHP', 'MySQL', 'Docker', 'Bootstrap', 'Nginx', 'Git', 'D3.js',
     'Kotlin', 'Jetpack Compose', 'WorkManager', 'SQLCipher',
     'Ciclo de Formação', 'Avaliação &amp; Desempenho', 'Inteligência Educacional',
     'Jornada Disciplinar', 'Escolha de QMS', 'Operação Móvel Offline'

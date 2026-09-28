@@ -11,10 +11,10 @@ flowchart LR
     P --> S[Sincronização\nWorkManager]
     S --> A
     A --> D[Serviços de domínio]
-    D --> M[(MySQL)]
-    D --> R[(Redis)]
+    D --> M[(MySQL\nadministrativo)]
+    D --> R[(MySQL\nSSAA)]
     A --> Q[Relatórios e exportações]
-    Q --> B[Camada analítica\nMicroStrategy]
+    Q --> B[Painel Oficial\nD3.js]
     N[Nginx] --> W
 ```
 
