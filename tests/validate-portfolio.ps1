@@ -33,7 +33,7 @@ $requiredPaths = @(
     'docs/assets/logo-esa.svg',
     'docs/assets/team/joao-victor.jpg',
     'docs/assets/team/alexandre-ferreira.jpg',
-    'docs/assets/team/natanael-cirino-restaurada.png',
+    'docs/assets/team/natanael-cirino.jpg',
     'docs/assets/main.js',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
