@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Exemplos autorais e sanitizados do portfólio técnico Atalaia / COP Educação.">
+    <meta name="description" content="Exemplos autorais do portfólio Atalaia & Gavião: as regras reais do painel, da escolha de QMS, da evasão e do app offline, reescritas com dados fictícios.">
     <meta name="theme-color" content="#102a43">
-    <title>Exemplos técnicos — Atalaia / COP Educação</title>
+    <title>Exemplos técnicos — Atalaia &amp; Gavião</title>
     <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="../assets/styles.css?v=2">
     <link rel="stylesheet" href="../assets/examples-1d3a47a.css">
@@ -15,8 +15,8 @@
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
     <header class="site-header subpage-header examples-header">
         <div class="container nav-wrap">
-            <a class="brand" href="../" aria-label="Voltar ao início do portfólio"><span class="brand-mark" aria-hidden="true">A</span><span>Atalaia <small>portfólio técnico</small></span></a>
-            <nav class="examples-nav" aria-label="Navegação da página"><a href="../">Visão geral</a><a href="../#evolucao">Evolução</a><a class="nav-cta" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Código no GitHub</a></nav>
+            <a class="brand" href="../" aria-label="Voltar ao início do portfólio"><span class="brand-mark" aria-hidden="true">A</span><span>Atalaia &amp; Gavião <small>portfólio técnico</small></span></a>
+            <nav class="examples-nav" aria-label="Navegação da página"><a href="../">Visão geral</a><a href="../#painel">Painel</a><a class="nav-cta" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Código no GitHub</a></nav>
         </div>
     </header>
 
@@ -27,42 +27,44 @@
                     <a class="breadcrumb" href="../">← Voltar ao portfólio</a>
                     <p class="eyebrow">Código demonstrativo</p>
                     <h1>Exemplos técnicos, sem ruído.</h1>
-                    <p>Uma pequena funcionalidade fictícia mostra como as responsabilidades atravessam a aplicação — da requisição à interface.</p>
+                    <p>As regras que mais deram trabalho no Atalaia e no Gavião, reescritas do zero para este portfólio: mesma lógica, dados fictícios.</p>
                     <div class="hero-actions"><a class="button primary" href="#arquivos">Explorar arquivos</a><a class="button secondary" href="https://github.com/3xpedition/atalaia-portfolio/tree/main/examples">Abrir no GitHub</a></div>
                 </div>
                 <aside class="example-summary reveal" aria-label="Resumo do conteúdo">
-                    <span class="summary-label">Neste exemplo</span>
-                    <strong>Indicadores acadêmicos</strong>
-                    <p>Um fluxo genérico para consultar, consolidar e apresentar métricas de um período.</p>
-                    <ul><li>5 arquivos comentados</li><li>Camadas desacopladas</li><li>Dados 100% fictícios</li></ul>
+                    <span class="summary-label">Nesta coleção</span>
+                    <strong>Regras reais, dados fictícios</strong>
+                    <p>Do painel de comando ao app de campo: cada arquivo resolve um problema que o sistema de verdade enfrentou.</p>
+                    <ul><li>7 arquivos comentados</li><li>PHP, SQL, JavaScript e Kotlin</li><li>Regras testadas em PHP 7.3 e Node</li></ul>
                 </aside>
             </div>
         </section>
 
         <section class="section examples-section" id="arquivos">
             <div class="container">
-                <div class="examples-intro reveal"><div><p class="eyebrow">Explore por camada</p><h2>Do pedido ao indicador.</h2></div><p>Leia na ordem sugerida ou abra apenas a camada que interessa. Cada arquivo foi criado exclusivamente para este portfólio.</p></div>
-                <ol class="code-flow reveal" aria-label="Fluxo da funcionalidade"><li><span>01</span>Requisição</li><li><span>02</span>Orquestração</li><li><span>03</span>Consulta</li><li><span>04</span>Apresentação</li></ol>
+                <div class="examples-intro reveal"><div><p class="eyebrow">Explore por problema</p><h2>Do número na tela à regra por trás dele.</h2></div><p>Os três primeiros formam um fluxo completo de um tópico do Painel Oficial. Os demais são regras isoladas que valem a leitura sozinhas.</p></div>
+                <ol class="code-flow reveal" aria-label="Fluxo de um tópico do painel"><li><span>01</span>Requisição</li><li><span>02</span>Faixas</li><li><span>03</span>Apresentação</li><li><span>04</span>Lista de alunos</li></ol>
                 <div class="examples-grid">
-                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">01</span><span class="example-type">Controller</span></div><code>controllers/IndicadorController.php</code><h3>Entrada HTTP enxuta</h3><p>Valida o período, delega ao serviço e devolve uma resposta previsível sem concentrar regra de negócio.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/controllers/IndicadorController.php">Ver código <span aria-hidden="true">→</span></a></article>
-                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">02</span><span class="example-type">Service</span></div><code>services/ConsolidaIndicadoresService.php</code><h3>Orquestração explícita</h3><p>Consolida os indicadores em uma unidade testável e reutilizável por diferentes saídas.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/ConsolidaIndicadoresService.php">Ver código <span aria-hidden="true">→</span></a></article>
-                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">03</span><span class="example-type">Model</span></div><code>models/IndicadorAcademico.php</code><h3>Consulta encapsulada</h3><p>Aplica um escopo temporal e mantém a consulta orientada ao caso de uso demonstrado.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/models/IndicadorAcademico.php">Ver código <span aria-hidden="true">→</span></a></article>
-                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">04</span><span class="example-type">SQL</span></div><code>sql/resumo_avaliacoes.sql</code><h3>Resumo analítico</h3><p>Usa agrupamento e parâmetros delimitados sobre um esquema inteiramente fictício.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/sql/resumo_avaliacoes.sql">Ver consulta <span aria-hidden="true">→</span></a></article>
-                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">05</span><span class="example-type">Blade</span></div><code>views/painel-indicadores.blade.php</code><h3>Apresentação acessível</h3><p>Renderiza o resultado com responsividade, sem transportar a regra de negócio para a view.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/views/painel-indicadores.blade.php">Ver interface <span aria-hidden="true">→</span></a></article>
-                    <article class="example-card example-card-guide reveal"><div class="example-card-top"><span class="example-index">+</span><span class="example-type">Guia</span></div><code>examples/README.md</code><h3>Premissas e limites</h3><p>Explica o fluxo, as decisões demonstradas e o que este material público deliberadamente não contém.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/README.md">Ler o guia <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">01</span><span class="example-type">Controller</span></div><code>controllers/PainelDesempenhoController.php</code><h3>Recorte validado no servidor</h3><p>Valida ciclo e curso, confere a permissão no backend e delega. Nenhuma regra de cálculo mora aqui.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/controllers/PainelDesempenhoController.php">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">02</span><span class="example-type">Service</span></div><code>services/FaixaDesempenhoService.php</code><h3>Faixas do painel</h3><p>Mediana no lugar da média, "não avaliado" separado de zero e cada faixa em % do efetivo, carregando os alunos que a formam.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/FaixaDesempenhoService.php">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">03</span><span class="example-type">Blade</span></div><code>views/painel-faixas.blade.php</code><h3>Cor fixa, número clicável</h3><p>Cada faixa tem a mesma cor em qualquer tela e vira um botão acessível que abre a lista de alunos.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/views/painel-faixas.blade.php">Ver interface <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">04</span><span class="example-type">SQL</span></div><code>sql/efetivo_evasao_ciclo.sql</code><h3>Evasão que fecha com o oficial</h3><p>O reintegrado entra na turma nova, mas a saída dele fica no ciclo de origem. Ativos, reintegrados e desligados somam o total exato.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/sql/efetivo_evasao_ciclo.sql">Ver consulta <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">05</span><span class="example-type">Service</span></div><code>services/EscolhaQmsService.php</code><h3>Escolha de QMS por mérito</h3><p>Classificação decrescente e primeira prioridade com vaga. O resultado não muda com a ordem em que os dados chegam.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/EscolhaQmsService.php">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">06</span><span class="example-type">JavaScript</span></div><code>js/quebras-naturais.js</code><h3>Cores do mapa por Jenks</h3><p>Quebras naturais para o mapa do concurso: um estado muito acima dos outros não apaga a diferença entre o resto do país.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/js/quebras-naturais.js">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card reveal"><div class="example-card-top"><span class="example-index">07</span><span class="example-type">Kotlin</span></div><code>android/EnvioFoWorker.kt</code><h3>FO offline sem duplicar</h3><p>WorkManager envia a fila cifrada quando há rede. O identificador único impede que um reenvio crie o mesmo FO duas vezes.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/android/EnvioFoWorker.kt">Ver código <span aria-hidden="true">→</span></a></article>
+                    <article class="example-card example-card-guide reveal"><div class="example-card-top"><span class="example-index">+</span><span class="example-type">Guia</span></div><code>examples/README.md</code><h3>Premissas e limites</h3><p>O problema real por trás de cada exemplo e o que este material público deliberadamente não contém.</p><a class="text-link" href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/README.md">Ler o guia <span aria-hidden="true">→</span></a></article>
                 </div>
             </div>
         </section>
 
         <section class="section section-tint">
-                <div class="container split"><div class="section-heading reveal"><p class="eyebrow">O que observar</p><h2>Uma responsabilidade por etapa.</h2></div><ul class="responsibility-list reveal"><li><strong>Entrada previsível</strong><span>Validação e resposta ficam na borda HTTP.</span></li><li><strong>Regra reutilizável</strong><span>O serviço não depende da forma de apresentação.</span></li><li><strong>Consulta legível</strong><span>A intenção permanece clara no model e no SQL.</span></li><li><strong>View simples</strong><span>A interface recebe dados prontos para exibir.</span></li></ul></div>
+                <div class="container split"><div class="section-heading reveal"><p class="eyebrow">O que observar</p><h2>Cada regra existe por causa de um erro real.</h2></div><ul class="responsibility-list reveal"><li><strong>Zero não é ausência</strong><span>Tratar nota não lançada como zero inventa alunos críticos que ninguém avaliou.</span></li><li><strong>Total que fecha</strong><span>Um reintegrado contado no ciclo errado basta para o painel divergir do número oficial.</span></li><li><strong>Escala honesta</strong><span>Faixas iguais pintam quase o país inteiro de uma cor só quando um estado dispara.</span></li><li><strong>Reenvio seguro</strong><span>Sem identificador único, a rede que cai no meio do envio duplica o registro disciplinar.</span></li></ul></div>
         </section>
 
         <section class="section disclosure">
-            <div class="container disclosure-card reveal"><div><p class="eyebrow">Escopo seguro</p><h2>Demonstração, não reprodução.</h2></div><div><p>Não há código institucional, dados reais, credenciais, nomes de bancos, endereços internos ou estruturas privadas nesta coleção.</p><p><strong>Todos os exemplos são autorais, genéricos e sanitizados.</strong></p></div></div>
+            <div class="container disclosure-card reveal"><div><p class="eyebrow">Escopo seguro</p><h2>Demonstração, não reprodução.</h2></div><div><p>Nenhum arquivo foi copiado do repositório institucional. Não há dados reais, credenciais, nomes de bancos, endereços internos ou estruturas privadas nesta coleção.</p><p><strong>Todos os exemplos são autorais e sanitizados, escritos a partir das regras reais do sistema.</strong></p></div></div>
         </section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-wrap"><div><strong>Atalaia / COP Educação</strong><span>Exemplos técnicos públicos</span></div><p>Conteúdo demonstrativo · <span id="ano">2026</span></p></div></footer>
+    <footer class="site-footer"><div class="container footer-wrap"><div><strong>Atalaia &amp; Gavião</strong><span>Exemplos técnicos públicos</span></div><p>Conteúdo demonstrativo · <span id="ano">2026</span></p></div></footer>
 </body>
 </html>

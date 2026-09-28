@@ -129,11 +129,12 @@ Essa trajetória mostra a transformação de um sistema acadêmico central em um
 │   ├── mobile/                  # Arquitetura Android offline-first
 │   └── screenshots/             # Política para imagens demonstrativas
 ├── examples/
-│   ├── controllers/             # Exemplo autoral de camada HTTP
-│   ├── models/                  # Modelo fictício e genérico
-│   ├── services/                # Regra de negócio demonstrativa
-│   ├── sql/                     # Consulta sobre dados fictícios
-│   └── views/                   # Componente Blade demonstrativo
+│   ├── android/                 # Fila offline de FO com WorkManager
+│   ├── controllers/             # Endpoint de um tópico do painel
+│   ├── js/                      # Quebras naturais (Jenks) do mapa
+│   ├── services/                # Faixas do painel e escolha de QMS
+│   ├── sql/                     # Efetivo e evasão com reintegrado
+│   └── views/                   # Faixas com cor fixa e número clicável
 ├── tests/                       # Validação estrutural, de links e segurança
 ├── LICENSE
 └── README.md
@@ -141,7 +142,7 @@ Essa trajetória mostra a transformação de um sistema acadêmico central em um
 
 ## Exemplos demonstrativos
 
-Os arquivos em [`examples/`](examples/) foram escritos exclusivamente para este portfólio. Nomes, estruturas e regras são fictícios e demonstram injeção de dependência, consultas agregadas, validação, transformação de dados e apresentação acessível.
+Os arquivos em [`examples/`](examples/) foram escritos exclusivamente para este portfólio, a partir das regras reais do sistema: as faixas do Painel Oficial (mediana, "não avaliado" separado de zero, % do efetivo), a evasão que conta o reintegrado no ciclo certo, a escolha de QMS por mérito, as quebras naturais de Jenks do mapa do concurso e a fila offline de FO do app. Nomes, tabelas e dados são fictícios.
 
 Eles **não são cópias** do repositório privado e não representam esquemas, credenciais, endpoints ou dados reais.
 
