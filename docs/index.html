@@ -8,8 +8,8 @@
     <title>Atalaia &amp; Gavião — Portfólio técnico</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="assets/styles.css?v=2">
-    <link rel="stylesheet" href="assets/portfolio-team-725b14c.css?v=3">
-    <script src="assets/main.js" defer></script>
+    <link rel="stylesheet" href="assets/portfolio-team-725b14c.css?v=4">
+    <script src="assets/main.js?v=2" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -104,23 +104,31 @@
                     <h2>Do login à visão de comando.</h2>
                     <p>Telas reais do Atalaia e do Gavião, capturadas no ambiente de homologação com usuário de teste.</p>
                 </div>
-                <figure class="screen-shot screen-shot-main reveal">
-                    <a href="assets/gaviao/visao-geral-v2.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/visao-geral-v2.jpg" alt="Visão geral do Sistema Gavião com ano de formação, efetivo pronto e acesso rápido ao lançamento de FO" width="1600" height="737" loading="lazy"></a>
-                    <figcaption><strong>Visão geral do Gavião</strong><span>Efetivo pronto, ano de formação e lançamento de FO na primeira tela, com um quadro que explica o que o perfil do operador permite e o que falta configurar.</span></figcaption>
-                </figure>
-                <div class="screen-grid">
-                    <figure class="screen-shot reveal">
-                        <a href="assets/gaviao/modo-navegacao.gif" target="_blank" rel="noopener"><img src="assets/gaviao/modo-navegacao.gif" alt="Tela animada de escolha do modo de navegação: Antigo Painel Oficial, Conselho de Ensino, Dashboard e Painel Oficial" width="1920" height="919" loading="lazy"></a>
-                        <figcaption><strong>Modo de navegação</strong><span>Antigo Painel Oficial, Conselho de Ensino, dashboard operacional ou Painel Oficial.</span></figcaption>
-                    </figure>
-                    <figure class="screen-shot reveal">
-                        <a href="assets/gaviao/login-gaviao.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-gaviao.jpg" alt="Tela de login do Sistema Gavião, 2º Ano CFGS" width="920" height="566" loading="lazy"></a>
-                        <figcaption><strong>Gavião · 2º ano do CFGS</strong><span>Qualificação na ESA, por arma.</span></figcaption>
-                    </figure>
-                    <figure class="screen-shot reveal">
-                        <a href="assets/gaviao/login-atalaia.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-atalaia.jpg" alt="Tela de login do Sistema Atalaia, 1º Ano CFGS" width="1600" height="732" loading="lazy"></a>
-                        <figcaption><strong>Atalaia · 1º ano do CFGS</strong><span>Período Básico nas UETEs.</span></figcaption>
-                    </figure>
+                <div class="screen-carousel reveal" data-carousel aria-roledescription="carrossel" aria-label="Telas do sistema em uso">
+                    <div class="screen-shot screen-shot-main carousel-track">
+                        <figure class="carousel-slide is-active" id="tela-visao-geral" role="tabpanel" aria-labelledby="aba-visao-geral" data-duration="7000">
+                            <a href="assets/gaviao/visao-geral-v2.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/visao-geral-v2.jpg" alt="Visão geral do Sistema Gavião com ano de formação, efetivo pronto e acesso rápido ao lançamento de FO" width="1600" height="737" loading="lazy"></a>
+                            <figcaption><strong>Visão geral do Gavião</strong><span>Efetivo pronto, ano de formação e lançamento de FO na primeira tela, com um quadro que explica o que o perfil do operador permite e o que falta configurar.</span></figcaption>
+                        </figure>
+                        <figure class="carousel-slide" id="tela-modo-navegacao" role="tabpanel" aria-labelledby="aba-modo-navegacao" data-gif-loop="14470" data-gif-plays="2">
+                            <a href="assets/gaviao/modo-navegacao.gif" target="_blank" rel="noopener"><img src="assets/gaviao/modo-navegacao.gif" alt="Tela animada de escolha do modo de navegação: Antigo Painel Oficial, Conselho de Ensino, Dashboard e Painel Oficial" width="1920" height="919" loading="lazy"></a>
+                            <figcaption><strong>Modo de navegação</strong><span>Antigo Painel Oficial, Conselho de Ensino, dashboard operacional ou Painel Oficial.</span></figcaption>
+                        </figure>
+                        <figure class="carousel-slide carousel-slide-contain" id="tela-login-gaviao" role="tabpanel" aria-labelledby="aba-login-gaviao" data-duration="5000">
+                            <a href="assets/gaviao/login-gaviao.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-gaviao.jpg" alt="Tela de login do Sistema Gavião, 2º Ano CFGS" width="920" height="566" loading="lazy"></a>
+                            <figcaption><strong>Gavião · 2º ano do CFGS</strong><span>Qualificação na ESA, por arma.</span></figcaption>
+                        </figure>
+                        <figure class="carousel-slide" id="tela-login-atalaia" role="tabpanel" aria-labelledby="aba-login-atalaia" data-duration="5000">
+                            <a href="assets/gaviao/login-atalaia.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-atalaia.jpg" alt="Tela de login do Sistema Atalaia, 1º Ano CFGS" width="1600" height="732" loading="lazy"></a>
+                            <figcaption><strong>Atalaia · 1º ano do CFGS</strong><span>Período Básico nas UETEs.</span></figcaption>
+                        </figure>
+                    </div>
+                    <div class="carousel-tabs" role="tablist" aria-label="Escolher tela">
+                        <button type="button" class="carousel-tab is-active" role="tab" id="aba-visao-geral" aria-controls="tela-visao-geral" aria-selected="true">Visão geral<span class="carousel-progress" aria-hidden="true"></span></button>
+                        <button type="button" class="carousel-tab" role="tab" id="aba-modo-navegacao" aria-controls="tela-modo-navegacao" aria-selected="false" tabindex="-1">Modo de navegação<span class="carousel-progress" aria-hidden="true"></span></button>
+                        <button type="button" class="carousel-tab" role="tab" id="aba-login-gaviao" aria-controls="tela-login-gaviao" aria-selected="false" tabindex="-1">Login Gavião<span class="carousel-progress" aria-hidden="true"></span></button>
+                        <button type="button" class="carousel-tab" role="tab" id="aba-login-atalaia" aria-controls="tela-login-atalaia" aria-selected="false" tabindex="-1">Login Atalaia<span class="carousel-progress" aria-hidden="true"></span></button>
+                    </div>
                 </div>
             </div>
         </section>
