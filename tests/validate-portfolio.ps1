@@ -35,7 +35,7 @@ $requiredPaths = @(
     'docs/assets/team/alexandre-ferreira.jpg',
     'docs/assets/team/natanael-cirino.jpg',
     'docs/assets/gaviao/visao-geral-v2.jpg',
-    'docs/assets/gaviao/modo-navegacao.jpg',
+    'docs/assets/gaviao/modo-navegacao.gif',
     'docs/assets/gaviao/login-gaviao.jpg',
     'docs/assets/gaviao/login-atalaia.jpg',
     'docs/assets/main.js',
