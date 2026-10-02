@@ -97,6 +97,18 @@ A linha do tempo sintetiza marcos observáveis no histórico do projeto principa
 
 Essa trajetória mostra a transformação de um sistema acadêmico central em um ecossistema multiplataforma, mantido por evolução incremental e adaptação contínua às regras de negócio.
 
+### Mapa de atividade
+
+A seção "Evolução" do site mostra os commits por semana desde 2020, uma faixa por ano, com um marco em março de 2026, quando o COP Educação passou a ter uma equipe dedicada ao projeto. Os commits da equipe atual (João Victor, Alexandre e Natanael) aparecem separados dos demais contribuidores.
+
+Os dados ficam em `docs/assets/atividade.js` e são gerados a partir do repositório privado:
+
+```powershell
+.\tools\gerar-atividade.ps1 -Repositorio '<caminho do repositório privado>' -Equipe '<padrão 1>','<padrão 2>'
+```
+
+Cada item de `-Equipe` é uma regex aplicada em "Nome <email>". O script imprime no console a classificação de cada autor, para conferência. Merges e bots ficam de fora, e o arquivo gerado contém apenas contagens por semana (`"AAAA-MM-DD": [equipe, demais]`), sem nomes, e-mails, mensagens ou hashes. A validação local confere esse formato.
+
 ## Atuação profissional
 
 - evolução e manutenção de aplicações Laravel com regras de negócio complexas;
@@ -136,6 +148,7 @@ Essa trajetória mostra a transformação de um sistema acadêmico central em um
 │   ├── sql/                     # Efetivo e evasão com reintegrado
 │   └── views/                   # Faixas com cor fixa e número clicável
 ├── tests/                       # Validação estrutural, de links e segurança
+├── tools/                       # Geração dos dados do mapa de atividade
 ├── LICENSE
 └── README.md
 ```

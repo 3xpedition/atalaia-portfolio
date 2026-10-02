@@ -2,63 +2,43 @@
     margin-top: 64px;
 }
 
-.dashboard-frame {
-    padding: 10px;
-    overflow: hidden;
-    border: 1px solid var(--line);
-    border-radius: 22px;
-    background: #fff;
-    box-shadow: 0 28px 70px rgba(16,42,67,.14);
-}
-
+/* Capturas sem moldura de card: a própria imagem leva o fio e a sombra. */
 .dashboard-frame img {
     display: block;
     width: 100%;
     height: auto;
     border-radius: 14px;
+    box-shadow: var(--shadow);
 }
 
 .dashboard-caption {
     display: grid;
     grid-template-columns: .85fr 1.15fr;
     gap: 70px;
-    padding: 28px 10px 0;
+    padding-top: 24px;
 }
 
-.dashboard-caption strong,
-.dashboard-caption span {
+.dashboard-caption strong {
     display: block;
-}
-
-.dashboard-caption .caption-label {
-    margin-bottom: 7px;
-    color: var(--accent);
-    font-size: .67rem;
-    font-weight: 800;
-    letter-spacing: .13em;
-    text-transform: uppercase;
+    font-size: 1rem;
 }
 
 .dashboard-caption p {
     margin: 0;
     color: var(--ink-soft);
-    font-size: .87rem;
+    font-size: .92rem;
 }
 
 .screen-shot {
     margin: 0;
-    padding: 8px;
-    border: 1px solid var(--line);
-    border-radius: 18px;
-    background: #fff;
-    box-shadow: 0 18px 44px rgba(16,42,67,.1);
 }
 
 .screen-shot a {
     display: block;
     overflow: hidden;
-    border-radius: 11px;
+    border-radius: 14px;
     background: #0b1f33;
+    box-shadow: var(--shadow);
 }
 
 .screen-shot img {
@@ -73,7 +53,7 @@
 }
 
 .screen-shot figcaption {
-    padding: 16px 8px 8px;
+    padding-top: 18px;
 }
 
 .screen-shot figcaption strong,
@@ -83,18 +63,12 @@
 
 .screen-shot figcaption strong {
     margin-bottom: 4px;
-    font-size: .95rem;
+    font-size: 1rem;
 }
 
 .screen-shot figcaption span {
     color: var(--ink-soft);
-    font-size: .84rem;
-}
-
-.screen-shot-main {
-    padding: 10px;
-    border-radius: 22px;
-    box-shadow: 0 28px 70px rgba(16,42,67,.14);
+    font-size: .92rem;
 }
 
 .carousel-slide {
@@ -147,7 +121,7 @@
 
 .screen-carousel.is-ready .carousel-tabs {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 12px;
     margin-top: 18px;
 }
@@ -208,81 +182,66 @@
     }
 }
 
+/* Termos do domínio em linha, separados por ponto, sem pílulas. */
 .card-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 6px;
-    margin: 18px 0 0;
+    margin: 16px 0 0;
     padding: 0;
+    color: var(--teal-dark);
+    font-size: .85rem;
+    font-weight: 700;
     list-style: none;
 }
 
-.card-tags li {
-    padding: 4px 10px;
-    color: var(--teal);
-    border: 1px solid #cfe3e2;
-    border-radius: 999px;
-    background: #f1f8f7;
-    font-size: .72rem;
-    font-weight: 700;
+.card-tags li:not(:last-child)::after {
+    content: "·";
+    margin: 0 8px;
+    color: var(--line-strong);
 }
 
-.module-card-mobile .card-tags li {
-    color: #7cd5cd;
-    border-color: rgba(124,213,205,.3);
-    background: rgba(124,213,205,.08);
-}
-
+/* Os sete tópicos do painel como um índice: uma linha com fios entre os itens. */
 .topic-strip {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
-    margin: 0 0 40px;
+    gap: 10px 0;
+    margin: 0 0 56px;
     padding: 0;
     list-style: none;
 }
 
 .topic-strip li {
-    padding: 9px 16px;
+    padding: 2px 18px;
     color: var(--ink);
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: #fff;
-    font-size: .85rem;
+    font-size: .95rem;
     font-weight: 700;
+}
+
+.topic-strip li + li {
+    border-left: 1px solid var(--line-strong);
 }
 
 .principle-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 18px;
+    gap: 40px 44px;
 }
 
 .principle {
-    padding: 26px;
-    border: 1px solid var(--line);
-    border-top: 3px solid var(--teal);
-    border-radius: var(--radius);
-    background: #fff;
-}
-
-.principle > span {
-    color: var(--accent);
-    font-size: .74rem;
-    font-weight: 800;
-    letter-spacing: .12em;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-strong);
 }
 
 .principle h3 {
-    margin: 14px 0 8px;
-    font-size: 1.05rem;
+    margin: 0 0 8px;
+    font-size: 1.1rem;
 }
 
 .principle p {
     margin: 0;
     color: var(--ink-soft);
-    font-size: .9rem;
+    font-size: .95rem;
 }
 
 .team-section {
@@ -357,22 +316,11 @@
 }
 
 .team-member-copy {
-    min-height: 165px;
-    padding: 24px;
-}
-
-.team-member-copy span {
-    display: block;
-    margin-bottom: 14px;
-    color: #7cd5cd;
-    font-size: .66rem;
-    font-weight: 800;
-    letter-spacing: .13em;
-    text-transform: uppercase;
+    padding: 22px 24px 26px;
 }
 
 .team-member-copy h3 {
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     font-family: Georgia, serif;
     font-size: 1.25rem;
 }
@@ -380,13 +328,13 @@
 .team-member-copy p {
     margin: 0;
     color: #bed2de;
-    font-size: .86rem;
+    font-size: .92rem;
 }
 
 .team-source {
     margin: 24px 0 0;
-    color: #8faabd;
-    font-size: .72rem;
+    color: #9db6c7;
+    font-size: .85rem;
     text-align: right;
 }
 
@@ -408,11 +356,6 @@
         margin-top: 42px;
     }
 
-    .dashboard-frame {
-        padding: 5px;
-        border-radius: 14px;
-    }
-
     .dashboard-caption,
     .team-grid-portfolio,
     .principle-grid {
@@ -429,10 +372,9 @@
         font-size: .82rem;
     }
 
-    .screen-shot,
-    .screen-shot-main {
-        padding: 5px;
-        border-radius: 14px;
+    .screen-shot a,
+    .dashboard-frame img {
+        border-radius: 10px;
     }
 
     .team-context {
@@ -452,6 +394,690 @@
 @media (prefers-reduced-motion: reduce) {
     .screen-carousel.is-ready .carousel-slide,
     .screen-carousel.is-ready .carousel-slide.is-active {
+        transition: none;
+    }
+}
+
+/* ---------- Vídeo de apresentação ----------
+   Continua o fundo noturno do hero, então hero e vídeo leem como uma
+   abertura só. O brilho atrás do quadro (.showreel-ambient) é um canvas
+   minúsculo redesenhado com o próprio vídeo e borrado: acompanha as cores
+   da cena (o fogo da vinheta, o verde do modo de navegação). */
+/* ---------- App Android: dois aparelhos com as telas reais ----------
+   Os dois ficam na mesma célula da grade: o login atrás, inclinado pra
+   esquerda, e a consulta de FO na frente. No hover eles se afastam. */
+.phone-stage-duo {
+    grid-template: 1fr / 1fr;
+    min-height: 660px;
+}
+
+.phone-stage-duo .phone-shell {
+    grid-area: 1 / 1;
+    margin: 0;
+    transition: transform .6s cubic-bezier(.2, .8, .2, 1), filter .4s ease;
+}
+
+.phone-shell-back {
+    z-index: 1;
+    filter: brightness(.94) saturate(.9);
+    transform: translate(-34%, -5%) rotate(-8deg) scale(.88);
+}
+
+.phone-shell-front {
+    z-index: 2;
+    transform: translate(16%, 4%) rotate(3deg);
+}
+
+.phone-stage-duo:hover .phone-shell-back {
+    filter: none;
+    transform: translate(-44%, -8%) rotate(-11deg) scale(.88);
+}
+
+.phone-stage-duo:hover .phone-shell-front {
+    transform: translate(22%, 2%) rotate(4deg);
+}
+
+.phone-screen-shot {
+    min-height: 0;
+    aspect-ratio: 1 / 2;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+.phone-screen-shot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.phone-stage-duo figcaption {
+    position: absolute;
+    left: 50%;
+    padding: 6px 12px;
+    border-radius: 999px;
+    color: white;
+    background: var(--ink);
+    box-shadow: 0 6px 14px rgba(16, 42, 67, .2);
+    font-size: .8rem;
+    font-weight: 750;
+    white-space: nowrap;
+    transform: translateX(-50%);
+}
+
+.phone-shell-back figcaption {
+    top: -40px;
+}
+
+.phone-shell-front figcaption {
+    bottom: -40px;
+    background: var(--teal);
+}
+
+@media (max-width: 700px) {
+    .phone-stage-duo {
+        min-height: 560px;
+    }
+
+    .phone-stage-duo .phone-shell {
+        width: 230px;
+        padding: 9px;
+        border-radius: 32px;
+    }
+
+    .phone-stage-duo .phone-screen-shot {
+        border-radius: 24px;
+    }
+
+    .phone-shell-back,
+    .phone-stage-duo:hover .phone-shell-back {
+        transform: translate(-27%, -5%) rotate(-7deg) scale(.88);
+    }
+
+    .phone-shell-front,
+    .phone-stage-duo:hover .phone-shell-front {
+        transform: translate(15%, 4%) rotate(3deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .phone-stage-duo .phone-shell {
+        transition: none;
+    }
+}
+
+/* ---------- Hero: telas reais do produto ----------
+   Navegador com o Modo de Navegação em leve perspectiva e o celular com o
+   app por cima, no canto. No hover a janela se endireita um pouco. */
+.hero-showcase {
+    padding: 34px 0 70px 44px;
+}
+
+.showcase-browser {
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 16px;
+    background: white;
+    box-shadow: var(--shadow-dark);
+    transform: perspective(1600px) rotateY(-11deg) rotateX(3deg);
+    transform-origin: left center;
+    transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+.showcase-browser .window-top {
+    height: 38px;
+    background: #f6f8fa;
+}
+
+.showcase-browser img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.showcase-phone {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 0;
+    width: 27%;
+    padding: 6px;
+    border: 1px solid #2f4656;
+    border-radius: 22px;
+    background: #071725;
+    box-shadow: var(--shadow-dark);
+    transform: rotate(-6deg);
+    transition: transform .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+.showcase-phone img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 2;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 17px;
+}
+
+.hero-showcase:hover .showcase-browser {
+    transform: perspective(1600px) rotateY(-4deg) rotateX(1deg);
+}
+
+.hero-showcase:hover .showcase-phone {
+    transform: rotate(-3deg) translateY(-8px);
+}
+
+.showcase-tag {
+    position: absolute;
+    z-index: 4;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    padding: 9px 15px;
+    border-radius: 999px;
+    color: var(--ink);
+    background: rgba(255,255,255,.96);
+    box-shadow: 0 6px 16px rgba(0,0,0,.28);
+    font-size: .8rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.showcase-tag strong {
+    font-size: .82rem;
+    font-weight: 800;
+}
+
+.tag-atalaia {
+    top: -14px;
+    right: 6%;
+}
+
+.tag-gaviao {
+    right: -14px;
+    bottom: 34px;
+    color: white;
+    background: var(--teal);
+}
+
+@media (max-width: 700px) {
+    .hero-showcase {
+        padding: 28px 0 56px 18px;
+    }
+
+    .showcase-tag {
+        font-size: .75rem;
+    }
+
+    .showcase-phone {
+        border-radius: 16px;
+        padding: 4px;
+    }
+
+    .showcase-phone img {
+        border-radius: 12px;
+    }
+
+    .tag-gaviao {
+        right: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .showcase-browser,
+    .showcase-phone {
+        transition: none;
+    }
+}
+
+/* O hero desce até a cor do vídeo, sem emenda entre as duas seções. */
+.hero-into-showreel::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 220px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgba(11, 31, 51, 0), var(--night));
+}
+
+.hero-into-showreel .hero-grid {
+    z-index: 1;
+}
+
+.showreel {
+    position: relative;
+    overflow: hidden;
+    padding: 30px 0 120px;
+    color: white;
+    background: var(--night);
+}
+
+.showreel .container {
+    position: relative;
+}
+
+.showreel-heading {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 60px;
+    margin-bottom: 44px;
+}
+
+.showreel-heading .eyebrow {
+    color: #f1a086;
+}
+
+.showreel-heading h2 {
+    margin: 0;
+}
+
+.showreel-heading > p {
+    margin: 0;
+    color: #bed2de;
+    font-size: 1.02rem;
+}
+
+.showreel-screen {
+    position: relative;
+}
+
+.showreel-ambient {
+    position: absolute;
+    z-index: 0;
+    top: -8%;
+    left: -5%;
+    width: 110%;
+    height: 116%;
+    opacity: .55;
+    filter: blur(70px) saturate(1.5);
+    pointer-events: none;
+    transition: opacity .8s ease;
+}
+
+.showreel-stage.is-playing .showreel-ambient {
+    opacity: .75;
+}
+
+/* Cantoneiras de mira em volta do quadro: travam quando a seção entra na tela. */
+.showreel-mira {
+    position: absolute;
+    z-index: 2;
+    inset: -14px;
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(1.06);
+    transition: opacity .5s ease .35s, transform .9s cubic-bezier(.16, 1, .3, 1) .35s;
+    --c: #f1a086;
+    background:
+        linear-gradient(var(--c), var(--c)) top left / 34px 2px no-repeat,
+        linear-gradient(var(--c), var(--c)) top left / 2px 34px no-repeat,
+        linear-gradient(var(--c), var(--c)) top right / 34px 2px no-repeat,
+        linear-gradient(var(--c), var(--c)) top right / 2px 34px no-repeat,
+        linear-gradient(var(--c), var(--c)) bottom left / 34px 2px no-repeat,
+        linear-gradient(var(--c), var(--c)) bottom left / 2px 34px no-repeat,
+        linear-gradient(var(--c), var(--c)) bottom right / 34px 2px no-repeat,
+        linear-gradient(var(--c), var(--c)) bottom right / 2px 34px no-repeat;
+}
+
+.showreel-stage.is-visible .showreel-mira {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.showreel-frame {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.16);
+    border-radius: 16px;
+    background: #000;
+    box-shadow: var(--shadow-dark);
+}
+
+/* O HUD fica acima do vídeo (não por cima): o título do modo de navegação
+   encosta no topo da gravação e não pode ser coberto. */
+.showreel-frame video {
+    order: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+}
+
+.showreel-frame:fullscreen {
+    border: 0;
+    border-radius: 0;
+}
+
+.showreel-frame:fullscreen video {
+    flex: 1;
+    min-height: 0;
+    object-fit: contain;
+}
+
+/* Faixa de cima, estilo HUD. */
+.showreel-hud {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 11px 20px;
+    color: rgba(255,255,255,.82);
+    border-bottom: 1px solid rgba(255,255,255,.1);
+    background: linear-gradient(90deg, rgba(241, 160, 134, .1), rgba(9, 24, 39, .95) 30%, rgba(9, 24, 39, .95) 70%, rgba(43, 122, 120, .14));
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: .75rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    pointer-events: none;
+}
+
+.showreel-rec {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-weight: 700;
+}
+
+.showreel-rec i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ff5a3c;
+    opacity: .4;
+}
+
+.showreel-stage.is-playing .showreel-rec i {
+    opacity: 1;
+    animation: showreel-rec 1.2s steps(1) infinite;
+}
+
+/* Botão grande no meio do vídeo (descontado o HUD): só quando pausado. */
+.showreel-play {
+    position: absolute;
+    z-index: 2;
+    top: calc(50% + 20px);
+    left: 50%;
+    display: grid;
+    place-items: center;
+    width: 92px;
+    height: 92px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    color: white;
+    background: var(--accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3), 0 16px 24px -8px rgba(0, 0, 0, .45);
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform .25s ease, opacity .25s ease, background .2s ease;
+}
+
+.showreel-play span {
+    width: 0;
+    height: 0;
+    margin-left: 6px;
+    border-style: solid;
+    border-width: 15px 0 15px 25px;
+    border-color: transparent transparent transparent currentColor;
+}
+
+.showreel-play:hover,
+.showreel-play:focus-visible {
+    background: var(--accent-dark);
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.showreel-play:focus-visible,
+.showreel-btn:focus-visible,
+.showreel-chapters button:focus-visible {
+    outline: 3px solid #f1a086;
+    outline-offset: 3px;
+}
+
+.showreel-stage.is-playing .showreel-play {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(.8);
+}
+
+/* Barra de baixo: aparece no hover/foco ou pausado. */
+.showreel-bar {
+    position: absolute;
+    z-index: 2;
+    inset: auto 0 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 34px 18px 14px;
+    background: linear-gradient(to top, rgba(5, 14, 24, .82), transparent);
+    opacity: 0;
+    transform: translateY(8px);
+    transition: opacity .25s ease, transform .25s ease;
+}
+
+.showreel-frame:hover .showreel-bar,
+.showreel-frame:focus-within .showreel-bar,
+.showreel-stage:not(.is-playing) .showreel-bar {
+    opacity: 1;
+    transform: none;
+}
+
+.showreel-btn {
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    border: 1px solid rgba(255,255,255,.28);
+    border-radius: 50%;
+    color: white;
+    background: rgba(255,255,255,.08);
+    cursor: pointer;
+}
+
+.showreel-btn:hover {
+    background: rgba(255,255,255,.18);
+}
+
+.showreel-btn svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.showreel-btn .icon-play,
+.showreel-stage:not(.is-playing) .showreel-btn .icon-pause {
+    display: none;
+}
+
+.showreel-stage:not(.is-playing) .showreel-btn .icon-play {
+    display: block;
+}
+
+.showreel-progress {
+    position: relative;
+    flex: 1;
+    height: 4px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.22);
+    cursor: pointer;
+}
+
+/* Área de clique maior que a linha. */
+.showreel-progress::before {
+    content: "";
+    position: absolute;
+    inset: -10px 0;
+}
+
+.showreel-progress span {
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: calc(var(--p, 0) * 100%);
+    border-radius: inherit;
+    background: #f1a086;
+}
+
+/* Capítulos: pular pra uma parte e ver em qual se está. */
+.showreel-chapters {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.showreel-chapters button {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    width: 100%;
+    padding: 14px 16px 16px;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 12px;
+    color: #bed2de;
+    background: rgba(255,255,255,.04);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: border-color .2s ease, background .2s ease, color .2s ease;
+}
+
+.showreel-chapters button:hover {
+    border-color: rgba(255,255,255,.3);
+    color: white;
+}
+
+.showreel-chapters button.is-active {
+    border-color: rgba(241, 160, 134, .6);
+    color: white;
+    background: rgba(241, 160, 134, .08);
+}
+
+.showreel-chapter-time {
+    color: #f1a086;
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: .76rem;
+}
+
+.showreel-chapters strong {
+    font-size: .92rem;
+}
+
+.showreel-chapter-fill {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 3px;
+    width: calc(var(--p, 0) * 100%);
+    background: var(--accent);
+}
+
+/* Botão do hero que leva ao vídeo. */
+.button-play {
+    gap: 10px;
+}
+
+.button-play-icon {
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.22);
+}
+
+.button-play-icon::before {
+    content: "";
+    margin-left: 2px;
+    border-style: solid;
+    border-width: 5px 0 5px 8px;
+    border-color: transparent transparent transparent currentColor;
+}
+
+@keyframes showreel-rec { 0%, 60% { opacity: 1; } 60.01%, 100% { opacity: .25; } }
+
+@media (max-width: 900px) {
+    .showreel-heading {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+}
+
+@media (max-width: 700px) {
+    .showreel {
+        padding: 10px 0 80px;
+    }
+
+    .showreel-mira {
+        inset: -8px;
+        background-size: 20px 2px, 2px 20px, 20px 2px, 2px 20px, 20px 2px, 2px 20px, 20px 2px, 2px 20px;
+    }
+
+    .showreel-frame {
+        border-radius: 10px;
+    }
+
+    .showreel-hud {
+        padding: 8px 12px;
+        font-size: .7rem;
+        letter-spacing: .1em;
+    }
+
+    .showreel-play {
+        top: calc(50% + 15px);
+    }
+
+    .showreel-hud-mid {
+        display: none;
+    }
+
+    .showreel-play {
+        width: 64px;
+        height: 64px;
+    }
+
+    .showreel-play span {
+        border-width: 11px 0 11px 18px;
+    }
+
+    .showreel-bar {
+        padding: 22px 10px 8px;
+        gap: 10px;
+    }
+
+    .showreel-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .showreel-chapters {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .showreel-stage.is-playing .showreel-rec i {
+        animation: none;
+    }
+
+    .showreel-mira {
         transition: none;
     }
 }
