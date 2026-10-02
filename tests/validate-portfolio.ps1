@@ -35,10 +35,17 @@ $requiredPaths = @(
     'docs/assets/team/alexandre-ferreira.jpg',
     'docs/assets/team/natanael-cirino.jpg',
     'docs/assets/gaviao/visao-geral.gif',
-    'docs/assets/gaviao/modo-navegacao.gif',
+    'docs/assets/gaviao/apresentacao.mp4',
+    'docs/assets/gaviao/hero-modo-navegacao.jpg',
+    'docs/assets/gaviao/apresentacao-poster.jpg',
     'docs/assets/gaviao/login-gaviao.jpg',
     'docs/assets/gaviao/login-atalaia.jpg',
+    'docs/assets/mobile/app-login.jpg',
+    'docs/assets/mobile/app-consulta-fo.jpg',
     'docs/assets/main.js',
+    'docs/assets/atividade.js',
+    'docs/assets/atividade-mapa.js',
+    'tools/gerar-atividade.ps1',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
     'docs/mobile/README.md',
@@ -73,10 +80,20 @@ foreach ($term in $requiredTerms) {
     Assert-Portfolio -Condition ($readme.Contains($readmeTerm) -and $site.Contains($term)) -Message "Termo obrigatório ausente no README ou no site: $readmeTerm"
 }
 
-$historyTerms = @('Histórico e evolução', '2020', '2021', '2022', '2023–2024', '2025', '2026')
+$historyTerms = @('Histórico e evolução', '2020', '2021', '2022', '2023–2024', '2025', '2026', 'Mapa de atividade')
 foreach ($term in $historyTerms) {
-    Assert-Portfolio -Condition ($readme.Contains($term) -and $site.Contains($term)) -Message "Marco histórico ausente no README ou no site: $term"
+    Assert-Portfolio -Condition ($readme.Contains($term)) -Message "Marco histórico ausente no README: $term"
 }
+
+foreach ($script in @('assets/atividade.js', 'assets/atividade-mapa.js')) {
+    Assert-Portfolio -Condition ($site.Contains("<script src=`"$script`" defer></script>")) -Message "Script do mapa de atividade ausente no site: $script"
+}
+Assert-Portfolio -Condition ($site.Contains('id="evolucao"') -and $site.Contains('data-activity-map')) -Message 'Seção do mapa de atividade ausente no site.'
+
+# O mapa promete publicar só contagens por semana: nada de nomes, e-mails, mensagens ou hashes.
+$activity = Get-Content -Raw -LiteralPath (Join-Path $repositoryRoot 'docs/assets/atividade.js')
+$activityPattern = '^// [^\r\n]*\r?\nwindow\.ATALAIA_ATIVIDADE = \{\r?\n  "geradoEm": "\d{4}-\d{2}-\d{2}",\r?\n  "inicio": "\d{4}-\d{2}-\d{2}",\r?\n  "inicioCop": "\d{4}-\d{2}-\d{2}",\r?\n  "semanas": \{\r?\n(    "\d{4}-\d{2}-\d{2}": \[\d+, \d+\],?\r?\n)+  \}\r?\n\};\r?\n?$'
+Assert-Portfolio -Condition ([regex]::IsMatch($activity, $activityPattern)) -Message 'docs/assets/atividade.js tem conteúdo além das contagens por semana.'
 
 Assert-Portfolio -Condition (-not $site.Contains('href="../examples/"')) -Message 'O link antigo dos exemplos ainda aponta para fora do projeto do GitHub Pages.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais e sanitizados, escritos a partir das regras reais do sistema.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
@@ -98,11 +115,16 @@ foreach ($heading in $legacyModuleHeadings) {
 }
 
 $textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt', '.kt')
+# Pastas locais de ferramentas de agentes (ignoradas no .gitignore): não são publicadas.
+$localToolFolders = @('.agent', '.agents', '.claude', '.codex', '.gemini') |
+    ForEach-Object { Join-Path $repositoryRoot $_ }
 $publicFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File |
     Where-Object {
-        $_.FullName -notlike "*\.git\*" -and
-        $_.FullName -notlike "*\tests\*" -and
-        $textExtensions -contains $_.Extension
+        $file = $_
+        $file.FullName -notlike "*\.git\*" -and
+        $file.FullName -notlike "*\tests\*" -and
+        -not ($localToolFolders | Where-Object { $file.FullName.StartsWith("$_\") }) -and
+        $textExtensions -contains $file.Extension
     }
 
 $forbiddenPatterns = @(

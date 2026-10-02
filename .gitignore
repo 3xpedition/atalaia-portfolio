@@ -28,3 +28,10 @@ yarn-error.log*
 *.log
 *.tmp
 *.bak
+
+# Ferramentas locais de agentes de IA (impeccable etc.), fora do repositório público
+/.agent/
+/.agents/
+/.claude/
+/.codex/
+/.gemini/
