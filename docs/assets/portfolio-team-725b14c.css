@@ -1382,3 +1382,20 @@
         columns: 1;
     }
 }
+
+/* Mapa do concurso: o GIF em largura total, com os quatro recortes logo abaixo. */
+.concurso-map .system-steps {
+    margin-top: 40px;
+}
+
+.concurso-map .system-steps li {
+    border-top-color: var(--teal);
+}
+
+.concurso-map .system-steps strong::before {
+    color: var(--teal-dark);
+}
+
+.concurso-map-shot a {
+    aspect-ratio: 1440 / 692;
+}
