@@ -29,11 +29,12 @@ $requiredPaths = @(
     'docs/assets/styles.css',
     'docs/assets/examples-1d3a47a.css',
     'docs/assets/portfolio-team-725b14c.css',
-    'docs/assets/dashboard-ssaa-demonstrativa.png',
     'docs/assets/logo-esa.svg',
     'docs/assets/team/joao-victor.jpg',
     'docs/assets/team/alexandre-ferreira.jpg',
     'docs/assets/team/natanael-cirino.jpg',
+    'docs/assets/team/diego-fernandes.jpg',
+    'docs/assets/team/abner.jpg',
     'docs/assets/gaviao/visao-geral.gif',
     'docs/assets/gaviao/apresentacao.mp4',
     'docs/assets/gaviao/hero-modo-navegacao.jpg',
@@ -99,7 +100,6 @@ Assert-Portfolio -Condition (-not $site.Contains('href="../examples/"')) -Messag
 Assert-Portfolio -Condition ($examplesSite.Contains('Todos os exemplos são autorais e sanitizados, escritos a partir das regras reais do sistema.')) -Message 'Aviso de sanitização ausente na página de exemplos.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Exemplos técnicos, sem ruído.')) -Message 'Título principal da página de exemplos ausente.'
 Assert-Portfolio -Condition ($site.Contains('Uma equipe multidisciplinar por trás da evolução.')) -Message 'Seção pública da equipe ausente.'
-Assert-Portfolio -Condition ($site.Contains('Métricas, turmas e valores são inteiramente fictícios.')) -Message 'Aviso de dados fictícios da dashboard ausente.'
 
 $legacyModuleHeadings = @(
     'Calendário de Avaliações',

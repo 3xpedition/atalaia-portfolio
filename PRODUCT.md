@@ -47,7 +47,7 @@ A real system with six years in production, built and kept running by a small te
 
 - **The names Atalaia and Gavião are fixed.** Gavião's existing identity (the colors, the ESA opening vignette, the radar that locks onto each module) must be preserved.
 - **The ESA logo is authorized** to appear on the portfolio (`docs/assets/logo-esa.svg`).
-- **Team names and photos are authorized and stay:** João Victor Gomes da Silva (Gestão), Alexandre José Ferreira (Dados), Natanael Cirino and Guilherme Gomes (Desenvolvimento e Design). Photos are in `docs/assets/team/`.
+- **Team names and photos are authorized and stay:** João Victor Gomes da Silva (Gestão; criou o sistema em 2020, avaliações, demonstrativo e classificação, escolha de QMS, painel público do COP Educação), Alexandre José Ferreira (Desenvolvimento e Dados; app Android Gavião FO e API móvel, lançamento de FO e FATD, Saúde Operacional, nota atitudinal N1 e N4 SIESP, Perfil de Comando), Natanael Cirino Guilherme Gomes (Desenvolvimento; Painel Oficial do Diretor, Conselho de Ensino, relatórios e estatística de FO, modo de navegação com o radar, mapa do concurso). Contributions come from the private repository commit history. Photos are in `docs/assets/team/`.
 - All copy is in Brazilian Portuguese. No binding tone was set beyond being factual about real capabilities.
 
 ## Evidence on Hand
@@ -55,7 +55,6 @@ A real system with six years in production, built and kept running by a small te
 - **Presentation video:** a 43-second walkthrough of Gavião (`docs/assets/gaviao/apresentacao.mp4`, poster `apresentacao-poster.jpg`).
 - **Real staging screenshots and animations** (`docs/assets/gaviao/`): login screens for Atalaia and Gavião, the navigation-mode hero, and the overview GIF.
 - **Android app screenshots** (`docs/assets/mobile/`): the login screen and the FO lookup by student.
-- **A conceptual SSAA mockup** with entirely fictitious data (`docs/assets/dashboard-ssaa-demonstrativa.png`).
 - **Documentation:** the architecture docs (`docs/arquitetura/`), the component diagrams (`docs/diagramas/`), and the mobile technical overview (`docs/mobile/README.md`).
 - **Demonstration code** (`examples/`):
   - the dashboard bands;

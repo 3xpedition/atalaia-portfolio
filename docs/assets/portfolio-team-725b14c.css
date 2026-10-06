@@ -1,34 +1,3 @@
-.dashboard-showcase {
-    margin-top: 64px;
-}
-
-/* Capturas sem moldura de card: a própria imagem leva o fio e a sombra. */
-.dashboard-frame img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    box-shadow: var(--shadow);
-}
-
-.dashboard-caption {
-    display: grid;
-    grid-template-columns: .85fr 1.15fr;
-    gap: 70px;
-    padding-top: 24px;
-}
-
-.dashboard-caption strong {
-    display: block;
-    font-size: 1rem;
-}
-
-.dashboard-caption p {
-    margin: 0;
-    color: var(--ink-soft);
-    font-size: .92rem;
-}
-
 .screen-shot {
     margin: 0;
 }
@@ -121,7 +90,7 @@
 
 .screen-carousel.is-ready .carousel-tabs {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 12px;
     margin-top: 18px;
 }
@@ -331,6 +300,32 @@
     font-size: .92rem;
 }
 
+/* O que cada um entregou: lista curta sob o cargo, um fio entre os itens. */
+.team-work {
+    margin: 18px 0 0;
+    padding: 14px 0 0;
+    border-top: 1px solid rgba(255,255,255,.14);
+    list-style: none;
+}
+
+.team-work li {
+    position: relative;
+    padding: 5px 0 5px 18px;
+    color: #e3edf2;
+    font-size: .9rem;
+    line-height: 1.45;
+}
+
+.team-work li::before {
+    content: "";
+    position: absolute;
+    top: .95em;
+    left: 0;
+    width: 8px;
+    height: 1px;
+    background: #f1a086;
+}
+
 .team-source {
     margin: 24px 0 0;
     color: #9db6c7;
@@ -338,8 +333,47 @@
     text-align: right;
 }
 
+/* Coordenação e Desenvolvimento em fileiras separadas. A coordenação não
+   programa: o cartão é horizontal, com o papel em uma frase no lugar da
+   lista de entregas. */
+.team-group-label {
+    margin: 0 0 14px;
+    color: #f1a086;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.team-grid-lead {
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 44px;
+}
+
+.team-member-lead {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+}
+
+.team-member-lead .team-photo {
+    height: 100%;
+    min-height: 250px;
+}
+
+.team-member-lead .team-member-copy {
+    align-self: center;
+}
+
+.team-member-copy .team-role {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,.14);
+    color: #e3edf2;
+    font-size: .9rem;
+    line-height: 1.5;
+}
+
 @media (max-width: 900px) {
-    .dashboard-caption,
     .team-heading {
         grid-template-columns: 1fr;
         gap: 28px;
@@ -349,14 +383,13 @@
     .principle-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .team-grid-lead {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 700px) {
-    .dashboard-showcase {
-        margin-top: 42px;
-    }
-
-    .dashboard-caption,
     .team-grid-portfolio,
     .principle-grid {
         grid-template-columns: 1fr;
@@ -372,8 +405,7 @@
         font-size: .82rem;
     }
 
-    .screen-shot a,
-    .dashboard-frame img {
+    .screen-shot a {
         border-radius: 10px;
     }
 
@@ -384,6 +416,15 @@
 
     .team-photo {
         height: 390px;
+    }
+
+    .team-member-lead {
+        grid-template-columns: 1fr;
+    }
+
+    .team-member-lead .team-photo {
+        height: 390px;
+        min-height: 0;
     }
 
     .team-source {
@@ -595,6 +636,8 @@
 .tag-atalaia {
     top: -14px;
     right: 6%;
+    color: white;
+    background: var(--atalaia);
 }
 
 .tag-gaviao {
@@ -1079,5 +1122,263 @@
 
     .showreel-mira {
         transition: none;
+    }
+}
+
+/* ---------- Atalaia e Gavião, cada um na sua seção ----------
+   Mesmo esqueleto nas duas: selo do sistema, título e texto lado a lado,
+   depois as telas. O Atalaia leva o verde da própria tela de login; o
+   Gavião, o teal que já marca o sistema no hero. */
+:root {
+    --atalaia: #10673a;
+    --atalaia-dark: #0b4f2c;
+}
+
+.system-atalaia {
+    background: linear-gradient(180deg, #eef6f1 0%, #fff 70%);
+}
+
+.system-head {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: end;
+    gap: 70px;
+    margin-bottom: 44px;
+}
+
+.system-head h2 {
+    margin-bottom: 0;
+}
+
+.system-head > p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+}
+
+.system-badge {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0 0 18px;
+    padding: 7px 14px;
+    border-radius: 999px;
+    color: white;
+    background: var(--teal-dark);
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.system-badge strong {
+    font-size: .82rem;
+    font-weight: 800;
+}
+
+.system-atalaia .system-badge {
+    background: var(--atalaia);
+}
+
+.system-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin: 44px 0 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: passo;
+}
+
+.system-steps li {
+    padding-top: 16px;
+    border-top: 2px solid var(--atalaia);
+    counter-increment: passo;
+}
+
+.system-steps strong,
+.system-steps span {
+    display: block;
+}
+
+.system-steps strong {
+    margin-bottom: 6px;
+    font-size: .98rem;
+}
+
+.system-steps strong::before {
+    content: counter(passo, decimal-leading-zero);
+    display: block;
+    margin-bottom: 4px;
+    color: var(--atalaia);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .95rem;
+    font-weight: 400;
+}
+
+.system-steps span {
+    color: var(--ink-soft);
+    font-size: .9rem;
+    line-height: 1.55;
+}
+
+.system-steps a {
+    color: var(--teal-dark);
+    font-weight: 700;
+}
+
+.system-more {
+    margin: 28px 0 0;
+    color: var(--ink-soft);
+    font-size: .92rem;
+}
+
+.system-more a,
+#visao-geral .prose a {
+    color: var(--teal-dark);
+    font-weight: 700;
+}
+
+#visao-geral .prose a[href="#atalaia"] {
+    color: var(--atalaia-dark);
+}
+
+@media (max-width: 900px) {
+    .system-head {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .system-steps {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 24px;
+    }
+}
+
+@media (max-width: 560px) {
+    .system-steps {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* As 13 UETEs do Atalaia: números à esquerda, lista por região à direita.
+   O Sudeste tem sete e ocupa duas colunas; as demais regiões, uma cada. */
+.uete-roll {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 56px;
+    margin-bottom: 56px;
+    padding: 32px 0;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.uete-stats {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    margin: 0;
+}
+
+.uete-stats div {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.uete-stats dd {
+    margin: 0;
+    color: var(--atalaia);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.6rem;
+    line-height: 1;
+    letter-spacing: -.03em;
+    font-variant-numeric: tabular-nums;
+}
+
+.uete-stats dt {
+    margin-top: 4px;
+    color: var(--ink-soft);
+    font-size: .84rem;
+}
+
+.uete-regions {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 32px;
+}
+
+.uete-region h3 {
+    margin: 0 0 10px;
+    color: var(--atalaia-dark);
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.uete-region ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.uete-region-wide ul {
+    columns: 2;
+    column-gap: 32px;
+}
+
+.uete-region li {
+    padding: 9px 0;
+    border-bottom: 1px solid var(--line);
+    break-inside: avoid;
+}
+
+.uete-region strong,
+.uete-region span {
+    display: block;
+}
+
+.uete-region strong {
+    font-size: .95rem;
+}
+
+.uete-region span {
+    color: var(--ink-soft);
+    font-size: .84rem;
+}
+
+@media (max-width: 900px) {
+    .uete-roll {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .uete-stats {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .uete-regions {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .uete-region-wide {
+        grid-column: 1 / -1;
+    }
+
+    .uete-region-wide ul {
+        columns: 3;
+    }
+}
+
+@media (max-width: 560px) {
+    .uete-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .uete-regions {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .uete-region-wide ul {
+        columns: 1;
     }
 }

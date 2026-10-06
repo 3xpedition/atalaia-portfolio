@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfólio técnico do Atalaia e do Gavião, sistemas de gestão acadêmica da Escola de Sargentos das Armas: Laravel, painel de comando em D3.js e app Android offline para Fato Observado.">
+    <meta name="description" content="Portfólio técnico do Atalaia e do Gavião, sistemas de gestão acadêmica da Escola de Sargentos das Armas: o Atalaia em 13 UETEs de nove estados, o Gavião na ESA, Laravel, painel de comando em D3.js e app Android offline para Fato Observado.">
     <meta name="theme-color" content="#102a43">
     <title>Atalaia &amp; Gavião — Portfólio técnico</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/styles.css?v=5">
-    <link rel="stylesheet" href="assets/portfolio-team-725b14c.css?v=8">
+    <link rel="stylesheet" href="assets/styles.css?v=6">
+    <link rel="stylesheet" href="assets/portfolio-team-725b14c.css?v=12">
     <script src="assets/main.js?v=3" defer></script>
     <script src="assets/atividade.js" defer></script>
     <script src="assets/atividade-mapa.js" defer></script>
@@ -27,9 +27,8 @@
                 <span class="sr-only">Abrir menu</span>
             </button>
             <nav id="menu-principal" class="main-nav" aria-label="Navegação principal">
-                <a href="#apresentacao">Apresentação</a>
-                <a href="#visao-geral">Visão geral</a>
-                <a href="#em-uso">Telas</a>
+                <a href="#atalaia">Atalaia</a>
+                <a href="#gaviao">Gavião</a>
                 <a href="#modulos">Produto</a>
                 <a href="#painel">Painel</a>
                 <a href="#mobile">Android</a>
@@ -45,8 +44,8 @@
         <section class="hero hero-into-showreel">
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
-                    <h1>Os dois anos do sargento, em um só sistema.</h1>
-                    <p class="hero-lead">O Atalaia acompanha o 1º ano do Curso de Formação e Graduação de Sargentos nas UETEs. O Gavião assume o 2º ano na ESA, já dentro de cada arma. Juntos, cobrem da importação do concurso à escolha da especialidade, com painel de comando e app Android para registro disciplinar em campo.</p>
+                    <h1>A formação do sargento, das 13 UETEs à ESA.</h1>
+                    <p class="hero-lead">O <strong>Atalaia</strong> cuida do 1º ano em 13 UETEs de nove estados. O <strong>Gavião</strong> assume o 2º ano na Escola de Sargentos das Armas, já dentro de cada arma. Do resultado do concurso à escolha da especialidade, com painel para o comando e app Android que registra FO sem rede.</p>
                     <div class="hero-actions">
                         <a class="button primary button-play" href="#apresentacao"><span class="button-play-icon" aria-hidden="true"></span>Assistir à apresentação</a>
                         <a class="button secondary" href="examples/">Explorar exemplos</a>
@@ -61,7 +60,7 @@
                     <div class="showcase-phone">
                         <img src="assets/mobile/app-consulta-fo.jpg" alt="Consulta de Fato Observado no app Android Gavião FO" width="1440" height="2864">
                     </div>
-                    <span class="showcase-tag tag-atalaia"><strong>Atalaia</strong>1º ano · UETEs</span>
+                    <span class="showcase-tag tag-atalaia"><strong>Atalaia</strong>1º ano · 13 UETEs</span>
                     <span class="showcase-tag tag-gaviao"><strong>Gavião</strong>2º ano · ESA</span>
                     <div class="hero-radar" aria-hidden="true"></div>
                 </div>
@@ -112,32 +111,91 @@
         <section class="section" id="visao-geral">
             <div class="container split">
                 <div class="section-heading reveal">
-                    <h2>Do concurso à escolha da arma, sem trocar de sistema.</h2>
+                    <h2>Dois anos, dois sistemas, uma só base.</h2>
                 </div>
                 <div class="prose reveal">
-                    <p>O aprovado no concurso faz o <strong>1º ano (Período Básico)</strong> em uma das Unidades Escolares Tecnológicas do Exército, as UETEs, espalhadas pelo país. Esse ano roda no <strong>Atalaia</strong>: cadastro, notas, Treinamento Físico Militar, Fato Observado e a escolha de QMS, que define a arma do aluno.</p>
-                    <p>No <strong>2º ano (Período de Qualificação)</strong> o aluno chega à ESA, em Três Corações (MG), e passa para o <strong>Gavião</strong>: calendário de provas, lançamento de graus, avaliação atitudinal, disciplina e o painel que o comando usa para ler a turma. As avaliações da qualificação ficam num banco próprio, o SSAA, separado da base administrativa.</p>
+                    <p>O aprovado no concurso passa dois anos em formação, em dois lugares. O <strong>1º ano (Período Básico)</strong> acontece em uma das 13 UETEs, de Alegrete (RS) a Fortaleza (CE), e roda no <a href="#atalaia"><strong>Atalaia</strong></a>. No <strong>2º ano (Período de Qualificação)</strong> o aluno chega à ESA, em Três Corações (MG), e passa para o <a href="#gaviao"><strong>Gavião</strong></a>.</p>
+                    <p>Os dois sistemas dividem a mesma base de código, as regras e os perfis de acesso. As avaliações da qualificação ficam num banco próprio, o SSAA, separado da base administrativa.</p>
                     <p>O código completo e os dados permanecem no repositório institucional privado. Este portfólio mostra o que o sistema faz e como foi construído.</p>
-                </div>
-            </div>
-            <div class="container dashboard-showcase reveal">
-                <div class="dashboard-frame">
-                    <img src="assets/dashboard-ssaa-demonstrativa.png" alt="Dashboard demonstrativa do operador SSAA com indicadores acadêmicos fictícios" loading="lazy" width="1672" height="942">
-                </div>
-                <div class="dashboard-caption">
-                    <strong>Interface conceitual: a visão do operador SSAA, sem expor dados reais.</strong>
-                    <p>Mockup criado para o portfólio a partir das capacidades do produto. Métricas, turmas e valores são inteiramente fictícios.</p>
                 </div>
             </div>
         </section>
 
-        <section class="section section-tint" id="em-uso">
+        <section class="section system system-atalaia" id="atalaia" aria-labelledby="atalaia-titulo">
             <div class="container">
-                <div class="section-heading centered reveal">
-                    <h2>Do login à visão de comando.</h2>
-                    <p>Telas reais do Atalaia e do Gavião, capturadas no ambiente de homologação com usuário de teste.</p>
+                <div class="system-head reveal">
+                    <div>
+                        <p class="system-badge"><strong>Atalaia</strong>1º ano do CFGS · Período Básico</p>
+                        <h2 id="atalaia-titulo">Treze UETEs, nove estados, um só sistema.</h2>
+                    </div>
+                    <p>O Atalaia roda em todas as Unidades Escolares Tecnológicas do Exército que formam o 1º ano do CFGS, do Rio Grande do Sul ao Ceará. Cada UETE matricula, avalia e acompanha os seus alunos no mesmo sistema, e a Escola enxerga a turma inteira de uma vez, até a escolha da especialidade que define a arma de cada um.</p>
                 </div>
-                <div class="screen-carousel reveal" data-carousel aria-roledescription="carrossel" aria-label="Telas do sistema em uso">
+                <div class="uete-roll reveal">
+                    <dl class="uete-stats">
+                        <div><dt>UETEs</dt><dd>13</dd></div>
+                        <div><dt>cidades</dt><dd>12</dd></div>
+                        <div><dt>estados</dt><dd>9</dd></div>
+                        <div><dt>regiões do país</dt><dd>4</dd></div>
+                    </dl>
+                    <div class="uete-regions" aria-label="UETEs atendidas pelo Atalaia, por região">
+                        <div class="uete-region uete-region-wide">
+                            <h3>Sudeste</h3>
+                            <ul>
+                                <li><strong>1º GAAAe</strong><span>Rio de Janeiro · RJ</span></li>
+                                <li><strong>12º GAAAe</strong><span>Jundiaí · SP</span></li>
+                                <li><strong>13º RC Mec</strong><span>Pirassununga · SP</span></li>
+                                <li><strong>10º BIL Mth</strong><span>Juiz de Fora · MG</span></li>
+                                <li><strong>4º GAC L Mth</strong><span>Juiz de Fora · MG</span></li>
+                                <li><strong>14º GAC</strong><span>Pouso Alegre · MG</span></li>
+                                <li><strong>4º BE Cmb</strong><span>Itajubá · MG</span></li>
+                            </ul>
+                        </div>
+                        <div class="uete-region">
+                            <h3>Sul</h3>
+                            <ul>
+                                <li><strong>6º RCB</strong><span>Alegrete · RS</span></li>
+                                <li><strong>23º BI</strong><span>Blumenau · SC</span></li>
+                            </ul>
+                        </div>
+                        <div class="uete-region">
+                            <h3>Centro-Oeste</h3>
+                            <ul>
+                                <li><strong>41º BI Mec</strong><span>Jataí · GO</span></li>
+                                <li><strong>20º RCB</strong><span>Campo Grande · MS</span></li>
+                            </ul>
+                        </div>
+                        <div class="uete-region">
+                            <h3>Nordeste</h3>
+                            <ul>
+                                <li><strong>16º BI Mtz</strong><span>Natal · RN</span></li>
+                                <li><strong>23º BC</strong><span>Fortaleza · CE</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <figure class="screen-shot system-shot reveal">
+                    <a href="assets/gaviao/login-atalaia.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-atalaia.jpg" alt="Tela de login do Sistema Atalaia, 1º Ano CFGS" width="1600" height="732" loading="lazy"></a>
+                    <figcaption><strong>Login do Atalaia</strong><span>Capturado no ambiente de homologação, com usuário de teste.</span></figcaption>
+                </figure>
+                <ol class="system-steps reveal" aria-label="O que o Atalaia cobre no 1º ano">
+                    <li><strong>Cadastro e matrícula</strong><span>Importação dos aprovados no concurso e matrícula por ano de formação, em cada UETE.</span></li>
+                    <li><strong>Notas e TFM</strong><span>Lançamento de graus e o Treinamento Físico Militar, que entra na média do aluno.</span></li>
+                    <li><strong>Fato Observado</strong><span>Registro do FO positivo, neutro ou negativo ao longo do ano de formação.</span></li>
+                    <li><strong>Escolha de QMS</strong><span>Vagas distribuídas pela classificação e pelas prioridades do aluno. Daí ele segue para o <a href="#gaviao">Gavião</a>.</span></li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="section section-tint system system-gaviao" id="gaviao" aria-labelledby="gaviao-titulo">
+            <div class="container">
+                <div class="system-head reveal">
+                    <div>
+                        <p class="system-badge"><strong>Gavião</strong>2º ano do CFGS · ESA</p>
+                        <h2 id="gaviao-titulo">A qualificação na ESA, já dentro de cada arma.</h2>
+                    </div>
+                    <p>No Gavião ficam o calendário de provas e o lançamento de graus da qualificação, a avaliação atitudinal, a disciplina e o painel que o comando usa para ler a turma. Telas reais, capturadas na homologação com usuário de teste.</p>
+                </div>
+                <div class="screen-carousel reveal" data-carousel aria-roledescription="carrossel" aria-label="Telas do Gavião em uso">
                     <div class="screen-shot screen-shot-main carousel-track">
                         <figure class="carousel-slide is-active" id="tela-visao-geral" role="tabpanel" aria-labelledby="aba-visao-geral" data-gif-loop="30270" data-gif-plays="1">
                             <a href="assets/gaviao/visao-geral.gif" target="_blank" rel="noopener"><img src="assets/gaviao/visao-geral.gif" alt="Navegação animada pelo Sistema Gavião: escolha do modo de navegação, visão geral, alunos, FO/FATD, nota atitudinal, saúde operacional, documentação e relatórios e SSAA, com dados pessoais e efetivos borrados" width="1920" height="920" loading="lazy"></a>
@@ -145,19 +203,15 @@
                         </figure>
                         <figure class="carousel-slide carousel-slide-contain" id="tela-login-gaviao" role="tabpanel" aria-labelledby="aba-login-gaviao" data-duration="5000">
                             <a href="assets/gaviao/login-gaviao.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-gaviao.jpg" alt="Tela de login do Sistema Gavião, 2º Ano CFGS" width="920" height="566" loading="lazy"></a>
-                            <figcaption><strong>Gavião · 2º ano do CFGS</strong><span>Qualificação na ESA, por arma.</span></figcaption>
-                        </figure>
-                        <figure class="carousel-slide" id="tela-login-atalaia" role="tabpanel" aria-labelledby="aba-login-atalaia" data-duration="5000">
-                            <a href="assets/gaviao/login-atalaia.jpg" target="_blank" rel="noopener"><img src="assets/gaviao/login-atalaia.jpg" alt="Tela de login do Sistema Atalaia, 1º Ano CFGS" width="1600" height="732" loading="lazy"></a>
-                            <figcaption><strong>Atalaia · 1º ano do CFGS</strong><span>Período Básico nas UETEs.</span></figcaption>
+                            <figcaption><strong>Login do Gavião</strong><span>Entrada do 2º ano do CFGS, com o brasão da ESA.</span></figcaption>
                         </figure>
                     </div>
                     <div class="carousel-tabs" role="tablist" aria-label="Escolher tela">
                         <button type="button" class="carousel-tab is-active" role="tab" id="aba-visao-geral" aria-controls="tela-visao-geral" aria-selected="true">Visão geral<span class="carousel-progress" aria-hidden="true"></span></button>
-                        <button type="button" class="carousel-tab" role="tab" id="aba-login-gaviao" aria-controls="tela-login-gaviao" aria-selected="false" tabindex="-1">Login Gavião<span class="carousel-progress" aria-hidden="true"></span></button>
-                        <button type="button" class="carousel-tab" role="tab" id="aba-login-atalaia" aria-controls="tela-login-atalaia" aria-selected="false" tabindex="-1">Login Atalaia<span class="carousel-progress" aria-hidden="true"></span></button>
+                        <button type="button" class="carousel-tab" role="tab" id="aba-login-gaviao" aria-controls="tela-login-gaviao" aria-selected="false" tabindex="-1">Login<span class="carousel-progress" aria-hidden="true"></span></button>
                     </div>
                 </div>
+                <p class="system-more reveal">Também no Gavião: <a href="#apresentacao">a apresentação em 43 segundos</a>, <a href="#painel">o Painel Oficial do Diretor</a> e <a href="#mobile">o app Gavião FO</a>.</p>
             </div>
         </section>
 
@@ -295,18 +349,68 @@
                         <p>COP Educação: gestão, desenvolvimento, dados e design trabalhando de forma integrada para transformar necessidades em soluções.</p>
                     </div>
                 </div>
+                <p class="team-group-label reveal">Coordenação</p>
+                <div class="team-grid-portfolio team-grid-lead">
+                    <article class="team-member team-member-lead reveal">
+                        <div class="team-photo"><img src="assets/team/diego-fernandes.jpg" alt="Capitão Diego Fernandes" width="432" height="576" loading="lazy"></div>
+                        <div class="team-member-copy">
+                            <h3>Cap Diego Fernandes</h3>
+                            <p>Coordenador do Projeto</p>
+                            <p class="team-role">Define as prioridades da equipe e leva as necessidades do ensino para dentro do sistema.</p>
+                        </div>
+                    </article>
+                    <article class="team-member team-member-lead reveal">
+                        <div class="team-photo"><img src="assets/team/abner.jpg" alt="Major Abner Alves de Melo" width="236" height="280" loading="lazy"></div>
+                        <div class="team-member-copy">
+                            <h3>Maj Abner Alves de Melo</h3>
+                            <p>Relações Institucionais</p>
+                            <p class="team-role">Faz a ponte do projeto com o comando e os demais setores da Escola.</p>
+                        </div>
+                    </article>
+                </div>
+                <p class="team-group-label reveal">Desenvolvimento</p>
                 <div class="team-grid-portfolio">
                     <article class="team-member reveal">
                         <div class="team-photo"><img src="assets/team/joao-victor.jpg" alt="João Victor Gomes da Silva" width="300" height="360" loading="lazy"></div>
-                        <div class="team-member-copy"><h3>João Victor Gomes da Silva</h3><p>Gestor do Desenvolvimento</p></div>
+                        <div class="team-member-copy">
+                            <h3>João Victor Gomes da Silva</h3>
+                            <p>Gestor do Desenvolvimento</p>
+                            <ul class="team-work" aria-label="Entregas de João Victor">
+                                <li>Criação do sistema e implantação em 2020</li>
+                                <li>Avaliações: GBO, AR e recuperação</li>
+                                <li>Demonstrativo de notas e classificação final</li>
+                                <li>Escolha de QMS no Atalaia</li>
+                                <li>Painel público do COP Educação</li>
+                            </ul>
+                        </div>
                     </article>
                     <article class="team-member reveal">
                         <div class="team-photo"><img src="assets/team/alexandre-ferreira.jpg" alt="Alexandre José Ferreira" width="360" height="360" loading="lazy"></div>
-                        <div class="team-member-copy"><h3>Alexandre José Ferreira</h3><p>Desenvolvimento e Ciência de Dados</p></div>
+                        <div class="team-member-copy">
+                            <h3>Alexandre José Ferreira</h3>
+                            <p>Desenvolvimento e Ciência de Dados</p>
+                            <ul class="team-work" aria-label="Entregas de Alexandre">
+                                <li>App Android Gavião FO e API móvel</li>
+                                <li>Lançamento de FO e FATD, com encaminhamento em lote</li>
+                                <li>Painel de Saúde Operacional</li>
+                                <li>Nota atitudinal N1 e importação da N4 SIESP</li>
+                                <li>Perfil de Comando</li>
+                            </ul>
+                        </div>
                     </article>
                     <article class="team-member reveal">
                         <div class="team-photo"><img src="assets/team/natanael-cirino.jpg" alt="Natanael Cirino Guilherme Gomes" width="600" height="800" loading="lazy"></div>
-                        <div class="team-member-copy"><h3>Natanael Cirino Guilherme Gomes</h3><p>Desenvolvimento e Design · Painel Oficial do Diretor e mapa do concurso</p></div>
+                        <div class="team-member-copy">
+                            <h3>Natanael Cirino Guilherme Gomes</h3>
+                            <p>Desenvolvimento</p>
+                            <ul class="team-work" aria-label="Entregas de Natanael">
+                                <li>Painel Oficial do Diretor</li>
+                                <li>Conselho de Ensino</li>
+                                <li>Relatórios e estatística de FO</li>
+                                <li>Modo de navegação com o radar</li>
+                                <li>Mapa do concurso</li>
+                            </ul>
+                        </div>
                     </article>
                 </div>
                 <p class="team-source reveal">Equipe apresentada no painel público do COP Educação. Imagens utilizadas com autorização para este portfólio.</p>
