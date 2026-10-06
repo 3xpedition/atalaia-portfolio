@@ -247,8 +247,8 @@ h3 { line-height: 1.25; }
 .hero .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .hero .reveal { opacity: 1; transform: none; transition: none; } }
 
-/* Com oito links o menu só cabe inteiro a partir de ~1080px; abaixo disso vira gaveta. */
-@media (max-width: 1080px) {
+/* Com nove links o menu só cabe inteiro a partir de ~1160px; abaixo disso vira gaveta. */
+@media (max-width: 1160px) {
     .menu-toggle { display: block; }
     .main-nav { position: absolute; top: 76px; left: 14px; right: 14px; display: none; align-items: stretch; flex-direction: column; gap: 0; padding: 12px; color: var(--ink); border-radius: 14px; background: white; box-shadow: var(--shadow); }
     .main-nav.is-open { display: flex; }
