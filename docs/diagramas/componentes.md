@@ -1,21 +1,16 @@
-# Diagrama de componentes
-
-Diagrama conceitual e sanitizado da solução:
+# Diagrama conceitual de componentes
 
 ```mermaid
 flowchart LR
-    U[Usuários autorizados] --> W[Interface web\nBlade + Bootstrap]
-    C[Operação em campo] --> P[App Android\nKotlin + Compose]
-    W --> A[Aplicação Laravel]
-    P --> O[(Dados locais\nSQLCipher)]
-    P --> S[Sincronização\nWorkManager]
-    S --> A
-    A --> D[Serviços de domínio]
-    D --> M[(MySQL\nadministrativo)]
-    D --> R[(MySQL\nSSAA)]
-    A --> Q[Relatórios e exportações]
-    Q --> B[Painel Oficial\nD3.js]
-    N[Nginx] --> W
+    U[Usuário autorizado] --> W[Experiência web]
+    M[Operação móvel] --> A[Aplicativo Android]
+    A --> L[(Dados locais cifrados)]
+    A --> S[Sincronização resiliente]
+    W --> H[Aplicação e API]
+    S --> H
+    H --> D[Serviços de domínio]
+    D --> B[(Persistência relacional)]
+    D --> R[Painéis e relatórios]
 ```
 
-As conexões são ilustrativas e não representam nomes, endereços, portas ou topologia de produção.
+O desenho demonstra responsabilidades, não topologia. Nomes, conexões, volumes e limites de produção não são publicados.

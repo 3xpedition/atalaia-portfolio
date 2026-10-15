@@ -7,9 +7,9 @@ namespace Portfolio\Services;
 use InvalidArgumentException;
 
 /**
- * Classifica as notas de um grupo nas faixas de cor do Painel Oficial.
+ * Classifica as notas de um grupo nas faixas de um painel demonstrativo.
  *
- * Regras demonstradas, as mesmas do painel real (a régua aqui é fictícia):
+ * Regras demonstradas numa régua integralmente fictícia:
  * - o número de destaque é a MEDIANA: um aluno com nota muito baixa não
  *   arrasta o retrato da turma inteira, como aconteceria com a média;
  * - nota não lançada é "não avaliado", nunca zero. Zero é nota; ausência

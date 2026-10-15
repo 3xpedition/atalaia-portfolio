@@ -1,7 +1,14 @@
-# Screenshots
+# Política de imagens e demonstrações
 
-Esta pasta é reservada a capturas demonstrativas previamente sanitizadas.
+Este portfólio não aceita screenshots, vídeos ou fotografias de ambientes reais — mesmo quando borrados.
 
-Antes de adicionar uma imagem, confirme que ela não contém nomes, matrículas, e-mails, documentos, credenciais, endereços de rede, URLs internas, identificadores de banco de dados ou marcas de acesso restrito. Prefira dados fictícios e recortes que mostrem apenas a experiência de uso relevante.
+Interfaces públicas devem ser construídas especificamente para demonstração e atender a todos os critérios:
 
-As capturas publicadas no site ficam em `docs/assets/gaviao/` e foram feitas no ambiente de homologação, com usuário de teste, sem barra do navegador e sem dados de alunos.
+- identidade visual autoral;
+- dados e nomes integralmente fictícios;
+- nenhuma marca, brasão, uniforme ou imagem institucional;
+- nenhuma URL, rota, perfil, permissão ou topologia real;
+- indicação visível de “Demonstração · dados fictícios”;
+- nenhuma dependência de imagem pública sem licença documentada.
+
+Mockups em HTML/CSS são preferidos porque permanecem acessíveis, responsivos, auditáveis e não carregam metadados ocultos.

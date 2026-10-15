@@ -1,5 +1,5 @@
 {{--
-    Faixas de um tópico do Painel Oficial. Recebe $resumo pronto do
+    Faixas de um indicador demonstrativo. Recebe $resumo pronto do
     FaixaDesempenhoService: a view só apresenta, não calcula nada.
 
     As cores são fixas por faixa (azul, verde, amarelo, vermelho, e cinza para

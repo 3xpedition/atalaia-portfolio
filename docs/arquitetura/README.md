@@ -1,26 +1,25 @@
 # Arquitetura de referência
 
-Esta visão descreve uma arquitetura pública e conceitual. Ela demonstra as camadas e responsabilidades trabalhadas no projeto sem reproduzir topologia, nomes de serviços, rotas ou configurações do ambiente institucional.
+Esta arquitetura é pública, conceitual e demonstrativa. Ela comunica responsabilidades sem reproduzir nomes de serviços, rotas, bancos, endereços, volumes ou configurações de qualquer ambiente real.
 
 ## Camadas
 
-1. **Interface web** — páginas responsivas construídas com Blade, Bootstrap e JavaScript.
-2. **Aplicativo Android** — experiência nativa em Kotlin e Compose, preparada para operação offline.
-3. **Aplicação HTTP e API** — rotas, validação de entrada, autenticação, autorização e controllers Laravel.
-4. **Serviços de domínio** — regras reutilizáveis para formação, avaliação, disciplina e relatórios.
-5. **Persistência** — dois bancos MySQL (administrativo e SSAA, das avaliações da qualificação) e SQLCipher no dispositivo.
-6. **Entrega e análise** — Nginx na camada web, relatórios em PDF e Excel e painéis de comando em D3.js, com todas as dependências servidas localmente para funcionar na Intranet.
+1. **Experiência web** — páginas responsivas com Blade e JavaScript.
+2. **Aplicativo Android** — interface nativa em Kotlin e Compose, preparada para operação offline.
+3. **Aplicação e API** — autenticação, autorização, validação e coordenação dos casos de uso.
+4. **Serviços de domínio** — regras reutilizáveis por telas, painéis e relatórios.
+5. **Persistência** — armazenamento relacional no servidor e base cifrada no dispositivo.
+6. **Apresentação analítica** — indicadores e visualizações com caminho até o dado de origem.
 
 ## Princípios
 
-- controllers pequenos e orientados à coordenação;
-- regras relevantes concentradas em serviços testáveis;
-- validação e autorização no servidor;
-- consultas explícitas e índices adequados aos fluxos de leitura;
-- mesmas regras de cálculo para tela, relatório e exportação;
-- sincronização móvel resiliente, rastreável e orientada à conectividade;
-- proteção de dados locais com criptografia e chaves geridas pelo sistema operacional;
-- logs sem dados sensíveis e mensagens de erro adequadas ao público;
-- configuração por ambiente sem segredos versionados.
+- autorização aplicada no servidor;
+- regras importantes isoladas e testáveis;
+- uma mesma regra para tela, relatório e exportação;
+- sincronização idempotente e orientada à conectividade;
+- dados locais mínimos e protegidos;
+- logs sem conteúdo sensível;
+- configuração por ambiente sem segredos versionados;
+- falhas apresentadas em linguagem adequada ao usuário.
 
-Veja também o [diagrama de componentes](../diagramas/componentes.md).
+Veja também o [diagrama conceitual](../diagramas/componentes.md).

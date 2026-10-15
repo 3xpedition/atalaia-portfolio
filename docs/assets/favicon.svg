@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Atalaia">
-  <rect width="64" height="64" rx="16" fill="#102a43"/>
-  <path d="M32 13 51 49h-9l-4-8H26l-4 8h-9L32 13Zm0 13-3 7h6l-3-7Z" fill="#fff"/>
-  <circle cx="49" cy="15" r="6" fill="#d05a3a"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Atalaia e Gavião">
+  <rect width="64" height="64" rx="16" fill="#071921"/>
+  <circle cx="32" cy="32" r="20" fill="none" stroke="#26c6a5" stroke-width="2" opacity=".5"/>
+  <circle cx="32" cy="32" r="11" fill="none" stroke="#26c6a5" stroke-width="3"/>
+  <circle cx="32" cy="32" r="4" fill="#26c6a5"/>
+  <path d="M9 32h46M32 9v46" stroke="#26c6a5" stroke-width="1" opacity=".65"/>
 </svg>
