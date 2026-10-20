@@ -1,4 +1,4 @@
-# Atalaia & Gavião — portfólio técnico independente
+# Nexo Formação — portfólio técnico independente
 
 Estudo de caso público de uma plataforma web e móvel para gestão educacional, acompanhamento de desempenho e operação offline.
 
@@ -15,7 +15,7 @@ Estudo de caso público de uma plataforma web e móvel para gestão educacional,
 
 ## Uma publicação deliberadamente demonstrativa
 
-O site foi construído sem screenshots, vídeos, fotografias, logotipos ou documentos de ambientes reais. Todas as interfaces são mockups em HTML e CSS criados exclusivamente para esta apresentação. Nomes, números, grupos, métricas e situações são fictícios.
+O site foi construído sem screenshots, vídeos, fotografias, logotipos ou documentos de ambientes reais. Todas as interfaces são mockups em HTML e CSS criados exclusivamente para esta apresentação. As imagens narrativas são sintéticas, autorais e documentadas em [`docs/assets/media/README.md`](docs/assets/media/README.md). Nomes, números, grupos, métricas e situações são fictícios.
 
 Este portfólio:
 
@@ -23,7 +23,8 @@ Este portfólio:
 - não reproduz identidade visual, menus ou topologia de ambientes privados;
 - não publica dados pessoais, documentos, credenciais, endereços ou configurações;
 - não contém cópia do código-fonte privado;
-- não depende de imagens de terceiros ou conteúdo apenas borrado.
+- não depende de imagens de terceiros ou conteúdo apenas borrado;
+- só aceita mídias declaradas em manifesto, sem identidade institucional ou contexto operacional real.
 
 ## Arquitetura conceitual
 

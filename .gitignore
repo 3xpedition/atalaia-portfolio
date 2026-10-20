@@ -35,3 +35,8 @@ yarn-error.log*
 /.claude/
 /.codex/
 /.gemini/
+
+# Pré-visualização local do portfólio
+/.edge-*/
+/.tmp-chrome-profile/
+/preview-*.png

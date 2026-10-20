@@ -3,24 +3,25 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Atalaia &amp; Gavião: estudo de caso técnico de uma plataforma web e móvel para gestão educacional, análise de desempenho e operação offline.">
+    <meta name="description" content="Nexo Formação: portfólio técnico independente sobre uma plataforma web e móvel para jornadas educacionais distribuídas, análise de desempenho e operação offline.">
     <meta name="theme-color" content="#081b24">
-    <title>Atalaia &amp; Gavião — produto, dados e operação offline</title>
+    <title>Nexo Formação — tecnologia para jornadas distribuídas</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="assets/styles.css?v=20">
-    <script src="assets/main.js?v=20" defer></script>
+    <link rel="preload" href="assets/media/hero-rede-distribuida.png" as="image" fetchpriority="high">
+    <link rel="stylesheet" href="assets/styles.css?v=21">
+    <script src="assets/main.js?v=21" defer></script>
 </head>
 <body>
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
     <header class="site-header" data-header>
         <div class="container header-inner">
-            <a class="brand" href="#inicio" aria-label="Atalaia e Gavião — início">
+            <a class="brand" href="#inicio" aria-label="Nexo Formação — início">
                 <span class="brand-symbol" aria-hidden="true"><i></i><i></i></span>
-                <span>Atalaia <b>+</b> Gavião<small>portfólio técnico independente</small></span>
+                <span>Nexo <b>Formação</b><small>portfólio técnico independente</small></span>
             </a>
             <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-principal" data-menu><span></span><span></span><span></span><b class="sr-only">Abrir navegação</b></button>
             <nav id="nav-principal" class="main-nav" aria-label="Navegação principal" data-nav>
-                <a href="#produto">Produto</a><a href="#demonstracao">Demonstração</a><a href="#engenharia">Engenharia</a><a href="#equipe">Equipe</a><a class="nav-cta" href="examples/">Explorar código</a>
+                <a href="#jornada">Jornada</a><a href="#produto">Produto</a><a href="#demonstracao">Demonstração</a><a href="#engenharia">Engenharia</a><a href="#equipe">Equipe</a><a class="nav-cta" href="examples/">Explorar código</a>
             </nav>
         </div>
     </header>
@@ -31,13 +32,35 @@
             <div class="container hero-grid">
                 <div class="hero-copy reveal">
                     <p class="eyebrow"><span></span> Software que transforma registros em decisão</p>
-                    <h1>Uma visão inteira.<br><em>Do campo à estratégia.</em></h1>
-                    <p class="hero-lead">Atalaia e Gavião formam uma plataforma web e móvel para organizar jornadas educacionais complexas, acompanhar desempenho e manter a operação ativa mesmo quando a rede desaparece.</p>
+                    <h1>Uma visão inteira.<br><em>Das regiões remotas à decisão.</em></h1>
+                    <p class="hero-lead">Uma plataforma web e móvel para organizar jornadas educacionais distribuídas, acompanhar desempenho e manter a operação ativa mesmo quando a rede desaparece.</p>
                     <div class="hero-actions"><a class="button primary" href="#demonstracao">Ver o produto</a><a class="button ghost" href="examples/">Abrir laboratório técnico</a></div>
-                    <ul class="hero-proof" aria-label="Destaques técnicos"><li><strong>Web + Android</strong><span>uma experiência conectada</span></li><li><strong>Offline-first</strong><span>continuidade em campo</span></li><li><strong>Dados acionáveis</strong><span>do detalhe ao panorama</span></li></ul>
+                    <ul class="hero-proof" aria-label="Destaques técnicos"><li><strong>Web + Android</strong><span>uma experiência conectada</span></li><li><strong>Offline-first</strong><span>continuidade em regiões remotas</span></li><li><strong>Dados acionáveis</strong><span>do detalhe ao panorama</span></li></ul>
                 </div>
 
-                <div class="hero-console reveal" aria-label="Interface demonstrativa do painel Atalaia e Gavião">
+                <figure class="hero-visual reveal">
+                    <img class="hero-image" src="assets/media/hero-rede-distribuida.png" alt="Ilustração autoral de uma rede distribuída conectando equipes em regiões remotas, aplicativo móvel e análise de dados" width="2048" height="1152" fetchpriority="high">
+                    <figcaption>Ilustração autoral demonstrativa · pessoas, territórios e interfaces fictícios</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="trust-strip" aria-label="Princípios do produto"><div class="container"><p>Projetado para contextos que exigem</p><ul><li>rastreabilidade</li><li>continuidade</li><li>clareza</li><li>segurança por padrão</li></ul></div></section>
+
+        <section class="section transformation" id="transformacao">
+            <div class="container transformation-layout">
+                <div class="transformation-copy reveal">
+                    <p class="eyebrow dark">Transformação digital</p>
+                    <h2>Não é apenas digitalizar formulários.<br>É redesenhar a jornada.</h2>
+                    <p>O Nexo Formação conecta pessoas, processos e dados para substituir fluxos isolados por uma operação integrada, mensurável e resiliente.</p>
+                    <div class="transformation-pillars" aria-label="Pilares da transformação digital">
+                        <article><span>01</span><strong>Processos integrados</strong><small>Uma jornada contínua entre canais e etapas.</small></article>
+                        <article><span>02</span><strong>Dados confiáveis</strong><small>Validação, rastreabilidade e fonte comum.</small></article>
+                        <article><span>03</span><strong>Decisão apoiada</strong><small>Indicadores conectados à evidência original.</small></article>
+                        <article><span>04</span><strong>Continuidade digital</strong><small>Operação online e offline em regiões remotas.</small></article>
+                    </div>
+                </div>
+                <div class="hero-console transformation-console reveal" aria-label="Interface demonstrativa do painel Nexo Formação">
                     <div class="demo-label">Demonstração · dados fictícios</div>
                     <div class="console-top"><span class="console-logo"><i></i></span><div><strong>Painel de acompanhamento</strong><small>Ciclo demonstrativo 2026</small></div><span class="status-dot">Sincronizado</span></div>
                     <div class="console-body">
@@ -56,14 +79,33 @@
             </div>
         </section>
 
-        <section class="trust-strip" aria-label="Princípios do produto"><div class="container"><p>Projetado para contextos que exigem</p><ul><li>rastreabilidade</li><li>continuidade</li><li>clareza</li><li>segurança por padrão</li></ul></div></section>
+        <section class="section journey-showcase" id="jornada">
+            <div class="container journey-layout">
+                <div class="journey-copy reveal">
+                    <p class="eyebrow light">A jornada da informação</p>
+                    <h2>Muitos pontos de entrada.<br>Uma visão verificável.</h2>
+                    <p>O desafio não termina no registro. A plataforma preserva contexto, aplica as mesmas regras em cada canal e leva a decisão de volta à origem do dado.</p>
+                    <ol class="journey-steps" data-journey-steps>
+                        <li class="active"><span>01</span><div><strong>Captura</strong><small>Web e celular registram com identidade única.</small></div></li>
+                        <li><span>02</span><div><strong>Validação</strong><small>Autorização e consistência no servidor.</small></div></li>
+                        <li><span>03</span><div><strong>Consolidação</strong><small>Uma regra alimenta telas e relatórios.</small></div></li>
+                        <li><span>04</span><div><strong>Decisão</strong><small>Todo indicador conserva o caminho até a evidência.</small></div></li>
+                    </ol>
+                </div>
+                <figure class="journey-media reveal" data-journey-media>
+                    <img src="assets/media/jornada-dados.png" alt="Ilustração autoral do fluxo entre registros distribuídos, validação e visualização analítica" width="2048" height="1152" loading="lazy">
+                    <div class="journey-scan" aria-hidden="true"></div>
+                    <figcaption><span>Sequência visual demonstrativa</span><strong data-journey-caption>Capturar sem perder o contexto</strong></figcaption>
+                </figure>
+            </div>
+        </section>
 
         <section class="section product-story" id="produto">
             <div class="container">
-                <div class="section-intro reveal"><p class="eyebrow dark">O produto</p><h2>Dois olhares.<br>Uma mesma jornada.</h2><p>O Atalaia estrutura o ciclo e os processos. O Gavião transforma esse conjunto em visão gerencial, acompanhamento e ação móvel. Juntos, eliminam ilhas de informação sem simplificar demais a realidade.</p></div>
+                <div class="section-intro reveal"><p class="eyebrow dark">O produto</p><h2>Dois olhares.<br>Uma mesma jornada.</h2><p>Um núcleo estrutura o ciclo e os processos. O outro transforma esse conjunto em visão gerencial, acompanhamento e ação móvel. Juntos, eliminam ilhas de informação sem simplificar demais a realidade.</p></div>
                 <div class="product-duo">
-                    <article class="product-card atalaia reveal"><div class="product-index">01</div><div class="product-mark tower" aria-hidden="true"><i></i><i></i><i></i></div><p class="eyebrow">Atalaia</p><h3>Estrutura para acompanhar cada etapa.</h3><p>Organiza ciclos, grupos, avaliações, situações e relatórios em fluxos consistentes, com permissões e regras aplicadas no servidor.</p><ul><li>Gestão de ciclos e participantes</li><li>Avaliação e consolidação</li><li>Relatórios rastreáveis</li></ul></article>
-                    <article class="product-card gaviao reveal"><div class="product-index">02</div><div class="product-mark eye" aria-hidden="true"><i></i></div><p class="eyebrow">Gavião</p><h3>Contexto para decidir com confiança.</h3><p>Conecta indicadores, registros de acompanhamento e operação móvel para revelar tendências sem perder o caminho até a origem do dado.</p><ul><li>Painéis e séries comparáveis</li><li>Registros em campo</li><li>Operação online e offline</li></ul></article>
+                    <article class="product-card atalaia reveal"><div class="product-index">01</div><div class="product-mark tower" aria-hidden="true"><i></i><i></i><i></i></div><p class="eyebrow">Núcleo de gestão</p><h3>Estrutura para acompanhar cada etapa.</h3><p>Organiza ciclos, grupos, avaliações, situações e relatórios em fluxos consistentes, com permissões e regras aplicadas no servidor.</p><ul><li>Gestão de ciclos e participantes</li><li>Avaliação e consolidação</li><li>Relatórios rastreáveis</li></ul></article>
+                    <article class="product-card gaviao reveal"><div class="product-index">02</div><div class="product-mark eye" aria-hidden="true"><i></i></div><p class="eyebrow">Núcleo de decisão</p><h3>Contexto para decidir com confiança.</h3><p>Conecta indicadores, registros de acompanhamento e operação móvel para revelar tendências sem perder o caminho até a origem do dado.</p><ul><li>Painéis e séries comparáveis</li><li>Registros em regiões remotas</li><li>Operação online e offline</li></ul></article>
                 </div>
             </div>
         </section>
@@ -90,9 +132,29 @@
                         <div class="table-wrap"><table class="mock-table"><thead><tr><th>Participante</th><th>Atividade</th><th>Progresso</th><th>Situação</th><th>Atualização</th></tr></thead><tbody><tr><td><i class="avatar coral">P1</i><strong>Pessoa 014</strong><small>ID DEMO-014</small></td><td>Coordenação Alfa</td><td><span class="mini-progress"><i style="width:100%"></i></span> 8/8</td><td><span class="pill complete">Concluída</span></td><td>Hoje, 14:32</td></tr><tr><td><i class="avatar blue">P2</i><strong>Pessoa 027</strong><small>ID DEMO-027</small></td><td>Coordenação Beta</td><td><span class="mini-progress"><i style="width:50%"></i></span> 4/8</td><td><span class="pill partial">Parcial</span></td><td>Ontem, 17:08</td></tr><tr><td><i class="avatar gold">P3</i><strong>Pessoa 031</strong><small>ID DEMO-031</small></td><td>Apoio Gama</td><td><span class="mini-progress"><i style="width:12%"></i></span> 1/8</td><td><span class="pill pending">Pendente</span></td><td>12 out, 09:15</td></tr><tr><td><i class="avatar green">P4</i><strong>Pessoa 046</strong><small>ID DEMO-046</small></td><td>Coordenação Alfa</td><td><span class="mini-progress"><i style="width:75%"></i></span> 6/8</td><td><span class="pill partial">Parcial</span></td><td>11 out, 16:40</td></tr></tbody></table></div>
                     </div>
                     <div class="demo-panel mobile-panel" role="tabpanel" data-demo-panel="mobile" hidden>
-                        <div class="phone-mock"><div class="phone-status"><span>09:41</span><span>● ◔ ▰</span></div><div class="phone-head"><span class="phone-brand">AG</span><div><strong>Novo registro</strong><small>Grupo Horizonte</small></div><i class="offline-badge">offline</i></div><label>Participante<span>*</span><div class="phone-input"><b>Pessoa 027</b><small>DEMO-027</small></div></label><label>Categoria<span>*</span><div class="phone-select">Acompanhamento <b>⌄</b></div></label><label>Descrição<span>*</span><div class="phone-text">Demonstração de um registro salvo localmente e preparado para sincronização.</div></label><button type="button" class="phone-button">Salvar no dispositivo</button><div class="phone-queue"><span><i></i><b>1 item na fila</b></span><small>Será enviado quando a conexão voltar.</small></div></div>
+                        <div class="phone-mock"><div class="phone-status"><span>09:41</span><span>● ◔ ▰</span></div><div class="phone-head"><span class="phone-brand">NF</span><div><strong>Novo registro</strong><small>Grupo Horizonte</small></div><i class="offline-badge">offline</i></div><label>Participante<span>*</span><div class="phone-input"><b>Pessoa 027</b><small>DEMO-027</small></div></label><label>Categoria<span>*</span><div class="phone-select">Acompanhamento <b>⌄</b></div></label><label>Descrição<span>*</span><div class="phone-text">Demonstração de um registro salvo localmente e preparado para sincronização.</div></label><button type="button" class="phone-button">Salvar no dispositivo</button><div class="phone-queue"><span><i></i><b>1 item na fila</b></span><small>Será enviado quando a conexão voltar.</small></div></div>
                         <div class="mobile-copy"><span class="demo-label">Demonstração · sem dados reais</span><h3>Offline não é um erro.<br>É um estado do produto.</h3><p>O aplicativo carrega os dados necessários, protege a sessão local e cria registros com identidade única. Quando a rede retorna, a fila sincroniza sem duplicar o que já chegou ao servidor.</p><ul><li>armazenamento local protegido</li><li>reenvio com espera progressiva</li><li>estado visível para o usuário</li><li>autorização novamente validada no servidor</li></ul></div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section field-story" aria-labelledby="regioes-remotas-titulo">
+            <div class="container field-grid">
+                <figure class="field-image reveal">
+                    <img src="assets/media/operacao-regioes-remotas.png" alt="Ilustração autoral de uma profissional com uniforme genérico usando um celular durante atividade educacional em região remota" width="1152" height="1440" loading="lazy">
+                    <figcaption>Ilustração sintética demonstrativa · uniforme genérico · sem vínculo institucional</figcaption>
+                </figure>
+                <div class="field-copy reveal">
+                    <p class="eyebrow dark">Operação móvel resiliente</p>
+                    <h2 id="regioes-remotas-titulo">A rede pode desaparecer. O trabalho continua.</h2>
+                    <p>O canal móvel mantém dados necessários no aparelho, protege a sessão local e organiza uma fila segura. Quando a conexão retorna, cada item é validado novamente antes de chegar ao servidor.</p>
+                    <div class="field-sequence" aria-label="Etapas do funcionamento offline">
+                        <article><span>01</span><strong>Preparar</strong><small>Dados autorizados ficam disponíveis localmente.</small></article>
+                        <article><span>02</span><strong>Registrar</strong><small>Cada envio recebe identidade única.</small></article>
+                        <article><span>03</span><strong>Sincronizar</strong><small>Retentativas progressivas evitam perda e duplicação.</small></article>
+                    </div>
+                    <p class="synthetic-note"><strong>Demonstração pública:</strong> pessoas, interfaces, nomes e números desta página são fictícios.</p>
                 </div>
             </div>
         </section>
@@ -124,6 +186,6 @@
         <section class="section disclosure" id="escopo"><div class="container disclosure-grid reveal"><div><p class="eyebrow light">Escopo público seguro</p><h2>Um estudo de caso independente.</h2></div><div><p>Este portfólio não é um canal oficial nem representa, endossa ou reproduz qualquer organização. Interfaces, nomes, números e situações são demonstrativos e utilizam dados fictícios.</p><p>Não são publicados código privado, dados de produção, documentos, credenciais, marcas institucionais, fotografias operacionais, endereços internos ou topologia real.</p><a href="https://github.com/3xpedition/atalaia-portfolio">Consultar o repositório público →</a></div></div></section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-inner"><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>Atalaia <b>+</b> Gavião<small>estudo de caso técnico independente</small></span></div><p>Conteúdo demonstrativo · <span data-year>2026</span></p></div></footer>
+    <footer class="site-footer"><div class="container footer-inner"><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>Nexo <b>Formação</b><small>estudo de caso técnico independente</small></span></div><p>Conteúdo demonstrativo · <span data-year>2026</span></p></div></footer>
 </body>
 </html>

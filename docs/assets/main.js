@@ -101,6 +101,63 @@
         revealItems.forEach(function (item) { observer.observe(item); });
     }
 
+    var journeySteps = Array.from(document.querySelectorAll('[data-journey-steps] li'));
+    var journeyCaption = document.querySelector('[data-journey-caption]');
+    var journeyMedia = document.querySelector('[data-journey-media]');
+    var journeyMessages = [
+        'Capturar sem perder o contexto',
+        'Validar identidade, escopo e consistência',
+        'Consolidar sem criar versões concorrentes',
+        'Decidir com caminho de volta à evidência'
+    ];
+
+    if (!reducedMotion && journeySteps.length && journeyCaption && journeyMedia) {
+        var journeyIndex = 0;
+        var journeyTimer = 0;
+
+        var showJourneyStep = function (index) {
+            journeyIndex = index;
+            journeySteps.forEach(function (step, stepIndex) {
+                step.classList.toggle('active', stepIndex === journeyIndex);
+            });
+            journeyCaption.textContent = journeyMessages[journeyIndex];
+        };
+
+        var startJourney = function () {
+            if (journeyTimer) {
+                return;
+            }
+            journeyTimer = window.setInterval(function () {
+                showJourneyStep((journeyIndex + 1) % journeySteps.length);
+            }, 3200);
+        };
+
+        var stopJourney = function () {
+            window.clearInterval(journeyTimer);
+            journeyTimer = 0;
+        };
+
+        journeySteps.forEach(function (step, index) {
+            step.addEventListener('mouseenter', function () {
+                stopJourney();
+                showJourneyStep(index);
+            });
+            step.addEventListener('mouseleave', startJourney);
+        });
+
+        if ('IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                if (entries[0].isIntersecting) {
+                    startJourney();
+                } else {
+                    stopJourney();
+                }
+            }, { threshold: 0.3 }).observe(journeyMedia);
+        } else {
+            startJourney();
+        }
+    }
+
     document.querySelectorAll('[data-year]').forEach(function (item) {
         item.textContent = String(new Date().getFullYear());
     });

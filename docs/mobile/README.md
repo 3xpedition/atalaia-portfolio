@@ -1,6 +1,6 @@
 # Aplicativo Android — visão técnica
 
-O aplicativo demonstrado no portfólio apoia registros em campo e preserva a continuidade quando a conexão fica indisponível.
+O aplicativo demonstrado no portfólio apoia registros em regiões remotas e preserva a continuidade quando a conexão fica indisponível.
 
 ## Experiência offline-first
 

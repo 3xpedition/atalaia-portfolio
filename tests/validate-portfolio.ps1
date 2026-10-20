@@ -25,6 +25,10 @@ $requiredPaths = @(
     'docs/assets/favicon.svg',
     'docs/assets/styles.css',
     'docs/assets/main.js',
+    'docs/assets/media/README.md',
+    'docs/assets/media/hero-rede-distribuida.png',
+    'docs/assets/media/jornada-dados.png',
+    'docs/assets/media/operacao-regioes-remotas.png',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
     'docs/mobile/README.md',
@@ -49,7 +53,7 @@ $site = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 
 $examplesSite = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/examples/index.html')
 
 $requiredTerms = @(
-    'Atalaia', 'offline-first', 'Laravel', 'MySQL', 'Kotlin',
+    'Nexo', 'offline-first', 'Laravel', 'MySQL', 'Kotlin',
     'WorkManager', 'SQLCipher', 'dados fict',
     'estudo de caso independente'
 )
@@ -61,14 +65,27 @@ foreach ($term in $requiredTerms) {
 Assert-Portfolio -Condition ([regex]::IsMatch($site, 'Este portf.lio n.o . um canal oficial')) -Message 'Aviso de independencia ausente.'
 Assert-Portfolio -Condition ($site.Contains('representa, endossa ou reproduz qualquer')) -Message 'Limite de representacao ausente.'
 Assert-Portfolio -Condition ($examplesSite.Contains('Nenhum arquivo foi copiado')) -Message 'Aviso do laboratorio ausente.'
-Assert-Portfolio -Condition (-not $site.Contains('<img')) -Message 'A pagina principal nao deve usar imagens raster ou capturas.'
 Assert-Portfolio -Condition (-not $site.Contains('<video')) -Message 'A pagina principal nao deve usar videos reais.'
 Assert-Portfolio -Condition (-not $site.Contains('borrad')) -Message 'A pagina principal nao deve depender de conteudo borrado.'
 
-$forbiddenAssetExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.mp4', '.mov', '.avi', '.pdf', '.xlsx', '.xls')
-$forbiddenAssets = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File |
-    Where-Object { $forbiddenAssetExtensions -contains $_.Extension.ToLowerInvariant() }
-Assert-Portfolio -Condition ($forbiddenAssets.Count -eq 0) -Message "Arquivo visual, vídeo ou documento proibido em docs/: $($forbiddenAssets.FullName -join ', ')"
+$allowedRasterAssets = @(
+    'docs/assets/media/hero-rede-distribuida.png',
+    'docs/assets/media/jornada-dados.png',
+    'docs/assets/media/operacao-regioes-remotas.png'
+)
+$controlledAssetExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.mp4', '.mov', '.avi', '.pdf', '.xlsx', '.xls')
+$controlledAssets = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File |
+    Where-Object { $controlledAssetExtensions -contains $_.Extension.ToLowerInvariant() }
+foreach ($asset in $controlledAssets) {
+    $relativeAsset = $asset.FullName.Substring($repositoryRoot.Length + 1).Replace('\', '/')
+    Assert-Portfolio -Condition ($allowedRasterAssets -contains $relativeAsset) -Message "Midia publica sem autorizacao no manifesto: $relativeAsset"
+}
+
+$mediaManifest = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/assets/media/README.md')
+foreach ($relativeAsset in $allowedRasterAssets) {
+    $assetName = Split-Path -Leaf $relativeAsset
+    Assert-Portfolio -Condition ($mediaManifest.Contains($assetName)) -Message "Midia sem registro de procedencia: $assetName"
+}
 
 $textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt', '.kt', '.svg', '.ps1')
 $publicFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File |
