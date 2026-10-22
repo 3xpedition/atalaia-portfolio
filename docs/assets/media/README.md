@@ -20,8 +20,10 @@ Elas não reproduzem ambientes, pessoas, sistemas, marcas ou dados reais.
 | `produto-nucleo-decisao.png` | Núcleo de decisão do produto | Gerada e editada com OpenAI ImageGen em 22/10/2026 | Centro de acompanhamento sintético; monitores com mapas e painéis claros de apoio à decisão; sem arma, insígnia, organização, unidade ou dado real |
 
 | `equipe-joao-victor.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
+| `equipe-joao-victor-neutro.png` | Seção da equipe | Retrato editado com OpenAI ImageGen em 22/10/2026, a partir de fotografia autorizada | Identidade preservada; roupa civil e fundo neutro; sem uniforme, insígnia, organização ou símbolo institucional |
 | `equipe-alexandre-ferreira.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
 | `equipe-natanael-cirino.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
+| `equipe-natanael-cirino-neutro.png` | Seção da equipe | Retrato editado com OpenAI ImageGen em 22/10/2026, a partir de fotografia autorizada | Identidade preservada; sorriso discreto, roupa civil e fundo neutro; sem uniforme, organização ou símbolo institucional |
 
 ## Política
 

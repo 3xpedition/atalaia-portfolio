@@ -284,8 +284,8 @@ img, svg { display: block; max-width: 100%; }
 .demo-tabs button[aria-selected="true"] { color: #0b3732; background: var(--mint); }
 .demo-panel { min-height: 530px; padding: 28px; color: var(--ink); background: #f1f5f3; }
 .demo-panel[hidden] { display: none; }
-.interface-showcase { display: grid; align-items: center; gap: clamp(28px, 5vw, 72px); min-height: 474px; grid-template-columns: minmax(245px, .58fr) minmax(0, 1.42fr); }
-.interface-copy h3, .assessment-head h3 { margin: 15px 0 12px; font-family: Georgia, serif; font-size: clamp(2rem, 3vw, 3.6rem); font-weight: 400; line-height: .98; }
+.interface-showcase { display: grid; align-items: center; gap: clamp(24px, 3vw, 44px); min-height: 474px; grid-template-columns: minmax(215px, .42fr) minmax(0, 1.58fr); }
+.interface-copy h3, .assessment-head h3 { margin: 15px 0 12px; font-family: Georgia, serif; font-size: clamp(1.85rem, 2.5vw, 3.15rem); font-weight: 400; line-height: .98; }
 .interface-copy > p, .assessment-head p { color: var(--muted); font-size: .86rem; line-height: 1.75; }
 .interface-copy ul { margin: 26px 0 0; padding: 0; border-top: 1px solid #d7e0dd; list-style: none; }
 .interface-copy li { display: grid; gap: 3px; padding: 13px 0; border-bottom: 1px solid #d7e0dd; grid-template-columns: 76px 1fr; font-size: .7rem; }
@@ -294,7 +294,7 @@ img, svg { display: block; max-width: 100%; }
 .interface-frame::before { content: ""; display: block; height: 28px; border-bottom: 1px solid #dce5e2; background: #f7faf9; }
 .window-dots { position: absolute; top: 11px; left: 14px; display: flex; gap: 5px; }
 .window-dots i { width: 7px; height: 7px; border-radius: 50%; background: #df765e; }.window-dots i:nth-child(2) { background: #e7b746; }.window-dots i:nth-child(3) { background: #69b79f; }
-.interface-frame img { display: block; width: 100%; aspect-ratio: 3 / 2; object-fit: cover; object-position: center; }
+.interface-frame img { display: block; width: 100%; height: auto; object-fit: contain; }
 .interface-frame figcaption { position: absolute; right: 12px; bottom: 10px; padding: 6px 9px; color: white; border-radius: 999px; background: rgba(8,30,37,.78); font-size: .52rem; }
 .assessment-demo { min-height: 474px; }
 .assessment-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 25px; padding-bottom: 22px; }
