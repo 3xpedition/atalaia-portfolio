@@ -16,8 +16,8 @@ Elas não reproduzem ambientes, pessoas, sistemas, marcas ou dados reais.
 | `jornada-entrada-distribuida.png` | Entrada da jornada da informação | Edição autoral com OpenAI ImageGen em 21/10/2026 | Pessoas sintéticas em uniforme genérico sem insígnias, posto tecnológico e marca neutros; sem arma, organização ou identidade real |
 | `jornada-cobertura-nacional.png` | Validação e consolidação em escala nacional | Edição autoral com OpenAI ImageGen em 21/10/2026 | Painel claro inspirado na linguagem visual do produto, com mapa público estilizado; sem unidades, siglas internas ou dados pessoais |
 | `jornada-decisao-verificavel.png` | Decisão apoiada por informação verificável | Edição autoral com OpenAI ImageGen em 21/10/2026 | Fluxo claro e genérico de captura, validação, consolidação e decisão; sem brasão, coordenada real, sistema real ou identificação institucional |
-| `produto-nucleo-gestao.png` | Núcleo de gestão do produto | Gerada com OpenAI ImageGen em 21/10/2026 | Centro de planejamento e pessoas sintéticas em uniforme genérico; sem arma, insígnia, organização, unidade ou dado real |
-| `produto-nucleo-decisao.png` | Núcleo de decisão do produto | Gerada com OpenAI ImageGen em 21/10/2026 | Centro de acompanhamento e pessoas sintéticas em uniforme genérico; sem arma, insígnia, organização, unidade ou dado real |
+| `produto-nucleo-gestao.png` | Núcleo de gestão do produto | Gerada e editada com OpenAI ImageGen em 22/10/2026 | Centro de planejamento sintético; monitores com painéis educacionais claros, mapa e dados genéricos; sem arma, insígnia, organização, unidade ou dado real |
+| `produto-nucleo-decisao.png` | Núcleo de decisão do produto | Gerada e editada com OpenAI ImageGen em 22/10/2026 | Centro de acompanhamento sintético; monitores com mapas e painéis claros de apoio à decisão; sem arma, insígnia, organização, unidade ou dado real |
 
 ## Política
 
