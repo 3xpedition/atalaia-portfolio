@@ -29,6 +29,14 @@ $requiredPaths = @(
     'docs/assets/media/hero-rede-distribuida.png',
     'docs/assets/media/jornada-dados.png',
     'docs/assets/media/operacao-regioes-remotas.png',
+    'docs/assets/media/painel-jornada-integrada.png',
+    'docs/assets/media/mobile-login-demonstrativo.png',
+    'docs/assets/media/mobile-consulta-demonstrativa.png',
+    'docs/assets/media/jornada-entrada-distribuida.png',
+    'docs/assets/media/jornada-cobertura-nacional.png',
+    'docs/assets/media/jornada-decisao-verificavel.png',
+    'docs/assets/media/produto-nucleo-gestao.png',
+    'docs/assets/media/produto-nucleo-decisao.png',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
     'docs/mobile/README.md',
@@ -53,7 +61,7 @@ $site = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 
 $examplesSite = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/examples/index.html')
 
 $requiredTerms = @(
-    'Nexo', 'offline-first', 'Laravel', 'MySQL', 'Kotlin',
+    'Atalaia', 'Gavi', 'offline-first', 'Laravel', 'MySQL', 'Kotlin',
     'WorkManager', 'SQLCipher', 'dados fict',
     'estudo de caso independente'
 )
@@ -71,7 +79,15 @@ Assert-Portfolio -Condition (-not $site.Contains('borrad')) -Message 'A pagina p
 $allowedRasterAssets = @(
     'docs/assets/media/hero-rede-distribuida.png',
     'docs/assets/media/jornada-dados.png',
-    'docs/assets/media/operacao-regioes-remotas.png'
+    'docs/assets/media/operacao-regioes-remotas.png',
+    'docs/assets/media/painel-jornada-integrada.png',
+    'docs/assets/media/mobile-login-demonstrativo.png',
+    'docs/assets/media/mobile-consulta-demonstrativa.png',
+    'docs/assets/media/jornada-entrada-distribuida.png',
+    'docs/assets/media/jornada-cobertura-nacional.png',
+    'docs/assets/media/jornada-decisao-verificavel.png',
+    'docs/assets/media/produto-nucleo-gestao.png',
+    'docs/assets/media/produto-nucleo-decisao.png'
 )
 $controlledAssetExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.mp4', '.mov', '.avi', '.pdf', '.xlsx', '.xls')
 $controlledAssets = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File |

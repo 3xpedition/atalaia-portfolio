@@ -1,4 +1,4 @@
-# Product brief — Nexo Formação
+# Product brief — Atalaia e Gavião
 
 ## Objetivo
 
@@ -12,20 +12,20 @@ Apresentar competências de produto e engenharia por meio de um estudo de caso p
 
 ## Proposta de valor
 
-Nexo Formação representa dois pontos de vista de uma mesma plataforma: estruturação da jornada e visão para decisão. O portfólio demonstra gestão de ciclos, avaliações, painéis, relatórios e continuidade móvel offline.
+Atalaia e Gavião representam dois pontos de vista de uma mesma plataforma: estruturação da jornada e visão para decisão. O portfólio demonstra gestão de ciclos, avaliações, painéis, relatórios e continuidade móvel offline.
 
 ## Direção visual
 
 - identidade autoral em verde-menta, azul profundo, coral e papel;
 - símbolos geométricos próprios, sem heráldica ou marcas institucionais;
-- mockups construídos em HTML/CSS, com dados sintéticos;
+- mockups construídos em HTML/CSS ou sanitizados como ilustrações, sempre com dados sintéticos;
 - imagens autorais demonstrativas com procedência e restrições documentadas;
 - tipografia editorial para narrativa e tipografia de sistema para interfaces;
 - demonstrações identificadas explicitamente como fictícias.
 
 ## Regras editoriais
 
-1. Não usar screenshots, vídeos ou fotografias de ambientes reais, mesmo borrados.
+1. Não usar screenshots, vídeos ou fotografias que identifiquem ambientes reais; qualquer referência visual deve ser integralmente sanitizada e registrada no manifesto.
 2. Não usar brasões, logotipos, uniformes, postos, nomes de organizações ou símbolos de terceiros.
 3. Não reproduzir literalmente menus, perfis, rotas, URLs, topologia ou fluxos privados.
 4. Usar somente nomes e identificadores sintéticos, como `Pessoa 014` e `DEMO-014`.

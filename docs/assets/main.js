@@ -104,10 +104,10 @@
     var journeySteps = Array.from(document.querySelectorAll('[data-journey-steps] li'));
     var journeyCaption = document.querySelector('[data-journey-caption]');
     var journeyMedia = document.querySelector('[data-journey-media]');
+    var journeyImages = Array.from(document.querySelectorAll('[data-journey-image]'));
     var journeyMessages = [
-        'Capturar sem perder o contexto',
-        'Validar identidade, escopo e consistência',
-        'Consolidar sem criar versões concorrentes',
+        'Registrar na origem sem perder o contexto',
+        'Validar e consolidar uma visão nacional',
         'Decidir com caminho de volta à evidência'
     ];
 
@@ -119,6 +119,9 @@
             journeyIndex = index;
             journeySteps.forEach(function (step, stepIndex) {
                 step.classList.toggle('active', stepIndex === journeyIndex);
+            });
+            journeyImages.forEach(function (image, imageIndex) {
+                image.classList.toggle('active', imageIndex === journeyIndex);
             });
             journeyCaption.textContent = journeyMessages[journeyIndex];
         };

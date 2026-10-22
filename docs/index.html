@@ -3,11 +3,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Nexo Formação: portfólio técnico independente sobre uma plataforma web e móvel para jornadas educacionais distribuídas, análise de desempenho e operação offline.">
+    <meta name="description" content="Atalaia e Gavião: portfólio técnico independente sobre uma plataforma web e móvel para jornadas educacionais distribuídas, análise de desempenho e operação offline.">
     <meta name="theme-color" content="#081b24">
-    <title>Nexo Formação — tecnologia para jornadas distribuídas</title>
+    <title>Atalaia e Gavião — tecnologia para jornadas distribuídas</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="assets/media/hero-rede-distribuida.png" as="image" fetchpriority="high">
+    <link rel="preload" href="assets/media/painel-jornada-integrada.png?v=2" as="image" fetchpriority="high">
     <link rel="stylesheet" href="assets/styles.css?v=21">
     <script src="assets/main.js?v=21" defer></script>
 </head>
@@ -15,9 +15,9 @@
     <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
     <header class="site-header" data-header>
         <div class="container header-inner">
-            <a class="brand" href="#inicio" aria-label="Nexo Formação — início">
+            <a class="brand" href="#inicio" aria-label="Atalaia e Gavião — início">
                 <span class="brand-symbol" aria-hidden="true"><i></i><i></i></span>
-                <span>Nexo <b>Formação</b><small>portfólio técnico independente</small></span>
+                <span>Atalaia <b>&amp;</b> Gavião<small>portfólio técnico independente</small></span>
             </a>
             <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-principal" data-menu><span></span><span></span><span></span><b class="sr-only">Abrir navegação</b></button>
             <nav id="nav-principal" class="main-nav" aria-label="Navegação principal" data-nav>
@@ -38,10 +38,20 @@
                     <ul class="hero-proof" aria-label="Destaques técnicos"><li><strong>Web + Android</strong><span>uma experiência conectada</span></li><li><strong>Offline-first</strong><span>continuidade em regiões remotas</span></li><li><strong>Dados acionáveis</strong><span>do detalhe ao panorama</span></li></ul>
                 </div>
 
-                <figure class="hero-visual reveal">
-                    <img class="hero-image" src="assets/media/hero-rede-distribuida.png" alt="Ilustração autoral de uma rede distribuída conectando equipes em regiões remotas, aplicativo móvel e análise de dados" width="2048" height="1152" fetchpriority="high">
-                    <figcaption>Ilustração autoral demonstrativa · pessoas, territórios e interfaces fictícios</figcaption>
-                </figure>
+                <div class="hero-visual hero-showcase reveal" aria-label="Composição demonstrativa do painel web e do aplicativo móvel">
+                    <div class="showcase-orbit" aria-hidden="true"></div>
+                    <figure class="showcase-browser">
+                        <div class="showcase-window"><span></span><span></span><span></span><small>Atalaia &amp; Gavião · visão consolidada</small></div>
+                        <img src="assets/media/painel-jornada-integrada.png?v=2" alt="Painel demonstrativo com indicadores consolidados da jornada de formação" width="1802" height="873" fetchpriority="high">
+                    </figure>
+                    <figure class="showcase-mobile">
+                        <span class="showcase-speaker" aria-hidden="true"></span>
+                        <img src="assets/media/mobile-consulta-demonstrativa.png?v=2" alt="Aplicativo demonstrativo consultando registros de um participante" width="889" height="1769" fetchpriority="high">
+                    </figure>
+                    <span class="showcase-tag showcase-tag-web"><strong>Web</strong> visão integrada</span>
+                    <span class="showcase-tag showcase-tag-mobile"><strong>Android</strong> operação móvel</span>
+                    <p class="showcase-caption">Interfaces públicas demonstrativas · dados e identidades genéricos</p>
+                </div>
             </div>
         </section>
 
@@ -49,54 +59,50 @@
 
         <section class="section transformation" id="transformacao">
             <div class="container transformation-layout">
-                <div class="transformation-copy reveal">
+                <header class="transformation-heading reveal">
                     <p class="eyebrow dark">Transformação digital</p>
                     <h2>Não é apenas digitalizar formulários.<br>É redesenhar a jornada.</h2>
-                    <p>O Nexo Formação conecta pessoas, processos e dados para substituir fluxos isolados por uma operação integrada, mensurável e resiliente.</p>
-                    <div class="transformation-pillars" aria-label="Pilares da transformação digital">
-                        <article><span>01</span><strong>Processos integrados</strong><small>Uma jornada contínua entre canais e etapas.</small></article>
-                        <article><span>02</span><strong>Dados confiáveis</strong><small>Validação, rastreabilidade e fonte comum.</small></article>
-                        <article><span>03</span><strong>Decisão apoiada</strong><small>Indicadores conectados à evidência original.</small></article>
-                        <article><span>04</span><strong>Continuidade digital</strong><small>Operação online e offline em regiões remotas.</small></article>
-                    </div>
-                </div>
-                <div class="hero-console transformation-console reveal" aria-label="Interface demonstrativa do painel Nexo Formação">
-                    <div class="demo-label">Demonstração · dados fictícios</div>
-                    <div class="console-top"><span class="console-logo"><i></i></span><div><strong>Painel de acompanhamento</strong><small>Ciclo demonstrativo 2026</small></div><span class="status-dot">Sincronizado</span></div>
-                    <div class="console-body">
-                        <aside class="console-nav" aria-hidden="true"><i class="active"></i><i></i><i></i><i></i><i></i></aside>
-                        <div class="console-content">
-                            <div class="console-heading"><div><small>Visão consolidada</small><strong>Panorama do ciclo</strong></div><button type="button">Grupo Horizonte⌄</button></div>
-                            <div class="metric-row"><article><span>Participação</span><strong>94%</strong><small class="up">↑ 3,2%</small></article><article><span>Registros avaliados</span><strong>1.284</strong><small>últimos 30 dias</small></article><article><span>Pendências</span><strong>18</strong><small class="warn">atenção necessária</small></article></div>
-                            <div class="chart-card">
-                                <div class="chart-title"><strong>Evolução por período</strong><span>● Desempenho&nbsp;&nbsp; ● Participação</span></div>
-                                <svg viewBox="0 0 600 190" role="img" aria-label="Gráfico demonstrativo de evolução"><defs><linearGradient id="area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#26c6a5" stop-opacity=".28"/><stop offset="1" stop-color="#26c6a5" stop-opacity="0"/></linearGradient></defs><g class="grid"><path d="M30 30H580M30 75H580M30 120H580M30 165H580"/></g><path class="area" d="M30 145C85 134 104 118 152 122S230 92 274 101S353 55 397 70S474 42 580 34V170H30Z"/><path class="line-a" d="M30 145C85 134 104 118 152 122S230 92 274 101S353 55 397 70S474 42 580 34"/><path class="line-b" d="M30 155C90 148 114 140 154 142S224 119 280 123S356 91 402 95S490 72 580 76"/></svg>
-                            </div>
-                            <div class="record-strip"><span><i class="avatar">P1</i><b>Pessoa 014</b><small>Registro atualizado</small></span><span class="pill complete">Concluído</span><span>Hoje, 14:32</span></div>
+                </header>
+                <div class="transformation-body">
+                    <div class="transformation-copy reveal">
+                        <p>Atalaia e Gavião conectam pessoas, processos e dados para substituir fluxos isolados por uma operação integrada, mensurável e resiliente.</p>
+                        <div class="transformation-pillars" aria-label="Pilares da transformação digital">
+                            <article><span>01</span><strong>Processos integrados</strong><small>Uma jornada contínua entre canais e etapas.</small></article>
+                            <article><span>02</span><strong>Dados confiáveis</strong><small>Validação, rastreabilidade e fonte comum.</small></article>
+                            <article><span>03</span><strong>Decisão apoiada</strong><small>Indicadores conectados à evidência original.</small></article>
+                            <article><span>04</span><strong>Continuidade digital</strong><small>Operação online e offline em regiões remotas.</small></article>
                         </div>
                     </div>
+                    <figure class="transformation-figure reveal">
+                        <img src="assets/media/painel-jornada-integrada.png?v=2" alt="Painel visual de jornada integrada, com indicadores de participação, evolução, competências e experiências de liderança" width="1802" height="873" loading="lazy">
+                    </figure>
                 </div>
             </div>
         </section>
 
         <section class="section journey-showcase" id="jornada">
             <div class="container journey-layout">
-                <div class="journey-copy reveal">
+                <header class="journey-heading reveal">
                     <p class="eyebrow light">A jornada da informação</p>
                     <h2>Muitos pontos de entrada.<br>Uma visão verificável.</h2>
-                    <p>O desafio não termina no registro. A plataforma preserva contexto, aplica as mesmas regras em cada canal e leva a decisão de volta à origem do dado.</p>
-                    <ol class="journey-steps" data-journey-steps>
-                        <li class="active"><span>01</span><div><strong>Captura</strong><small>Web e celular registram com identidade única.</small></div></li>
-                        <li><span>02</span><div><strong>Validação</strong><small>Autorização e consistência no servidor.</small></div></li>
-                        <li><span>03</span><div><strong>Consolidação</strong><small>Uma regra alimenta telas e relatórios.</small></div></li>
-                        <li><span>04</span><div><strong>Decisão</strong><small>Todo indicador conserva o caminho até a evidência.</small></div></li>
-                    </ol>
+                </header>
+                <div class="journey-body">
+                    <div class="journey-copy reveal">
+                        <p>O desafio não termina no registro. A plataforma preserva contexto, aplica as mesmas regras em cada canal e leva a decisão de volta à origem do dado.</p>
+                        <ol class="journey-steps" data-journey-steps>
+                            <li class="active"><span>01</span><div><strong>Entrada distribuída</strong><small>Web e celular registram com identidade única.</small></div></li>
+                            <li><span>02</span><div><strong>Validação e consolidação</strong><small>Autorização, consistência e uma fonte comum em escala nacional.</small></div></li>
+                            <li><span>03</span><div><strong>Decisão verificável</strong><small>Todo indicador conserva o caminho até a evidência.</small></div></li>
+                        </ol>
+                    </div>
+                    <figure class="journey-media reveal" data-journey-media>
+                        <img class="journey-image active" data-journey-image src="assets/media/jornada-entrada-distribuida.png?v=2" alt="Portal demonstrativo de entrada distribuída em posto tecnológico remoto" width="1854" height="848" loading="lazy">
+                        <img class="journey-image" data-journey-image src="assets/media/jornada-cobertura-nacional.png?v=2" alt="Painel demonstrativo de cobertura nacional com linguagem visual de comando e controle" width="1808" height="870" loading="lazy">
+                        <img class="journey-image" data-journey-image src="assets/media/jornada-decisao-verificavel.png?v=2" alt="Interface demonstrativa de comando e controle da jornada até a decisão verificável" width="1560" height="1008" loading="lazy">
+                        <div class="journey-scan" aria-hidden="true"></div>
+                        <figcaption><span>Sequência visual demonstrativa</span><strong data-journey-caption>Registrar na origem sem perder o contexto</strong></figcaption>
+                    </figure>
                 </div>
-                <figure class="journey-media reveal" data-journey-media>
-                    <img src="assets/media/jornada-dados.png" alt="Ilustração autoral do fluxo entre registros distribuídos, validação e visualização analítica" width="2048" height="1152" loading="lazy">
-                    <div class="journey-scan" aria-hidden="true"></div>
-                    <figcaption><span>Sequência visual demonstrativa</span><strong data-journey-caption>Capturar sem perder o contexto</strong></figcaption>
-                </figure>
             </div>
         </section>
 
@@ -104,16 +110,45 @@
             <div class="container">
                 <div class="section-intro reveal"><p class="eyebrow dark">O produto</p><h2>Dois olhares.<br>Uma mesma jornada.</h2><p>Um núcleo estrutura o ciclo e os processos. O outro transforma esse conjunto em visão gerencial, acompanhamento e ação móvel. Juntos, eliminam ilhas de informação sem simplificar demais a realidade.</p></div>
                 <div class="product-duo">
-                    <article class="product-card atalaia reveal"><div class="product-index">01</div><div class="product-mark tower" aria-hidden="true"><i></i><i></i><i></i></div><p class="eyebrow">Núcleo de gestão</p><h3>Estrutura para acompanhar cada etapa.</h3><p>Organiza ciclos, grupos, avaliações, situações e relatórios em fluxos consistentes, com permissões e regras aplicadas no servidor.</p><ul><li>Gestão de ciclos e participantes</li><li>Avaliação e consolidação</li><li>Relatórios rastreáveis</li></ul></article>
-                    <article class="product-card gaviao reveal"><div class="product-index">02</div><div class="product-mark eye" aria-hidden="true"><i></i></div><p class="eyebrow">Núcleo de decisão</p><h3>Contexto para decidir com confiança.</h3><p>Conecta indicadores, registros de acompanhamento e operação móvel para revelar tendências sem perder o caminho até a origem do dado.</p><ul><li>Painéis e séries comparáveis</li><li>Registros em regiões remotas</li><li>Operação online e offline</li></ul></article>
+                    <article class="product-card atalaia reveal"><figure class="product-visual"><img src="assets/media/produto-nucleo-gestao.png" alt="Centro de planejamento demonstrativo acompanhando ciclos e cobertura nacional" width="1672" height="941" loading="lazy"><span class="product-index">01</span></figure><div class="product-content"><p class="eyebrow">Núcleo de gestão</p><h3>Estrutura cada etapa.</h3><p>Organiza ciclos, participantes, avaliações e relatórios com regras e permissões consistentes.</p><ul><li>Gestão do ciclo</li><li>Validação e consolidação</li><li>Rastreabilidade</li></ul></div></article>
+                    <article class="product-card gaviao reveal"><figure class="product-visual"><img src="assets/media/produto-nucleo-decisao.png" alt="Centro de acompanhamento demonstrativo com painéis analíticos e operação móvel" width="1672" height="941" loading="lazy"><span class="product-index">02</span></figure><div class="product-content"><p class="eyebrow">Núcleo de decisão</p><h3>Transforma dados em contexto.</h3><p>Conecta indicadores, registros e operação móvel para revelar tendências sem perder a origem do dado.</p><ul><li>Visão comparável</li><li>Acompanhamento distribuído</li><li>Operação online e offline</li></ul></div></article>
                 </div>
             </div>
         </section>
 
         <section class="section workflow-section">
-            <div class="container workflow-grid">
-                <div class="workflow-copy reveal"><p class="eyebrow dark">Uma linha contínua</p><h2>Registrar é só o começo.</h2><p>O valor aparece quando cada registro chega validado, contextualizado e pronto para sustentar uma decisão.</p><ol class="workflow-list"><li class="active"><span>01</span><div><strong>Capturar</strong><small>Web ou celular, com ou sem conexão.</small></div></li><li><span>02</span><div><strong>Validar</strong><small>Regras consistentes e retorno claro.</small></div></li><li><span>03</span><div><strong>Consolidar</strong><small>Uma fonte comum para tela e relatório.</small></div></li><li><span>04</span><div><strong>Compreender</strong><small>Indicadores que levam ao detalhe.</small></div></li></ol></div>
-                <div class="flow-canvas reveal" aria-label="Fluxo demonstrativo do produto"><div class="flow-node source"><span>Entrada</span><strong>Registro móvel</strong><small>identidade única</small></div><div class="flow-line one"></div><div class="flow-node process"><span>Processamento</span><strong>Regras de domínio</strong><small>validação + autorização</small></div><div class="flow-line two"></div><div class="flow-node result"><span>Resultado</span><strong>Painel e relatório</strong><small>mesma regra, várias saídas</small></div><div class="flow-pulse p1"></div><div class="flow-pulse p2"></div></div>
+            <div class="container operation-layout">
+                <header class="operation-heading reveal"><p class="eyebrow light">Integração operacional</p><h2>Da origem ao comando.<br>Um fluxo sem ruptura.</h2><p>A informação pode nascer sem conexão, atravessar validações e chegar à decisão com identidade, contexto e histórico preservados.</p></header>
+                <div class="operation-board reveal" aria-label="Fluxo técnico demonstrativo da origem do registro até a decisão">
+                    <div class="operation-reticle" aria-hidden="true"></div>
+                    <div class="operation-track">
+                        <article class="operation-node"><div class="operation-node-top"><span>01</span><i>OR</i></div><small>Origem</small><h3>Entrada distribuída</h3><p>Web ou Android, inclusive sem conexão.</p><em>registro identificado</em></article>
+                        <article class="operation-node"><div class="operation-node-top"><span>02</span><i>PL</i></div><small>Dispositivo</small><h3>Proteção local</h3><p>Sessão protegida e fila persistente.</p><em>aguardando rede</em></article>
+                        <article class="operation-node"><div class="operation-node-top"><span>03</span><i>TX</i></div><small>Transmissão</small><h3>Sincronização segura</h3><p>Retentativas controladas, sem duplicidade.</p><em>envio confirmado</em></article>
+                        <article class="operation-node"><div class="operation-node-top"><span>04</span><i>VA</i></div><small>Servidor</small><h3>Validação central</h3><p>Identidade, permissão, escopo e consistência.</p><em>acesso autorizado</em></article>
+                        <article class="operation-node"><div class="operation-node-top"><span>05</span><i>VI</i></div><small>Núcleo</small><h3>Visão integrada</h3><p>Uma fonte para consultas, painéis e relatórios.</p><em>dado consolidado</em></article>
+                        <article class="operation-node"><div class="operation-node-top"><span>06</span><i>DV</i></div><small>Comando</small><h3>Decisão verificável</h3><p>Indicadores ligados à evidência original.</p><em>ciclo concluído</em></article>
+                    </div>
+                    <span class="operation-signal" aria-hidden="true"></span>
+                </div>
+                <div class="operation-assurances reveal" aria-label="Garantias do fluxo"><article><span>01</span><strong>Continuidade</strong><p>A operação não para quando a conexão desaparece.</p></article><article><span>02</span><strong>Segurança</strong><p>O servidor reaplica identidade, permissão e escopo.</p></article><article><span>03</span><strong>Rastreabilidade</strong><p>A decisão conserva o caminho de volta à evidência.</p></article></div>
+                <section class="technology-arsenal reveal" aria-labelledby="technology-title">
+                    <header class="technology-heading">
+                        <div><p class="eyebrow light">Engenharia da solução</p><h3 id="technology-title">Tecnologias que sustentam a jornada.</h3></div>
+                        <p>Uma arquitetura web e móvel, construída para integrar bases, continuar operando em regiões remotas e proteger a informação em trânsito e no dispositivo.</p>
+                    </header>
+                    <div class="technology-grid">
+                        <article class="technology-card"><span>01 · WEB</span><h4>Aplicação institucional</h4><p>PHP, Laravel, Blade, JavaScript, Bootstrap e jQuery compõem os fluxos operacionais, painéis e relatórios.</p><ul><li>HTML5 e CSS3</li><li>Laravel Mix</li><li>PDF e planilhas</li></ul></article>
+                        <article class="technology-card"><span>02 · DADOS</span><h4>Integração multibanco</h4><p>MySQL, Eloquent ORM, SQL estruturado, relacionamentos e consultas analíticas conectam os diferentes ciclos.</p><ul><li>Bases especializadas</li><li>Views e triggers</li><li>JSON e índices</li></ul></article>
+                        <article class="technology-card"><span>03 · API</span><h4>Contrato entre canais</h4><p>API REST em PHP, respostas JSON e autenticação Bearer ligam o sistema web ao aplicativo Android.</p><ul><li>Escopo no servidor</li><li>Sincronização incremental</li><li>Controle de versão</li></ul></article>
+                        <article class="technology-card"><span>04 · MOBILE</span><h4>Operação em movimento</h4><p>Kotlin e Jetpack Compose entregam uma interface Android nativa, com Retrofit, OkHttp e Gson na comunicação.</p><ul><li>WorkManager</li><li>Biometria AndroidX</li><li>Offline-first</li></ul></article>
+                        <article class="technology-card technology-card-security"><span>05 · PROTEÇÃO</span><h4>Segurança em profundidade</h4><p>HTTPS/TLS protege o transporte; SQLCipher protege a base local; Android Keystore guarda chaves fora do código.</p><ul><li>AES-256-GCM e AES-SIV</li><li>PBKDF2 com HMAC-SHA-256</li><li>Tokens armazenados por hash SHA-256</li><li>Certificados X.509</li></ul></article>
+                        <article class="technology-card"><span>06 · RESILIÊNCIA</span><h4>Continuidade controlada</h4><p>Filas persistentes, timeouts explícitos, retentativas progressivas e reconciliação preservam o trabalho sem rede.</p><ul><li>SQLite criptografado</li><li>Cache local</li><li>Envio sem duplicidade</li></ul></article>
+                        <article class="technology-card"><span>07 · QUALIDADE</span><h4>Verificação contínua</h4><p>Testes automatizados e análise de código reduzem regressões nos canais web, API e Android.</p><ul><li>PHPUnit e Jest</li><li>JUnit, Espresso e MockWebServer</li><li>PHPStan e PHPCS</li></ul></article>
+                        <article class="technology-card"><span>08 · OPERAÇÃO</span><h4>Ambiente reproduzível</h4><p>Docker, Nginx, PHP-FPM, Composer, Gradle e Git apoiam desenvolvimento, empacotamento e publicação controlada.</p><ul><li>Dependências locais</li><li>APK assinado</li><li>Logs técnicos sem segredos</li></ul></article>
+                    </div>
+                    <p class="technology-note"><strong>Decisão continua humana.</strong> A solução organiza, valida e apresenta evidências; não utiliza inteligência artificial nativa para avaliar pessoas ou decidir por seus responsáveis.</p>
+                </section>
             </div>
         </section>
 
@@ -132,7 +167,10 @@
                         <div class="table-wrap"><table class="mock-table"><thead><tr><th>Participante</th><th>Atividade</th><th>Progresso</th><th>Situação</th><th>Atualização</th></tr></thead><tbody><tr><td><i class="avatar coral">P1</i><strong>Pessoa 014</strong><small>ID DEMO-014</small></td><td>Coordenação Alfa</td><td><span class="mini-progress"><i style="width:100%"></i></span> 8/8</td><td><span class="pill complete">Concluída</span></td><td>Hoje, 14:32</td></tr><tr><td><i class="avatar blue">P2</i><strong>Pessoa 027</strong><small>ID DEMO-027</small></td><td>Coordenação Beta</td><td><span class="mini-progress"><i style="width:50%"></i></span> 4/8</td><td><span class="pill partial">Parcial</span></td><td>Ontem, 17:08</td></tr><tr><td><i class="avatar gold">P3</i><strong>Pessoa 031</strong><small>ID DEMO-031</small></td><td>Apoio Gama</td><td><span class="mini-progress"><i style="width:12%"></i></span> 1/8</td><td><span class="pill pending">Pendente</span></td><td>12 out, 09:15</td></tr><tr><td><i class="avatar green">P4</i><strong>Pessoa 046</strong><small>ID DEMO-046</small></td><td>Coordenação Alfa</td><td><span class="mini-progress"><i style="width:75%"></i></span> 6/8</td><td><span class="pill partial">Parcial</span></td><td>11 out, 16:40</td></tr></tbody></table></div>
                     </div>
                     <div class="demo-panel mobile-panel" role="tabpanel" data-demo-panel="mobile" hidden>
-                        <div class="phone-mock"><div class="phone-status"><span>09:41</span><span>● ◔ ▰</span></div><div class="phone-head"><span class="phone-brand">NF</span><div><strong>Novo registro</strong><small>Grupo Horizonte</small></div><i class="offline-badge">offline</i></div><label>Participante<span>*</span><div class="phone-input"><b>Pessoa 027</b><small>DEMO-027</small></div></label><label>Categoria<span>*</span><div class="phone-select">Acompanhamento <b>⌄</b></div></label><label>Descrição<span>*</span><div class="phone-text">Demonstração de um registro salvo localmente e preparado para sincronização.</div></label><button type="button" class="phone-button">Salvar no dispositivo</button><div class="phone-queue"><span><i></i><b>1 item na fila</b></span><small>Será enviado quando a conexão voltar.</small></div></div>
+                        <div class="mobile-screens" aria-label="Telas demonstrativas do aplicativo móvel">
+                            <figure class="mobile-screen mobile-screen-login"><img src="assets/media/mobile-login-demonstrativo.png" alt="Tela demonstrativa de acesso ao aplicativo Atalaia e Gavião" width="1024" height="1792" loading="lazy"><figcaption>Acesso seguro e sessão local</figcaption></figure>
+                            <figure class="mobile-screen mobile-screen-query"><img src="assets/media/mobile-consulta-demonstrativa.png?v=2" alt="Tela demonstrativa de consulta de registros por participante" width="889" height="1769" loading="lazy"><figcaption>Consulta e leitura visual dos registros</figcaption></figure>
+                        </div>
                         <div class="mobile-copy"><span class="demo-label">Demonstração · sem dados reais</span><h3>Offline não é um erro.<br>É um estado do produto.</h3><p>O aplicativo carrega os dados necessários, protege a sessão local e cria registros com identidade única. Quando a rede retorna, a fila sincroniza sem duplicar o que já chegou ao servidor.</p><ul><li>armazenamento local protegido</li><li>reenvio com espera progressiva</li><li>estado visível para o usuário</li><li>autorização novamente validada no servidor</li></ul></div>
                     </div>
                 </div>
@@ -155,6 +193,27 @@
                         <article><span>03</span><strong>Sincronizar</strong><small>Retentativas progressivas evitam perda e duplicação.</small></article>
                     </div>
                     <p class="synthetic-note"><strong>Demonstração pública:</strong> pessoas, interfaces, nomes e números desta página são fictícios.</p>
+                </div>
+                <div class="field-mobile-showcase reveal" aria-label="Demonstração visual da operação móvel protegida e da sincronização">
+                    <div class="field-mobile-copy">
+                        <p class="eyebrow dark">Do dispositivo ao servidor</p>
+                        <h3>O mesmo fluxo acompanha o usuário.</h3>
+                        <p>A sessão protegida libera o trabalho local. A consulta preserva o contexto já autorizado. Ao recuperar a conexão, a fila segue para validação sem exigir que o operador refaça o registro.</p>
+                        <div class="field-mobile-status"><span><i></i> sessão protegida</span><span><i></i> dados disponíveis</span><span><i></i> sincronização controlada</span></div>
+                    </div>
+                    <div class="field-mobile-devices">
+                        <figure class="field-device field-device-login">
+                            <span class="field-device-speaker" aria-hidden="true"></span>
+                            <img src="assets/media/mobile-login-demonstrativo.png" alt="Tela demonstrativa de acesso protegido ao aplicativo móvel" width="1024" height="1792" loading="lazy">
+                            <figcaption><strong>01</strong><span>Acesso protegido<small>sessão local e biometria</small></span></figcaption>
+                        </figure>
+                        <div class="field-device-link" aria-hidden="true"><span></span><i>→</i><span></span></div>
+                        <figure class="field-device field-device-query">
+                            <span class="field-device-speaker" aria-hidden="true"></span>
+                            <img src="assets/media/mobile-consulta-demonstrativa.png?v=2" alt="Tela demonstrativa de consulta móvel de registros" width="889" height="1769" loading="lazy">
+                            <figcaption><strong>02</strong><span>Contexto disponível<small>consulta mesmo em deslocamento</small></span></figcaption>
+                        </figure>
+                    </div>
                 </div>
             </div>
         </section>
@@ -186,6 +245,6 @@
         <section class="section disclosure" id="escopo"><div class="container disclosure-grid reveal"><div><p class="eyebrow light">Escopo público seguro</p><h2>Um estudo de caso independente.</h2></div><div><p>Este portfólio não é um canal oficial nem representa, endossa ou reproduz qualquer organização. Interfaces, nomes, números e situações são demonstrativos e utilizam dados fictícios.</p><p>Não são publicados código privado, dados de produção, documentos, credenciais, marcas institucionais, fotografias operacionais, endereços internos ou topologia real.</p><a href="https://github.com/3xpedition/atalaia-portfolio">Consultar o repositório público →</a></div></div></section>
     </main>
 
-    <footer class="site-footer"><div class="container footer-inner"><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>Nexo <b>Formação</b><small>estudo de caso técnico independente</small></span></div><p>Conteúdo demonstrativo · <span data-year>2026</span></p></div></footer>
+    <footer class="site-footer"><div class="container footer-inner"><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>Atalaia <b>&amp;</b> Gavião<small>estudo de caso técnico independente</small></span></div><p>Conteúdo demonstrativo · <span data-year>2026</span></p></div></footer>
 </body>
 </html>
