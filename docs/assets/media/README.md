@@ -24,6 +24,9 @@ Elas não reproduzem ambientes, pessoas, sistemas, marcas ou dados reais.
 | `equipe-alexandre-ferreira.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
 | `equipe-natanael-cirino.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
 | `equipe-natanael-cirino-neutro.png` | Seção da equipe | Retrato editado com OpenAI ImageGen em 22/10/2026, a partir de fotografia autorizada | Identidade preservada; sorriso discreto, roupa civil e fundo neutro; sem uniforme, organização ou símbolo institucional |
+| `equipe-joao-victor-profissional.png` | Seção da equipe | Retoque editorial com OpenAI ImageGen em 22/10/2026 | Identidade preservada; correção leve de pele, sorriso e iluminação; sem alteração anatômica ou elemento institucional |
+| `equipe-alexandre-ferreira-profissional.png` | Seção da equipe | Retoque editorial com OpenAI ImageGen em 22/10/2026 | Identidade preservada; ampliação, padronização de enquadramento, pele e iluminação; sem elemento institucional |
+| `equipe-natanael-cirino-profissional.png` | Seção da equipe | Retoque editorial com OpenAI ImageGen em 22/10/2026 | Identidade preservada; correção leve de pele, sorriso e iluminação; sem alteração anatômica ou elemento institucional |
 
 ## Política
 
