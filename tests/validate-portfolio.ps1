@@ -87,7 +87,10 @@ $allowedRasterAssets = @(
     'docs/assets/media/jornada-cobertura-nacional.png',
     'docs/assets/media/jornada-decisao-verificavel.png',
     'docs/assets/media/produto-nucleo-gestao.png',
-    'docs/assets/media/produto-nucleo-decisao.png'
+    'docs/assets/media/produto-nucleo-decisao.png',
+    'docs/assets/media/equipe-joao-victor.jpg',
+    'docs/assets/media/equipe-alexandre-ferreira.jpg',
+    'docs/assets/media/equipe-natanael-cirino.jpg'
 )
 $controlledAssetExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.mp4', '.mov', '.avi', '.pdf', '.xlsx', '.xls')
 $controlledAssets = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File |

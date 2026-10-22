@@ -19,10 +19,14 @@ Elas não reproduzem ambientes, pessoas, sistemas, marcas ou dados reais.
 | `produto-nucleo-gestao.png` | Núcleo de gestão do produto | Gerada e editada com OpenAI ImageGen em 22/10/2026 | Centro de planejamento sintético; monitores com painéis educacionais claros, mapa e dados genéricos; sem arma, insígnia, organização, unidade ou dado real |
 | `produto-nucleo-decisao.png` | Núcleo de decisão do produto | Gerada e editada com OpenAI ImageGen em 22/10/2026 | Centro de acompanhamento sintético; monitores com mapas e painéis claros de apoio à decisão; sem arma, insígnia, organização, unidade ou dado real |
 
+| `equipe-joao-victor.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
+| `equipe-alexandre-ferreira.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
+| `equipe-natanael-cirino.jpg` | Seção da equipe | Acervo autorizado do portfólio do projeto | Uso autorizado pelo integrante; nome e contribuições profissionais públicas |
+
 ## Política
 
 - Toda mídia nova deve ser documentada nesta tabela antes da publicação.
-- Não são aceitas capturas, fotografias ou gravações identificáveis de ambientes reais.
+- Não são aceitas capturas, fotografias ou gravações identificáveis de ambientes reais; retratos da equipe exigem autorização expressa e registro neste manifesto.
 - Não são aceitos brasões, logotipos, uniformes, postos, nomes de organizações ou topologia real.
 - Pessoas sintéticas não representam integrantes, usuários ou militares reais.
 - Interfaces são construídas em HTML/CSS ou sanitizadas como ilustrações demonstrativas, sempre com dados fictícios.
