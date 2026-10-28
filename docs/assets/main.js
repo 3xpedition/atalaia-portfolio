@@ -3,6 +3,7 @@
 
     var header = document.querySelector('[data-header]');
     var menuButton = document.querySelector('[data-menu]');
+    var menuLabel = document.querySelector('[data-menu-label]');
     var navigation = document.querySelector('[data-nav]');
 
     function updateHeader() {
@@ -17,6 +18,9 @@
         }
 
         menuButton.setAttribute('aria-expanded', 'false');
+        if (menuLabel) {
+            menuLabel.textContent = 'Abrir navegação';
+        }
         navigation.classList.remove('open');
         document.body.classList.remove('menu-open');
     }
@@ -25,6 +29,9 @@
         menuButton.addEventListener('click', function () {
             var open = menuButton.getAttribute('aria-expanded') === 'true';
             menuButton.setAttribute('aria-expanded', String(!open));
+            if (menuLabel) {
+                menuLabel.textContent = open ? 'Abrir navegação' : 'Fechar navegação';
+            }
             navigation.classList.toggle('open', !open);
             document.body.classList.toggle('menu-open', !open);
         });
@@ -40,6 +47,13 @@
                 closeMenu();
             }
         });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+                closeMenu();
+                menuButton.focus();
+            }
+        });
     }
 
     document.querySelectorAll('[data-demo]').forEach(function (demo) {
@@ -49,10 +63,12 @@
         tabs.forEach(function (tab, index) {
             tab.id = 'demo-tab-' + index;
             tab.setAttribute('aria-controls', 'demo-panel-' + index);
+            tab.setAttribute('tabindex', tab.getAttribute('aria-selected') === 'true' ? '0' : '-1');
 
             if (panels[index]) {
                 panels[index].id = 'demo-panel-' + index;
                 panels[index].setAttribute('aria-labelledby', tab.id);
+                panels[index].setAttribute('tabindex', '0');
             }
 
             tab.addEventListener('click', function () {
@@ -60,6 +76,7 @@
 
                 tabs.forEach(function (item) {
                     item.setAttribute('aria-selected', String(item === tab));
+                    item.setAttribute('tabindex', item === tab ? '0' : '-1');
                 });
 
                 panels.forEach(function (panel) {
@@ -70,13 +87,16 @@
             });
 
             tab.addEventListener('keydown', function (event) {
-                if (event.key !== 'ArrowRight' && event.key !== 'ArrowLeft') {
+                if (!['ArrowRight', 'ArrowLeft', 'Home', 'End'].includes(event.key)) {
                     return;
                 }
 
                 event.preventDefault();
-                var direction = event.key === 'ArrowRight' ? 1 : -1;
-                var next = (index + direction + tabs.length) % tabs.length;
+                var next = event.key === 'Home' ? 0 : tabs.length - 1;
+                if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+                    var direction = event.key === 'ArrowRight' ? 1 : -1;
+                    next = (index + direction + tabs.length) % tabs.length;
+                }
                 tabs[next].focus();
                 tabs[next].click();
             });

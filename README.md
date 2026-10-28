@@ -61,6 +61,8 @@ pwsh -NoProfile -File tests/validate-portfolio.ps1
 
 O validador confere arquivos, links locais, ausência de binários e extensões proibidas, termos institucionais, possíveis segredos, endereços privados e o aviso de escopo público seguro.
 
+Os critérios e limites da auditoria de acessibilidade estão documentados em [`docs/ACESSIBILIDADE.md`](docs/ACESSIBILIDADE.md).
+
 ## Licença
 
 O código-fonte autoral e os exemplos textuais deste repositório são disponibilizados sob a [Licença MIT](LICENSE).

@@ -16,6 +16,30 @@ function Assert-Portfolio {
     }
 }
 
+function Get-RelativeLuminance {
+    param([Parameter(Mandatory)] [string] $HexColor)
+
+    $hex = $HexColor.TrimStart('#')
+    $channels = @(0, 2, 4 | ForEach-Object { [Convert]::ToInt32($hex.Substring($_, 2), 16) / 255 })
+    $linear = $channels | ForEach-Object {
+        if ($_ -le 0.03928) { $_ / 12.92 } else { [Math]::Pow(($_ + 0.055) / 1.055, 2.4) }
+    }
+
+    return 0.2126 * $linear[0] + 0.7152 * $linear[1] + 0.0722 * $linear[2]
+}
+
+function Get-ContrastRatio {
+    param(
+        [Parameter(Mandatory)] [string] $Foreground,
+        [Parameter(Mandatory)] [string] $Background
+    )
+
+    $foregroundLuminance = Get-RelativeLuminance $Foreground
+    $backgroundLuminance = Get-RelativeLuminance $Background
+    return ([Math]::Max($foregroundLuminance, $backgroundLuminance) + 0.05) / `
+        ([Math]::Min($foregroundLuminance, $backgroundLuminance) + 0.05)
+}
+
 $requiredPaths = @(
     'README.md',
     'PRODUCT.md',
@@ -23,6 +47,7 @@ $requiredPaths = @(
     'RIGHTS.md',
     'docs/index.html',
     'docs/examples/index.html',
+    'docs/ACESSIBILIDADE.md',
     'docs/assets/favicon.svg',
     'docs/assets/styles.css',
     'docs/assets/main.js',
@@ -64,6 +89,8 @@ $license = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRo
 $rights = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'RIGHTS.md')
 $site = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/index.html')
 $examplesSite = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/examples/index.html')
+$styles = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/assets/styles.css')
+$mainScript = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/assets/main.js')
 
 $requiredTerms = @(
     'Atalaia', 'Gavi', 'offline-first', 'Laravel', 'MySQL', 'Kotlin',
@@ -217,6 +244,27 @@ foreach ($repositoryFile in $repositoryFiles) {
 $htmlFiles = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File -Filter '*.html'
 foreach ($htmlFile in $htmlFiles) {
     $html = Get-Content -Raw -Encoding UTF8 -LiteralPath $htmlFile.FullName
+    Assert-Portfolio -Condition ([regex]::IsMatch($html, '<html\s+lang="pt-BR"')) -Message "Idioma principal ausente em $($htmlFile.FullName)"
+    Assert-Portfolio -Condition ([regex]::IsMatch($html, '<main\b[^>]*id="conteudo"')) -Message "Regiao principal ou alvo do salto ausente em $($htmlFile.FullName)"
+    Assert-Portfolio -Condition ($html.Contains('class="skip-link"')) -Message "Link para saltar ao conteudo ausente em $($htmlFile.FullName)"
+    Assert-Portfolio -Condition (-not [regex]::IsMatch($html, 'user-scalable\s*=\s*no|maximum-scale\s*=\s*1')) -Message "Zoom do navegador restringido em $($htmlFile.FullName)"
+
+    $headings = [regex]::Matches($html, '<h([1-6])\b', 'IgnoreCase')
+    Assert-Portfolio -Condition ((@($headings | Where-Object { $_.Groups[1].Value -eq '1' })).Count -eq 1) `
+        -Message "Cada pagina deve possuir exatamente um h1: $($htmlFile.FullName)"
+    for ($headingIndex = 1; $headingIndex -lt $headings.Count; $headingIndex++) {
+        $previousLevel = [int] $headings[$headingIndex - 1].Groups[1].Value
+        $currentLevel = [int] $headings[$headingIndex].Groups[1].Value
+        Assert-Portfolio -Condition ($currentLevel -le $previousLevel + 1) `
+            -Message "Salto na hierarquia de titulos em $($htmlFile.FullName): h$previousLevel para h$currentLevel"
+    }
+
+    $images = [regex]::Matches($html, '<img\b[^>]*>', 'IgnoreCase')
+    foreach ($image in $images) {
+        Assert-Portfolio -Condition ([regex]::IsMatch($image.Value, '\balt="[^"]*"', 'IgnoreCase')) `
+            -Message "Imagem sem atributo alt em $($htmlFile.FullName)"
+    }
+
     foreach ($attribute in @('href', 'src')) {
         $matches = [regex]::Matches($html, "$attribute=`"([^`"]+)`"")
         foreach ($match in $matches) {
@@ -230,6 +278,26 @@ foreach ($htmlFile in $htmlFiles) {
         }
     }
 }
+
+Assert-Portfolio -Condition ($styles.Contains(':focus-visible')) -Message 'Indicador de foco visivel ausente.'
+Assert-Portfolio -Condition ($styles.Contains('box-shadow: 0 0 0 6px #005fcc')) -Message 'Foco de alto contraste ausente.'
+Assert-Portfolio -Condition ($styles.Contains('@media (prefers-reduced-motion: reduce)')) -Message 'Preferencia de movimento reduzido ausente.'
+Assert-Portfolio -Condition ($mainScript.Contains("event.key === 'Escape'")) -Message 'Menu movel nao fecha por Escape.'
+Assert-Portfolio -Condition ($mainScript.Contains("'Home', 'End'")) -Message 'Abas nao oferecem navegacao Home/End.'
+Assert-Portfolio -Condition ($mainScript.Contains("setAttribute('tabindex'")) -Message 'Abas nao gerenciam foco por tabindex.'
+
+$smallFontDeclarations = [regex]::Matches($styles + $examplesSite, 'font-size:\s*(\.[0-9]+)rem') |
+    Where-Object { [double]::Parse(('0' + $_.Groups[1].Value), [Globalization.CultureInfo]::InvariantCulture) -lt 0.75 }
+Assert-Portfolio -Condition ($smallFontDeclarations.Count -eq 0) -Message 'Foi encontrada fonte declarada abaixo de 0.75rem.'
+
+$palette = @{}
+[regex]::Matches($styles, '--([a-z0-9-]+):\s*(#[0-9a-f]{6})', 'IgnoreCase') | ForEach-Object {
+    $palette[$_.Groups[1].Value] = $_.Groups[2].Value
+}
+Assert-Portfolio -Condition ((Get-ContrastRatio $palette['muted'] $palette['paper']) -ge 4.5) `
+    -Message 'Contraste insuficiente entre texto secundario e fundo claro.'
+Assert-Portfolio -Condition ((Get-ContrastRatio $palette['mint-dark'] $palette['paper']) -ge 4.5) `
+    -Message 'Contraste insuficiente entre destaque verde e fundo claro.'
 
 $oldFolders = @('docs/assets/gaviao', 'docs/assets/mobile', 'docs/assets/team')
 foreach ($folder in $oldFolders) {
