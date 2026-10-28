@@ -179,8 +179,8 @@ foreach ($relativeAsset in ($allowedRasterAssets | Where-Object { $_.EndsWith('.
 $textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt', '.kt', '.svg', '.ps1')
 $publicFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File |
     Where-Object {
-        $_.FullName -notlike '*\.git\*' -and
-        $_.FullName -notlike '*\tests\*' -and
+        $_.FullName -notmatch '[\\/]\.git[\\/]' -and
+        $_.FullName -notmatch '[\\/]tests[\\/]' -and
         $textExtensions -contains $_.Extension.ToLowerInvariant()
     }
 
@@ -237,7 +237,7 @@ $forbiddenArtifactExtensions = @(
     '.zip', '.7z', '.rar', '.tar', '.gz', '.sqlite', '.db'
 )
 $repositoryFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File -Force |
-    Where-Object { $_.FullName -notlike '*\.git\*' }
+    Where-Object { $_.FullName -notmatch '[\\/]\.git[\\/]' }
 foreach ($repositoryFile in $repositoryFiles) {
     $relativeRepositoryFile = $repositoryFile.FullName.Substring($repositoryRoot.Length + 1).Replace('\', '/')
     Assert-Portfolio -Condition (-not $relativeRepositoryFile.StartsWith('.env')) -Message "Arquivo de ambiente proibido: $relativeRepositoryFile"
