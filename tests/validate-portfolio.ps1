@@ -27,7 +27,6 @@ $requiredPaths = @(
     'docs/assets/main.js',
     'docs/assets/media/README.md',
     'docs/assets/media/hero-rede-distribuida.png',
-    'docs/assets/media/jornada-dados.png',
     'docs/assets/media/operacao-regioes-remotas.png',
     'docs/assets/media/painel-jornada-integrada.png',
     'docs/assets/media/mobile-login-demonstrativo.png',
@@ -37,6 +36,9 @@ $requiredPaths = @(
     'docs/assets/media/jornada-decisao-verificavel.png',
     'docs/assets/media/produto-nucleo-gestao.png',
     'docs/assets/media/produto-nucleo-decisao.png',
+    'docs/assets/media/equipe-joao-victor-profissional.png',
+    'docs/assets/media/equipe-alexandre-ferreira-profissional.png',
+    'docs/assets/media/equipe-natanael-cirino-profissional.png',
     'docs/arquitetura/README.md',
     'docs/diagramas/componentes.md',
     'docs/mobile/README.md',
@@ -78,7 +80,6 @@ Assert-Portfolio -Condition (-not $site.Contains('borrad')) -Message 'A pagina p
 
 $allowedRasterAssets = @(
     'docs/assets/media/hero-rede-distribuida.png',
-    'docs/assets/media/jornada-dados.png',
     'docs/assets/media/operacao-regioes-remotas.png',
     'docs/assets/media/painel-jornada-integrada.png',
     'docs/assets/media/mobile-login-demonstrativo.png',
@@ -88,11 +89,6 @@ $allowedRasterAssets = @(
     'docs/assets/media/jornada-decisao-verificavel.png',
     'docs/assets/media/produto-nucleo-gestao.png',
     'docs/assets/media/produto-nucleo-decisao.png',
-    'docs/assets/media/equipe-joao-victor.jpg',
-    'docs/assets/media/equipe-joao-victor-neutro.png',
-    'docs/assets/media/equipe-alexandre-ferreira.jpg',
-    'docs/assets/media/equipe-natanael-cirino.jpg',
-    'docs/assets/media/equipe-natanael-cirino-neutro.png',
     'docs/assets/media/equipe-joao-victor-profissional.png',
     'docs/assets/media/equipe-alexandre-ferreira-profissional.png',
     'docs/assets/media/equipe-natanael-cirino-profissional.png'
@@ -109,6 +105,29 @@ $mediaManifest = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $reposi
 foreach ($relativeAsset in $allowedRasterAssets) {
     $assetName = Split-Path -Leaf $relativeAsset
     Assert-Portfolio -Condition ($mediaManifest.Contains($assetName)) -Message "Midia sem registro de procedencia: $assetName"
+}
+
+$privatePngChunks = @('eXIf', 'tEXt', 'zTXt', 'iTXt', 'tIME')
+foreach ($relativeAsset in ($allowedRasterAssets | Where-Object { $_.EndsWith('.png') })) {
+    $assetPath = Join-Path $repositoryRoot $relativeAsset
+    $bytes = [System.IO.File]::ReadAllBytes($assetPath)
+    $offset = 8
+    $chunks = [System.Collections.Generic.List[string]]::new()
+
+    while ($offset + 12 -le $bytes.Length) {
+        $length = [System.Net.IPAddress]::NetworkToHostOrder([BitConverter]::ToInt32($bytes, $offset))
+        $chunk = [Text.Encoding]::ASCII.GetString($bytes, $offset + 4, 4)
+        $chunks.Add($chunk)
+        $offset += 12 + $length
+
+        if ($chunk -eq 'IEND') {
+            break
+        }
+    }
+
+    $privateChunks = @($chunks | Where-Object { $privatePngChunks -contains $_ })
+    Assert-Portfolio -Condition ($privateChunks.Count -eq 0) `
+        -Message "Midia publica contem metadados privados ou textuais: $relativeAsset ($($privateChunks -join ', '))"
 }
 
 $textExtensions = @('.md', '.html', '.css', '.js', '.php', '.sql', '.txt', '.kt', '.svg', '.ps1')
