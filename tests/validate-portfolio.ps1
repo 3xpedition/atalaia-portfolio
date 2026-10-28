@@ -165,6 +165,16 @@ $secretPatterns = @(
     '-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----'
 )
 
+$forbiddenTechnicalPatterns = @(
+    '(?i)\b(?:PHP|Laravel|MySQL|Kotlin|Android|SQLCipher|Nginx|Apache)\s+v?\d+(?:\.\d+){0,2}\b',
+    '(?i)\b(?:Bearer|PBKDF2|AES-SIV|X\.509|PHP-FPM|Nginx)\b',
+    '(?i)(?:^|["''])/api/(?:v\d+/)?',
+    '(?i)\b(?:perfil|permiss.o)\s*[:#=\-]?\s*9\d{3}\b',
+    '(?i)\b(?:token|sess.o).{0,30}\b\d+\s*(?:minutos?|horas?|dias?|h)\b'
+)
+
+$allowedPublicHosts = @('3xpedition.github.io', 'github.com', 'www.w3.org')
+
 foreach ($file in $publicFiles) {
     $content = Get-Content -Raw -Encoding UTF8 -LiteralPath $file.FullName
     foreach ($pattern in $forbiddenInstitutionalPatterns) {
@@ -172,6 +182,29 @@ foreach ($file in $publicFiles) {
     }
     foreach ($pattern in $secretPatterns) {
         Assert-Portfolio -Condition (-not [regex]::IsMatch($content, $pattern)) -Message "Possivel segredo ou endereco privado em $($file.FullName)"
+    }
+    foreach ($pattern in $forbiddenTechnicalPatterns) {
+        Assert-Portfolio -Condition (-not [regex]::IsMatch($content, $pattern)) -Message "Detalhe tecnico operacional proibido em $($file.FullName): $pattern"
+    }
+
+    $publicUrls = [regex]::Matches($content, 'https?://[^\s"''<>)]+')
+    foreach ($publicUrl in $publicUrls) {
+        $hostName = ([Uri] $publicUrl.Value).Host
+        Assert-Portfolio -Condition ($allowedPublicHosts -contains $hostName) -Message "Host publico nao autorizado em $($file.FullName): $hostName"
+    }
+}
+
+$forbiddenArtifactExtensions = @('.pem', '.key', '.pfx', '.p12', '.crt', '.cer', '.dump', '.bak')
+$repositoryFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File -Force |
+    Where-Object { $_.FullName -notlike '*\.git\*' }
+foreach ($repositoryFile in $repositoryFiles) {
+    $relativeRepositoryFile = $repositoryFile.FullName.Substring($repositoryRoot.Length + 1).Replace('\', '/')
+    Assert-Portfolio -Condition (-not $relativeRepositoryFile.StartsWith('.env')) -Message "Arquivo de ambiente proibido: $relativeRepositoryFile"
+    Assert-Portfolio -Condition (-not ($forbiddenArtifactExtensions -contains $repositoryFile.Extension.ToLowerInvariant())) `
+        -Message "Certificado, chave ou artefato de infraestrutura proibido: $relativeRepositoryFile"
+    if ($repositoryFile.Extension -eq '.sql') {
+        Assert-Portfolio -Condition ($relativeRepositoryFile.StartsWith('examples/sql/')) `
+            -Message "SQL fora do laboratorio demonstrativo: $relativeRepositoryFile"
     }
 }
 

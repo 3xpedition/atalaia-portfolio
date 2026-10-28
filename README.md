@@ -37,6 +37,10 @@ Android offline ┘         │                       │
 
 Stack apresentada: Laravel, PHP, MySQL, Blade, JavaScript, D3.js, Kotlin, Jetpack Compose, WorkManager, SQLCipher e Git.
 
+### Divulgação tecnológica segura
+
+As tecnologias são apresentadas como evidências de competência, sem reproduzir a configuração operacional. O conteúdo público não informa versões de produção, URLs ou rotas internas, endereços IP, topologia, nomes de servidores, duração de sessões, perfis, códigos de permissão, certificados, estruturas reais de banco ou procedimentos de implantação e acesso.
+
 ## Laboratório público
 
 Os arquivos em [`examples/`](examples/) são exemplos pequenos, independentes e escritos para o portfólio:

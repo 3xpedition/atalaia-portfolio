@@ -11,7 +11,7 @@
 --   * evasão    -> só quem se matriculou no ciclo e saiu.
 -- ativos + reintegrados + desligados = matriculados, sem sobra nem falta.
 --
--- O ciclo entra por um único parâmetro (:ciclo), lido de uma CTE (MySQL 8):
+-- O ciclo entra por um único parâmetro (:ciclo), lido de uma CTE:
 -- com PDO em prepare nativo, repetir o mesmo nome de parâmetro não funciona.
 
 WITH parametro AS (SELECT :ciclo AS id)
