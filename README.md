@@ -37,6 +37,10 @@ Android offline ┘         │                       │
 
 Stack apresentada: Laravel, PHP, MySQL, Blade, JavaScript, D3.js, Kotlin, Jetpack Compose, WorkManager, SQLCipher e Git.
 
+### Divulgação tecnológica segura
+
+As tecnologias são apresentadas como evidências de competência, sem reproduzir a configuração operacional. O conteúdo público não informa versões de produção, URLs ou rotas internas, endereços IP, topologia, nomes de servidores, duração de sessões, perfis, códigos de permissão, certificados, estruturas reais de banco ou procedimentos de implantação e acesso.
+
 ## Laboratório público
 
 Os arquivos em [`examples/`](examples/) são exemplos pequenos, independentes e escritos para o portfólio:
@@ -57,6 +61,12 @@ pwsh -NoProfile -File tests/validate-portfolio.ps1
 
 O validador confere arquivos, links locais, ausência de binários e extensões proibidas, termos institucionais, possíveis segredos, endereços privados e o aviso de escopo público seguro.
 
+A mesma validação é executada pelo GitHub Actions em Pull Requests e na `main`. Arquivos documentais, pacotes, bancos, dumps e itens acima de 8 MB são bloqueados. A política de comunicação responsável está em [`SECURITY.md`](SECURITY.md). Como este site não possui dependências gerenciadas, o Dependabot não é configurado até que exista um manifesto real.
+
+Os critérios e limites da auditoria de acessibilidade estão documentados em [`docs/ACESSIBILIDADE.md`](docs/ACESSIBILIDADE.md).
+
 ## Licença
 
-O conteúdo demonstrativo original deste repositório é disponibilizado sob a [Licença MIT](LICENSE). A licença não se estende a produtos, dados, marcas ou materiais privados que não estejam presentes aqui.
+O código-fonte autoral e os exemplos textuais deste repositório são disponibilizados sob a [Licença MIT](LICENSE).
+
+Fotografias, retratos, imagem pessoal, ilustrações, identidade visual e nomes de produtos **não estão abrangidos pela MIT** e não podem ser reutilizados automaticamente. Consulte [RIGHTS.md](RIGHTS.md) para a delimitação completa.

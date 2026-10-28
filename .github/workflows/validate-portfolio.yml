@@ -1,0 +1,26 @@
+name: Validar portfólio público
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Conteúdo, segurança e acessibilidade
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Obter repositório
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validar publicação
+        shell: pwsh
+        run: ./tests/validate-portfolio.ps1
