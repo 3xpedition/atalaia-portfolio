@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Exemplos públicos, autorais e sanitizados do portfólio Atalaia e Gavião.">
+    <meta name="theme-color" content="#071921">
+    <title>Laboratório técnico — Atalaia e Gavião</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../assets/styles.css?v=23">
+    <style>
+        .lab-hero{padding:170px 0 100px;color:#fff;background:#071921}.lab-hero .breadcrumb{color:#8ee4d4;text-decoration:none;font-size:.78rem}.lab-hero h1{max-width:850px;margin:38px 0 24px;font:400 clamp(3.4rem,7vw,6.5rem)/.95 Georgia,serif;letter-spacing:-.05em}.lab-hero p{max-width:690px;color:#a9c1c4;font-size:1.08rem}.lab-grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}.lab-card{display:flex;min-height:330px;flex-direction:column;padding:32px;border:1px solid #d9dfdc;border-radius:20px;background:#fffef9}.lab-card .number{color:#087f70;font:1rem Georgia,serif}.lab-card code{margin:42px 0 12px;color:#64757a;font-size:.7rem;overflow-wrap:anywhere}.lab-card h2{margin:0 0 12px;font:400 1.55rem/1.15 Georgia,serif}.lab-card p{color:#64757a;font-size:.85rem}.lab-card a{margin-top:auto;color:#087f70;font-size:.78rem;font-weight:800;text-decoration:none}.lab-disclosure{display:grid;gap:60px;padding:52px;border-radius:24px;color:white;background:#0c665b;grid-template-columns:.8fr 1.2fr}.lab-disclosure h2{margin:0;font:400 2.5rem/1.05 Georgia,serif}.lab-disclosure p{margin:0;color:#c8e5df}@media(max-width:850px){.lab-grid{grid-template-columns:1fr 1fr}.lab-disclosure{grid-template-columns:1fr}}@media(max-width:560px){.lab-grid{grid-template-columns:1fr}.lab-disclosure{padding:32px}}
+    </style>
+    <script src="../assets/main.js?v=23" defer></script>
+</head>
+<body>
+    <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+    <header class="site-header scrolled" data-header><div class="container header-inner"><a class="brand" href="../"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>Atalaia <b>&amp;</b> Gavião<small>laboratório público</small></span></a><a class="button ghost" href="../">Voltar ao portfólio</a></div></header>
+    <main id="conteudo">
+        <section class="lab-hero"><div class="container"><a class="breadcrumb" href="../">← Portfólio</a><p class="eyebrow"><span></span> Código demonstrativo</p><h1>Decisões técnicas,<br>sem expor o produto privado.</h1><p>Uma coleção pequena e intencional de exemplos escritos para este portfólio. Os nomes, estruturas e dados são fictícios; as preocupações de engenharia são reais.</p></div></section>
+        <section class="section"><div class="container"><div class="lab-grid">
+            <article class="lab-card"><span class="number">01</span><code>controllers/PainelDesempenhoController.php</code><h2>Autorização no servidor</h2><p>O recorte solicitado é validado antes de qualquer consulta. A interface ajuda; o backend decide.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/controllers/PainelDesempenhoController.php">Ver código →</a></article>
+            <article class="lab-card"><span class="number">02</span><code>services/FaixaDesempenhoService.php</code><h2>Faixas consistentes</h2><p>Ausência de avaliação não vira zero, e a mesma regra pode alimentar tela, planilha e relatório.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/FaixaDesempenhoService.php">Ver código →</a></article>
+            <article class="lab-card"><span class="number">03</span><code>views/painel-faixas.blade.php</code><h2>Detalhe acessível</h2><p>Indicadores são botões semânticos que preservam contexto e permitem chegar às pessoas que formam a faixa.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/views/painel-faixas.blade.php">Ver código →</a></article>
+            <article class="lab-card"><span class="number">04</span><code>sql/efetivo_evasao_ciclo.sql</code><h2>Totais reconciliáveis</h2><p>Movimentações entre ciclos são tratadas explicitamente para que entrada, permanência e saída fechem.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/sql/efetivo_evasao_ciclo.sql">Ver consulta →</a></article>
+            <article class="lab-card"><span class="number">05</span><code>services/DistribuicaoVagasService.php</code><h2>Distribuição por prioridade</h2><p>Uma regra determinística respeita classificação, preferências e disponibilidade sem depender da ordem de chegada.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/services/DistribuicaoVagasService.php">Ver código →</a></article>
+            <article class="lab-card"><span class="number">06</span><code>js/quebras-naturais.js</code><h2>Escala visual honesta</h2><p>Quebras naturais evitam que um valor extremo apague diferenças importantes entre os demais grupos.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/js/quebras-naturais.js">Ver código →</a></article>
+            <article class="lab-card"><span class="number">07</span><code>android/EnvioRegistroWorker.kt</code><h2>Fila offline idempotente</h2><p>Identidade única, armazenamento protegido e retentativa progressiva evitam perda e duplicação.</p><a href="https://github.com/3xpedition/atalaia-portfolio/blob/main/examples/android/EnvioRegistroWorker.kt">Ver código →</a></article>
+        </div></div></section>
+        <section class="section"><div class="container lab-disclosure"><h2>Demonstração,<br>não reprodução.</h2><p>Nenhum arquivo foi copiado de repositório privado. Não há credenciais, endereços, dados pessoais, nomes de tabelas de produção, marcas institucionais ou topologia real. Estes exemplos existem somente para comunicar práticas de engenharia.</p></div></section>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><div class="brand footer-brand"><span class="brand-symbol" aria-hidden="true"><i></i><i></i></span><span>Atalaia <b>&amp;</b> Gavião<small>laboratório técnico independente</small></span></div><p>Conteúdo demonstrativo · <span data-year>2026</span></p></div></footer>
+</body>
+</html>
