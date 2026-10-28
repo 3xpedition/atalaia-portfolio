@@ -45,6 +45,8 @@ $requiredPaths = @(
     'PRODUCT.md',
     'LICENSE',
     'RIGHTS.md',
+    'SECURITY.md',
+    '.github/workflows/validate-portfolio.yml',
     'docs/index.html',
     'docs/examples/index.html',
     'docs/ACESSIBILIDADE.md',
@@ -135,7 +137,9 @@ $allowedRasterAssets = @(
     'docs/assets/media/equipe-alexandre-ferreira-profissional.png',
     'docs/assets/media/equipe-natanael-cirino-profissional.png'
 )
-$controlledAssetExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.webp', '.bmp', '.mp4', '.mov', '.avi', '.pdf', '.xlsx', '.xls')
+$allowedRasterAssets += @($allowedRasterAssets | ForEach-Object { $_ -replace '\.png$', '.webp' })
+$allowedRasterAssets += @($allowedRasterAssets | Where-Object { $_.EndsWith('.png') } | ForEach-Object { $_ -replace '\.png$', '.avif' })
+$controlledAssetExtensions = @('.jpg', '.jpeg', '.png', '.gif', '.webp', '.avif', '.bmp', '.mp4', '.mov', '.avi', '.pdf', '.xlsx', '.xls')
 $controlledAssets = Get-ChildItem -LiteralPath (Join-Path $repositoryRoot 'docs') -Recurse -File |
     Where-Object { $controlledAssetExtensions -contains $_.Extension.ToLowerInvariant() }
 foreach ($asset in $controlledAssets) {
@@ -145,7 +149,7 @@ foreach ($asset in $controlledAssets) {
 
 $mediaManifest = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/assets/media/README.md')
 foreach ($relativeAsset in $allowedRasterAssets) {
-    $assetName = Split-Path -Leaf $relativeAsset
+    $assetName = (Split-Path -Leaf $relativeAsset) -replace '\.(webp|avif)$', '.png'
     Assert-Portfolio -Condition ($mediaManifest.Contains($assetName)) -Message "Midia sem registro de procedencia: $assetName"
 }
 
@@ -227,14 +231,20 @@ foreach ($file in $publicFiles) {
     }
 }
 
-$forbiddenArtifactExtensions = @('.pem', '.key', '.pfx', '.p12', '.crt', '.cer', '.dump', '.bak')
+$forbiddenArtifactExtensions = @(
+    '.pem', '.key', '.pfx', '.p12', '.crt', '.cer', '.dump', '.bak',
+    '.pdf', '.doc', '.docx', '.xls', '.xlsx', '.ppt', '.pptx', '.odt', '.ods',
+    '.zip', '.7z', '.rar', '.tar', '.gz', '.sqlite', '.db'
+)
 $repositoryFiles = Get-ChildItem -LiteralPath $repositoryRoot -Recurse -File -Force |
     Where-Object { $_.FullName -notlike '*\.git\*' }
 foreach ($repositoryFile in $repositoryFiles) {
     $relativeRepositoryFile = $repositoryFile.FullName.Substring($repositoryRoot.Length + 1).Replace('\', '/')
     Assert-Portfolio -Condition (-not $relativeRepositoryFile.StartsWith('.env')) -Message "Arquivo de ambiente proibido: $relativeRepositoryFile"
     Assert-Portfolio -Condition (-not ($forbiddenArtifactExtensions -contains $repositoryFile.Extension.ToLowerInvariant())) `
-        -Message "Certificado, chave ou artefato de infraestrutura proibido: $relativeRepositoryFile"
+        -Message "Documento, pacote, banco ou artefato de infraestrutura proibido: $relativeRepositoryFile"
+    Assert-Portfolio -Condition ($repositoryFile.Length -le 8MB) `
+        -Message "Arquivo excede o limite publico de 8 MB: $relativeRepositoryFile"
     if ($repositoryFile.Extension -eq '.sql') {
         Assert-Portfolio -Condition ($relativeRepositoryFile.StartsWith('examples/sql/')) `
             -Message "SQL fora do laboratorio demonstrativo: $relativeRepositoryFile"
@@ -263,6 +273,10 @@ foreach ($htmlFile in $htmlFiles) {
     foreach ($image in $images) {
         Assert-Portfolio -Condition ([regex]::IsMatch($image.Value, '\balt="[^"]*"', 'IgnoreCase')) `
             -Message "Imagem sem atributo alt em $($htmlFile.FullName)"
+        Assert-Portfolio -Condition ([regex]::IsMatch($image.Value, '\bwidth="\d+"', 'IgnoreCase')) `
+            -Message "Imagem sem largura explicita em $($htmlFile.FullName)"
+        Assert-Portfolio -Condition ([regex]::IsMatch($image.Value, '\bheight="\d+"', 'IgnoreCase')) `
+            -Message "Imagem sem altura explicita em $($htmlFile.FullName)"
     }
 
     foreach ($attribute in @('href', 'src')) {
@@ -285,6 +299,10 @@ Assert-Portfolio -Condition ($styles.Contains('@media (prefers-reduced-motion: r
 Assert-Portfolio -Condition ($mainScript.Contains("event.key === 'Escape'")) -Message 'Menu movel nao fecha por Escape.'
 Assert-Portfolio -Condition ($mainScript.Contains("'Home', 'End'")) -Message 'Abas nao oferecem navegacao Home/End.'
 Assert-Portfolio -Condition ($mainScript.Contains("setAttribute('tabindex'")) -Message 'Abas nao gerenciam foco por tabindex.'
+Assert-Portfolio -Condition ($site.Contains('rel="canonical"')) -Message 'URL canonica ausente.'
+Assert-Portfolio -Condition ($site.Contains('property="og:image"')) -Message 'Imagem social ausente.'
+Assert-Portfolio -Condition ($site.Contains('name="twitter:card"')) -Message 'Metadados sociais ausentes.'
+Assert-Portfolio -Condition ($site.Contains('<picture')) -Message 'Imagens responsivas com formatos modernos ausentes.'
 
 $smallFontDeclarations = [regex]::Matches($styles + $examplesSite, 'font-size:\s*(\.[0-9]+)rem') |
     Where-Object { [double]::Parse(('0' + $_.Groups[1].Value), [Globalization.CultureInfo]::InvariantCulture) -lt 0.75 }

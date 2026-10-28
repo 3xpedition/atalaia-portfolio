@@ -26,6 +26,8 @@ Estas mídias não são abrangidas pela Licença MIT do código. A presença dos
 
 ## Política
 
+Cada PNG autorizado possui variantes `.webp` e `.avif` geradas pelo script `scripts/optimize-images.php`. Os formatos modernos são derivados do mesmo original, preservam sua procedência e são servidos com fallback para PNG.
+
 - Toda mídia nova deve ser documentada nesta tabela antes da publicação.
 - Não são aceitas capturas, fotografias ou gravações identificáveis de ambientes reais; retratos da equipe exigem autorização expressa e registro neste manifesto.
 - Não são aceitos brasões, logotipos, uniformes, postos, nomes de organizações ou topologia real.

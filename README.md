@@ -61,6 +61,8 @@ pwsh -NoProfile -File tests/validate-portfolio.ps1
 
 O validador confere arquivos, links locais, ausência de binários e extensões proibidas, termos institucionais, possíveis segredos, endereços privados e o aviso de escopo público seguro.
 
+A mesma validação é executada pelo GitHub Actions em Pull Requests e na `main`. Arquivos documentais, pacotes, bancos, dumps e itens acima de 8 MB são bloqueados. A política de comunicação responsável está em [`SECURITY.md`](SECURITY.md). Como este site não possui dependências gerenciadas, o Dependabot não é configurado até que exista um manifesto real.
+
 Os critérios e limites da auditoria de acessibilidade estão documentados em [`docs/ACESSIBILIDADE.md`](docs/ACESSIBILIDADE.md).
 
 ## Licença
