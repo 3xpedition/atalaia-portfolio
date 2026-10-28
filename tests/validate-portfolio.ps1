@@ -86,6 +86,12 @@ Assert-Portfolio -Condition ($rights.Contains('treinar modelos')) -Message 'Prot
 Assert-Portfolio -Condition ($rights.Contains('Nenhum direito adicional')) -Message 'Separacao entre codigo e ilustracoes ausente.'
 Assert-Portfolio -Condition ($readme.Contains('RIGHTS.md')) -Message 'README nao informa a excecao de midias.'
 Assert-Portfolio -Condition ([regex]::IsMatch($site, 'O c.digo demonstrativo possui licen.a pr.pria')) -Message 'Aviso publico de direitos de midia ausente.'
+Assert-Portfolio -Condition ($site.Contains('id="conformidade"')) -Message 'Secao publica de conformidade ausente.'
+Assert-Portfolio -Condition ([regex]::IsMatch($site, 'Independente e n.o oficial')) -Message 'Declaracao de independencia ausente na conformidade.'
+Assert-Portfolio -Condition ($site.Contains('LGPD')) -Message 'Referencia publica a privacidade e LGPD ausente.'
+Assert-Portfolio -Condition ([regex]::IsMatch($site, 'normas aplic.veis de seguran.a cibern.tica')) -Message 'Compromisso de seguranca cibernetica ausente.'
+Assert-Portfolio -Condition ([regex]::IsMatch($site, 'autorais, sint.ticas ou expressamente autorizadas')) -Message 'Procedencia publica de imagens ausente.'
+Assert-Portfolio -Condition ([regex]::IsMatch($site, 'n.o utiliza intelig.ncia artificial nativa')) -Message 'Limite de uso de IA ausente.'
 
 $allowedRasterAssets = @(
     'docs/assets/media/hero-rede-distribuida.png',
