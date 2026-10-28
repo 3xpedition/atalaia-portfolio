@@ -20,6 +20,7 @@ $requiredPaths = @(
     'README.md',
     'PRODUCT.md',
     'LICENSE',
+    'RIGHTS.md',
     'docs/index.html',
     'docs/examples/index.html',
     'docs/assets/favicon.svg',
@@ -59,6 +60,8 @@ foreach ($relativePath in $requiredPaths) {
 }
 
 $readme = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'README.md')
+$license = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'LICENSE')
+$rights = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'RIGHTS.md')
 $site = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/index.html')
 $examplesSite = Get-Content -Raw -Encoding UTF8 -LiteralPath (Join-Path $repositoryRoot 'docs/examples/index.html')
 
@@ -77,6 +80,12 @@ Assert-Portfolio -Condition ($site.Contains('representa, endossa ou reproduz qua
 Assert-Portfolio -Condition ($examplesSite.Contains('Nenhum arquivo foi copiado')) -Message 'Aviso do laboratorio ausente.'
 Assert-Portfolio -Condition (-not $site.Contains('<video')) -Message 'A pagina principal nao deve usar videos reais.'
 Assert-Portfolio -Condition (-not $site.Contains('borrad')) -Message 'A pagina principal nao deve depender de conteudo borrado.'
+Assert-Portfolio -Condition ($license.Contains('docs/assets/media/')) -Message 'Escopo da Licenca MIT nao foi delimitado.'
+Assert-Portfolio -Condition ($license.Contains('Consulte RIGHTS.md')) -Message 'LICENSE nao referencia as regras de midia e imagem.'
+Assert-Portfolio -Condition ($rights.Contains('treinar modelos')) -Message 'Protecao dos retratos ausente em RIGHTS.md.'
+Assert-Portfolio -Condition ($rights.Contains('Nenhum direito adicional')) -Message 'Separacao entre codigo e ilustracoes ausente.'
+Assert-Portfolio -Condition ($readme.Contains('RIGHTS.md')) -Message 'README nao informa a excecao de midias.'
+Assert-Portfolio -Condition ([regex]::IsMatch($site, 'O c.digo demonstrativo possui licen.a pr.pria')) -Message 'Aviso publico de direitos de midia ausente.'
 
 $allowedRasterAssets = @(
     'docs/assets/media/hero-rede-distribuida.png',

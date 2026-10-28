@@ -32,6 +32,7 @@ Atalaia e Gavião representam dois pontos de vista de uma mesma plataforma: estr
 5. Não publicar métricas reais; todo número de interface deve ser demonstrativo.
 6. Manter aviso de independência e escopo seguro na página principal.
 7. Código público deve ser autoral, pequeno e deliberadamente genérico.
+8. Código e mídia devem ter licenciamento separado; a publicação de retratos, ilustrações e identidade visual não autoriza sua reutilização.
 
 ## Conteúdo aprovado
 

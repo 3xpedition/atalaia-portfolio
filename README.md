@@ -59,4 +59,6 @@ O validador confere arquivos, links locais, ausência de binários e extensões 
 
 ## Licença
 
-O conteúdo demonstrativo original deste repositório é disponibilizado sob a [Licença MIT](LICENSE). A licença não se estende a produtos, dados, marcas ou materiais privados que não estejam presentes aqui.
+O código-fonte autoral e os exemplos textuais deste repositório são disponibilizados sob a [Licença MIT](LICENSE).
+
+Fotografias, retratos, imagem pessoal, ilustrações, identidade visual e nomes de produtos **não estão abrangidos pela MIT** e não podem ser reutilizados automaticamente. Consulte [RIGHTS.md](RIGHTS.md) para a delimitação completa.

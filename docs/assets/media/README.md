@@ -3,6 +3,8 @@
 Este diretório contém somente imagens autorais geradas para o portfólio público.
 Elas não reproduzem ambientes, pessoas, sistemas, marcas ou dados reais.
 
+Estas mídias não são abrangidas pela Licença MIT do código. A presença dos arquivos no repositório não concede autorização automática para reutilização. Consulte [`RIGHTS.md`](../../../RIGHTS.md).
+
 ## Arquivos autorizados
 
 | Arquivo | Uso | Origem | Restrições aplicadas |
